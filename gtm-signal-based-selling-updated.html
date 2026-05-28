@@ -23,7 +23,7 @@
     --amber-bg: #fff3e0;
     --blue-bg: #eef2ff;
     --white: #fffdf8;
-  } 
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Instrument Sans', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
   .header { background: var(--ink); color: var(--paper); padding: 48px 60px 40px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--accent); }
@@ -104,6 +104,72 @@
     .arch-row { grid-template-columns: 1fr; }
     .arch-value { border-left: 0; border-top: 1px solid var(--rule); }
   }
+
+
+/* CELTRA BRANDING OVERRIDE - APPLIED */
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+:root{
+  --pink:#ff51a7;--pink-dark:#e0368e;--pink-soft:rgba(255,81,167,0.10);
+  --dark:#000005;--black:#0d0d0d;--gray-dark:#333;--gray-mid:#808082;
+  --gray-light:#f7f7f7;--border:#e8e8e8;--white:#F8F8F8;
+  --fav:'Celtra Favorit',-apple-system,BlinkMacSystemFont,sans-serif;
+  --ink:#000005;--paper:#F8F8F8;--paper2:#ffffff;--rule:#e8e8e8;
+  --accent:#ff51a7;--accent2:#17598C;--accent3:#00a66a;--amber:#ffb000;--muted:#808082;--teal:#17598C;
+  --red-bg:rgba(255,81,167,0.12);--green-bg:rgba(0,166,106,0.12);--amber-bg:rgba(255,176,0,0.14);--blue-bg:rgba(23,89,140,0.12);
+}
+html{font-family:var(--fav);-webkit-font-smoothing:antialiased;background:var(--white);color:#1A1A1C;scroll-behavior:smooth}
+body{font-family:var(--fav)!important;background:#F8F8F8;color:#1A1A1C;}
+.header{position:relative;overflow:hidden;background:#000005!important;color:#F8F8F8!important;padding:104px 64px 92px!important;border-bottom:0!important;align-items:flex-start!important;}
+.header:before{content:'';position:absolute;inset:auto -10% -62% -10%;height:360px;background:radial-gradient(ellipse 70% 80% at 50% 100%,#FE82BF 0%,#17598C 45%,#000005 100%);opacity:.95;pointer-events:none;}
+.header:after{content:'Celtra';position:absolute;left:64px;top:28px;font-weight:700;font-size:18px;letter-spacing:-.02em;color:#F8F8F8;}
+.header-left,.header-right{position:relative;z-index:1;}
+.header-left h1{font-family:var(--fav)!important;font-size:64px!important;line-height:64px!important;font-weight:500!important;letter-spacing:-.02em!important;max-width:980px;margin-bottom:28px!important;}
+.header-left h1 em{font-style:normal;color:var(--pink);}
+.header-left p,.eyebrow{font-family:var(--fav)!important;font-size:14px!important;line-height:18px!important;font-weight:700!important;letter-spacing:0!important;text-transform:uppercase;color:var(--pink)!important;}
+.header-right{font-family:var(--fav)!important;font-size:16px!important;line-height:22px!important;color:rgba(248,248,248,.72)!important;max-width:340px;}
+nav{background:#000005!important;border-bottom:1px solid #333!important;padding:0 64px!important;height:auto;box-shadow:0 1px 0 rgba(255,255,255,.06);}
+nav button{font-family:var(--fav)!important;font-size:13px!important;line-height:16px!important;font-weight:700!important;letter-spacing:0!important;color:#808082!important;padding:18px 18px 16px!important;border-bottom:3px solid transparent!important;text-transform:none!important;}
+nav button:hover,nav button.active{color:#F8F8F8!important;}
+nav button.active{border-bottom-color:var(--pink)!important;}
+main{max-width:1440px!important;margin:0 auto!important;padding:72px 64px!important;}
+.section-title{font-family:var(--fav)!important;font-size:44px!important;line-height:46px!important;font-weight:500!important;letter-spacing:-.02em!important;color:#1A1A1C!important;}
+.section-sub{font-family:var(--fav)!important;font-size:14px!important;line-height:18px!important;font-weight:700!important;letter-spacing:0!important;color:#808082!important;text-transform:uppercase!important;margin-bottom:36px!important;}
+.callout{background:#000005!important;color:#F8F8F8!important;border-radius:20px!important;padding:40px!important;border:1px solid #666668!important;box-shadow:0 0 84px -30px rgba(255,81,167,.55);}
+.callout h3{font-family:var(--fav)!important;font-size:32px!important;line-height:34px!important;font-weight:500!important;letter-spacing:-.02em!important;}
+.callout p{font-size:18px!important;line-height:24px!important;color:#b4b4b4!important;max-width:1100px!important;}
+.metric-card,.plain-card,.wf-card,.arch-row,table{background:#fff!important;border:1px solid var(--border)!important;border-radius:20px!important;box-shadow:0 0 40px -22px rgba(255,81,167,.28);}
+.metric-card h3{font-family:var(--fav)!important;color:#1A1A1C!important;font-size:28px!important;line-height:30px!important;font-weight:500!important;letter-spacing:-.02em!important;}
+.metric-label,.wf-num{font-family:var(--fav)!important;font-size:12px!important;line-height:14px!important;font-weight:700!important;letter-spacing:0!important;text-transform:uppercase!important;color:var(--pink)!important;}
+.metric-card p,.plain-card p,.arch-value,.output,td{font-size:15px!important;line-height:21px!important;color:#4d4d4f!important;}
+.arch-row{overflow:hidden!important;}
+.arch-label{background:#000005!important;color:#F8F8F8!important;padding:24px!important;}
+.arch-label small{font-family:var(--fav)!important;font-size:12px!important;line-height:14px!important;color:var(--pink)!important;letter-spacing:0!important;font-weight:700!important;}
+.arch-label strong{font-family:var(--fav)!important;font-size:22px!important;line-height:26px!important;font-weight:500!important;letter-spacing:-.02em!important;}
+.arch-body{background:#F8F8F8!important;padding:20px!important;}
+.arch-value{background:#fff!important;border-left:1px solid var(--border)!important;}
+.tool{border:1px solid var(--border)!important;border-radius:16px!important;border-left:4px solid var(--pink)!important;background:#fff!important;padding:16px!important;box-shadow:0 0 24px -18px rgba(0,0,0,.4);}
+.tool.sfdc{border-left-color:#17598C!important}.tool.ai{border-left-color:#ff51a7!important}.tool.green{border-left-color:#00a66a!important}.tool.eval{border-left-color:#ffb000!important}
+.tool-name{font-family:var(--fav)!important;font-size:18px!important;line-height:22px!important;font-weight:700!important;color:#1A1A1C!important;}
+.tool-role{font-family:var(--fav)!important;font-size:13px!important;line-height:17px!important;color:#808082!important;}
+.badge,.wf-priority,.tag{font-family:var(--fav)!important;font-size:11px!important;line-height:13px!important;font-weight:700!important;letter-spacing:0!important;border-radius:999px!important;text-transform:uppercase!important;padding:5px 9px 4px!important;}
+.b-owned,.p-high{background:rgba(0,166,106,.12)!important;color:#007a4d!important}.b-build{background:rgba(255,81,167,.12)!important;color:#c9006b!important}.b-eval,.p-eval{background:rgba(255,176,0,.14)!important;color:#8a5c00!important}.b-gap,.p-med{background:rgba(23,89,140,.12)!important;color:#17598C!important}
+.wf-head{background:#000005!important;color:#F8F8F8!important;border-bottom:1px solid #333!important;padding:22px!important;}
+.wf-title{font-family:var(--fav)!important;font-size:24px!important;line-height:28px!important;font-weight:500!important;letter-spacing:-.02em!important;color:#F8F8F8!important;}
+.wf-body{padding:22px!important;}
+.signal-box{background:#F8F8F8!important;border:1px solid var(--border)!important;border-radius:16px!important;padding:16px!important;}
+.signal-box .label{font-family:var(--fav)!important;font-size:12px!important;line-height:14px!important;font-weight:700!important;color:var(--pink)!important;letter-spacing:0!important;}
+.signal-box ul{font-size:15px!important;line-height:21px!important;color:#1A1A1C!important;}
+.step{font-size:13px!important;line-height:17px!important;background:#fff!important;border:1px solid var(--border)!important;border-radius:999px!important;padding:7px 11px!important;}
+.step.ai{background:rgba(255,81,167,.10)!important;border-color:rgba(255,81,167,.35)!important;color:#c9006b!important;}
+th{font-family:var(--fav)!important;font-size:12px!important;line-height:14px!important;font-weight:700!important;letter-spacing:0!important;color:#1A1A1C!important;text-transform:uppercase!important;background:#F8F8F8!important;}
+table{border-collapse:separate!important;border-spacing:0!important;overflow:hidden!important;}
+.footer{background:#000005!important;color:#808082!important;border-top:0!important;font-family:var(--fav)!important;padding:36px 64px!important;}
+.footer:before{content:'Celtra-branded UI applied · Full GTM workflow content preserved';color:var(--pink);font-weight:700;margin-right:20px;}
+@media(max-width:768px){.header{padding:82px 24px 64px!important}.header:after{left:24px}.header-left h1{font-size:40px!important;line-height:40px!important}nav{padding:0 24px!important}main{padding:48px 24px!important}.section-title{font-size:32px!important;line-height:34px!important}}
+/* END CELTRA BRANDING OVERRIDE */
+
 </style>
 </head>
 <body>
@@ -113,9 +179,8 @@
     <p>Celtra Revenue Operations · May 2026</p>
   </div>
   <div class="header-right">
-    CEO-ready operating model<br>
     Salesforce-centered · Snowflake-powered<br>
-    Better timing · Better context · Better action
+    Better timing · Better context · Better action<br>
   </div>
 </div>
 <nav>
@@ -126,6 +191,7 @@
   <button onclick="show('cs-workflows', event)">⑤ Customer Success</button>
   <button onclick="show('tools', event)">⑥ Tool Decisions</button>
   <button onclick="show('roadmap', event)">⑦ 90-Day Roadmap</button>
+  <button onclick="show('metrics', event)">⑧ Success Metrics</button>
 </nav>
 <main>
 <section class="section active" id="sec-thesis">
@@ -139,6 +205,10 @@
     <div class="metric-card"><div class="metric-label">Team question</div><h3>Who needs to act?</h3><p>Prioritized AE, SC, and CSM actions based on buyer engagement, product usage, support risk, trial health, commercial readiness, and renewal timing.</p></div>
     <div class="metric-card"><div class="metric-label">Timing question</div><h3>Why now?</h3><p>Every action is tied to a named trigger: campaign engagement, demo request, trial usage, technical blocker, support escalation, renewal risk, expansion signal, or stage stall.</p></div>
     <div class="metric-card"><div class="metric-label">Execution question</div><h3>What should we do?</h3><p>Agent recommends the play, drafts the message or brief, routes to the right owner, coordinates the pod, and logs the outcome for learning.</p></div>
+  </div>
+  <div class="plain-card" style="margin-top:18px;">
+    <div class="metric-label">Updated understanding</div>
+    <p><strong>The GTM stack should not optimize one role in isolation.</strong> AE, Solutions Consulting, and Customer Success each own different moments in the customer journey, but they should work from the same account context, signal definitions, action queue, and outcome measurement. The goal is coordinated revenue execution from demand creation through demo, trial, close, onboarding, expansion, and renewal.</p>
   </div>
   <div class="plain-card" style="margin-top:18px;">
     <div class="metric-label">Operating principle</div>
@@ -156,7 +226,7 @@
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gong</div><div class="tool-role">Competitors, objections<br>sentiment, next steps</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Pendo</div><div class="tool-role">Feature adoption<br>in-app usage</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Zendesk</div><div class="tool-role">Tickets, escalations<br>support blockers</div></div>
-        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gmail</div><div class="tool-role">Buyer replies, thread activity<br>direct seller engagement</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gmail</div><div class="tool-role">Buyer/customer replies<br>thread activity</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Slack</div><div class="tool-role">Internal urgency, deal chatter<br>handoffs + team alignment</div></div>
         <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes<br>stakeholders, relationships</div></div>
         <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
@@ -204,7 +274,7 @@
 </section>
 <section class="section" id="sec-workflows">
   <div class="section-title">Actual Seller Workflows</div>
-  <div class="section-sub">Named triggers, source tools, qualification logic, seller action, and execution channel</div>
+  <div class="section-sub">Named triggers, source tools, qualification logic, AE action, and execution channel</div>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 01 · Pipeline generation</div><div class="wf-title">High-fit account engages with marketing content</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot form fill, webinar attendance, product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit and no actively worked opp</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">→</span><span class="step">Salesforce campaign/member</span><span class="arrow">→</span><span class="step ai">Claude brief</span><span class="arrow">→</span><span class="step">SFDC task</span><span class="arrow">→</span><span class="step">Outreach/Gmail</span></div><div class="output"><strong>Seller sees:</strong> “Acme Retail had 2 contacts engage with creative automation content. High ICP fit. Recommended action: AE personalized follow-up. Use the webinar angle, reference the account context, and avoid a generic demo CTA.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Outreach/Gmail</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 02 · Expansion</div><div class="wf-title">Existing customer usage spike</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Snowflake/Pendo shows 30%+ usage increase, new team usage, or new users from a region/business unit</li><li>Salesforce confirms white space and Zendesk does not show active escalation</li></ul></div><div class="flow"><span class="step">Snowflake/Pendo</span><span class="arrow">→</span><span class="step">SFDC account flag</span><span class="arrow">→</span><span class="step ai">Expansion brief</span><span class="arrow">→</span><span class="step">Slack AE+CSM</span><span class="arrow">→</span><span class="step">Value review task</span></div><div class="output"><strong>Seller sees:</strong> “Usage increased 42% in 30 days, 11 new users added, no major support risk. Recommended play: AE + CSM value review. Create expansion opp only after customer confirms broader rollout need.”</div><div class="tags"><span class="tag">Snowflake</span><span class="tag">Pendo</span><span class="tag">Salesforce</span><span class="tag">Zendesk</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
@@ -252,8 +322,8 @@
       <tr><td><strong>Snowflake</strong></td><td>Unified data foundation for product usage, customer health, commercial history, and signal scoring.</td><td>Can GTM data be modeled into reliable triggers rather than one-off reporting extracts?</td><td class="rec-keep">Keep + deepen</td><td>Usage spike/drop detection, expansion propensity, renewal risk, account health, and conversion by signal type.</td></tr>
       <tr><td><strong>Claude / Agentic layer</strong></td><td>Reasoning layer that turns raw signals into account briefs, play recommendations, coaching notes, and message drafts.</td><td>Where can agents remove research, prep, and coordination time while keeping humans in control of customer-facing actions?</td><td class="rec-keep">Build</td><td>Brief accuracy, seller acceptance rate, time saved, action completion, reply lift, pipeline impact, and quality of manager coaching.</td></tr>
       <tr><td><strong>Outreach</strong></td><td>Governed sequencing rail for scaled outbound when the motion truly requires cadence management.</td><td>Is $18k justified by active users, active sequences, and sequence-driven meetings or pipeline?</td><td class="rec-eval">Audit before renewal</td><td>Weekly active users, live sequences, reply rates, meetings booked, opps created, and pipeline sourced or influenced.</td></tr>
-      <tr><td><strong>Gmail</strong></td><td>Direct seller communication source and execution channel for high-context one-off follow-ups.</td><td>Can buyer/customer replies, non-response, thread momentum, and AE/SC/CS-authored outreach become measurable signals in Salesforce?</td><td class="rec-keep">Keep + connect</td><td>Email reply/no-reply signals, last meaningful buyer touch, Claude-drafted one-off messages, task completion, and opp movement after follow-up.</td></tr>
-      <tr><td><strong>Slack</strong></td><td>Internal signal and routing layer for urgent deal context, AE/CSM handoffs, manager visibility, and cross-functional escalation.</td><td>Which Slack alerts deserve action, and how do we prevent AE/SC/CS context from staying trapped in channels?</td><td class="rec-keep">Keep + govern</td><td>Actionable alerts created, owner acknowledgement, escalation resolution time, AE/CSM alignment, and links back to Salesforce records.</td></tr>
+      <tr><td><strong>Gmail</strong></td><td>Direct customer communication source and execution channel for high-context AE, SC, and CSM follow-ups.</td><td>Can buyer/customer replies, non-response, thread momentum, and AE/SC/CS-authored outreach become measurable signals in Salesforce?</td><td class="rec-keep">Keep + connect</td><td>Email reply/no-reply signals, last meaningful buyer touch, Claude-drafted one-off messages, task completion, and opp movement after follow-up.</td></tr>
+      <tr><td><strong>Slack</strong></td><td>Internal signal and routing layer for urgent deal context, AE/SC/CSM handoffs, manager visibility, and cross-functional escalation.</td><td>Which Slack alerts deserve action, and how do we prevent AE/SC/CS context from staying trapped in channels?</td><td class="rec-keep">Keep + govern</td><td>Actionable alerts created, owner acknowledgement, escalation resolution time, AE/SC/CSM alignment, and links back to Salesforce records.</td></tr>
       <tr><td><strong>LinkedIn Sales Navigator</strong></td><td>External people and relationship signal source for job changes, new stakeholders, and account mapping.</td><td>Is $28k producing unique stakeholder/job-change signals, or is it mostly used as lookup?</td><td class="rec-eval">60-day prove-it plan</td><td>Job-change alerts acted on, new stakeholders added, relationship maps updated, meetings booked, and pipeline influenced.</td></tr>
       <tr><td><strong>Clay</strong></td><td>Candidate enrichment and external research layer for contact gaps, hiring signals, funding/news, and closed-lost reactivation.</td><td>Can Clay replace point enrichment tools and reduce Sales Nav dependence without polluting Salesforce?</td><td class="rec-eval">Evaluate against workflows</td><td>Contact gap fill rate, new stakeholder detection, job/hiring/news signal quality, reactivation conversion, and SFDC sync accuracy.</td></tr>
       <tr><td><strong>HubSpot</strong></td><td>Marketing engagement signal source for forms, events, nurture, page visits, campaign membership, and demand context.</td><td>Is engagement being routed with ICP context and next-best action, or only passed as generic MQL volume?</td><td class="rec-keep">Keep as marketing layer</td><td>High-fit engagement alerts, multi-contact account engagement, MQL-to-meeting conversion, and campaign-to-pipeline attribution.</td></tr>
@@ -265,15 +335,89 @@
     </tbody>
   </table>
 </section>
+</section>
 <section class="section" id="sec-roadmap">
-  <div class="section-title">Cross-Functional 90-Day Roadmap</div>
-  <div class="section-sub">Stand up the signal operating model across AE, Solutions Consulting, and Customer Success before buying more tooling</div>
-  <div class="grid-3">
-    <div class="plain-card"><div class="metric-label">Days 1-30</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Define the operating model</h3><p>Create shared Salesforce fields for Signal Type, Signal Source, Recommended Play, Action Owner, Accepted/Dismissed, Outcome, Trial Start/End, Success Criteria, Trial Health, Commercial Readiness, Demo Readiness, Technical Risk, Adoption Health, Support Risk, and Renewal Readiness. Establish AE, SC, and CSM ownership rules for each trigger.</p></div>
-    <div class="plain-card"><div class="metric-label">Days 31-60</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Launch role-specific pilots</h3><p>Launch AE workflows for high-fit engagement, trial auditing, stalled opp recovery, and late-stage close planning. Launch SC workflows for demo readiness, technical evaluation planning, and demo follow-up. Launch CS workflows for onboarding activation, adoption drop, support escalation, and renewal readiness. Use Salesforce Flow first; add orchestration only if native flows are insufficient.</p></div>
-    <div class="plain-card"><div class="metric-label">Days 61-90</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Measure, govern, decide</h3><p>Measure accepted actions, completion rates, conversion lift, demo quality, proof-plan completion, adoption recovery, renewal risk reduction, and expansion creation. Decide whether Outreach and Sales Nav are earning their spend. Evaluate Clay only against proven gaps: stakeholder change, contact gaps, closed-lost reactivation, and enrichment quality.</p></div>
+  <div class="section-title">90-Day Roadmap</div>
+  <div class="section-sub">Build the signal operating model while the company establishes the AI and data foundation</div>
+
+  <div class="callout">
+    <h3>The roadmap should separate what RevOps can control now from what depends on the broader AI architecture.</h3>
+    <p>Signal-based selling will only scale if the company defines a durable data layer, governance model, integration pattern, and AI operating architecture. RevOps does not need to wait for every foundational decision to be complete, but it should avoid building brittle automations that duplicate the future data layer or create a second source of truth outside Salesforce and Snowflake.</p>
   </div>
+
+  <div class="grid-3">
+    <div class="plain-card">
+      <div class="metric-label">Phase 01 · Days 1-30</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Define the architecture decisions</h3>
+      <p>Align RevOps, DI, Sales, CS, Product, and Finance on the foundational choices that determine whether signal-based AI can scale: canonical account model, data ownership, identity resolution, source-of-truth rules, AI access patterns, governance, and where recommendations should be surfaced.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Phase 02 · Days 31-60</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Build RevOps-controlled front-end workflows</h3>
+      <p>Use Salesforce-native fields, tasks, views, dashboards, flows, Slack alerts, and human-reviewed Claude briefs to pilot the operating model without waiting for full data infrastructure. Focus on workflows that use existing reliable data: HubSpot engagement, Salesforce opportunity hygiene, Gong summaries, Zendesk escalations, and manually validated usage signals.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Phase 03 · Days 61-90</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Transition pilots into governed infrastructure</h3>
+      <p>Compare pilot outcomes against the emerging data architecture. Promote validated triggers into Snowflake-modeled signals, retire manual workarounds, document field definitions, and decide whether external signal tooling like Clay, Sales Navigator, or Outreach is still needed based on measurable workflow value.</p>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:22px;">
+    <div class="plain-card">
+      <div class="metric-label">Foundational AI architecture decisions</div>
+      <p><strong>Before scaling signal-based AI, the company should decide:</strong></p>
+      <ul style="margin-top:12px; padding-left:20px; color:#4d4d4f; font-size:15px; line-height:23px;">
+        <li><strong>Canonical account and contact model:</strong> which object IDs, hierarchies, domains, parent/child relationships, and buyer roles define the customer graph.</li>
+        <li><strong>Source-of-truth rules:</strong> which system owns account data, product usage, contract status, support risk, billing status, engagement, and outcome history.</li>
+        <li><strong>Identity resolution:</strong> how contacts, users, domains, product users, buying committee members, and customer stakeholders are matched across systems.</li>
+        <li><strong>Signal taxonomy:</strong> what counts as a usage signal, engagement signal, stakeholder signal, deal risk, support risk, expansion signal, or renewal risk.</li>
+        <li><strong>Data freshness expectations:</strong> which signals need real-time updates, daily refresh, weekly refresh, or manual validation.</li>
+        <li><strong>AI access pattern:</strong> whether agents query Snowflake directly, call governed APIs, read from Salesforce, or operate through approved semantic models.</li>
+        <li><strong>Governance and permissions:</strong> what customer, product, contract, support, and email data AI can access; how PII and confidential data are protected.</li>
+        <li><strong>Recommendation logging:</strong> where AI recommendations, seller acceptance, dismissals, edits, actions, and outcomes are stored for learning.</li>
+        <li><strong>Human-in-the-loop rules:</strong> which actions AI may draft, recommend, route, update, or execute; and which actions require seller, CSM, manager, Legal, or Finance approval.</li>
+      </ul>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">What RevOps can do without owning the full architecture</div>
+      <p><strong>RevOps can still create meaningful front-end value while DI builds the data layer:</strong></p>
+      <ul style="margin-top:12px; padding-left:20px; color:#4d4d4f; font-size:15px; line-height:23px;">
+        <li>Create Salesforce fields for Signal Type, Signal Source, Recommended Play, Action Owner, Action Status, Dismissal Reason, and Outcome.</li>
+        <li>Build prioritized Salesforce list views for AEs, SCs, and CSMs using trusted existing fields.</li>
+        <li>Use Salesforce Flow for simple routing before adding separate orchestration tooling.</li>
+        <li>Generate Claude-assisted briefs from Salesforce, Gong summaries, HubSpot activity, Zendesk case summaries, and manually reviewed Snowflake/Pendo exports.</li>
+        <li>Create Slack alerts that link back to Salesforce records instead of letting recommendations live only in Slack.</li>
+        <li>Run controlled pilots with human review before automating any customer-facing action.</li>
+        <li>Measure action acceptance, completion, and outcome manually at first so DI knows which signals deserve production modeling.</li>
+        <li>Document definitions and workflow rules so pilots can migrate cleanly into the future company-wide AI architecture.</li>
+      </ul>
+    </div>
+  </div>
+
   <table style="margin-top:22px;">
+    <thead><tr><th>Roadmap workstream</th><th>RevOps-owned now</th><th>Requires DI / company architecture</th><th>Decision to make</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Signal taxonomy</strong></td><td>Define practical GTM categories and pilot fields in Salesforce.</td><td>Create governed enterprise definitions and shared semantic layer.</td><td>Which signals are official enough to trigger seller action?</td></tr>
+      <tr><td><strong>Account/customer graph</strong></td><td>Use Salesforce account hierarchy and validated contacts for workflow routing.</td><td>Unify CRM accounts, product users, domains, parent/child relationships, and customer entities.</td><td>What is the canonical account identity?</td></tr>
+      <tr><td><strong>Usage and health signals</strong></td><td>Start with manually reviewed Snowflake/Pendo exports or high-confidence fields.</td><td>Model production-grade usage thresholds, health scores, and product adoption events.</td><td>Which usage changes should trigger expansion or risk workflows?</td></tr>
+      <tr><td><strong>AI recommendations</strong></td><td>Use Claude to draft briefs and recommendations for human review.</td><td>Create approved AI access pattern, prompt governance, audit logs, and feedback loop.</td><td>Where should recommendations live and how should outcomes be logged?</td></tr>
+      <tr><td><strong>Workflow execution</strong></td><td>Use Salesforce tasks, Gmail drafts, Slack alerts, and Flow-based routing.</td><td>Evaluate durable orchestration layer if cross-system workflows exceed Salesforce Flow.</td><td>Which actions should stay in Salesforce versus a dedicated orchestration layer?</td></tr>
+      <tr><td><strong>Tool rationalization</strong></td><td>Audit Outreach, Sales Nav, Clay candidates, and actual seller use cases.</td><td>Compare tool signals against enterprise data model and governed signal needs.</td><td>Which tools provide unique signals or execution capabilities that the data layer cannot replace?</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="section" id="sec-metrics">
+  <div class="section-title">Success Metrics</div>
+  <div class="section-sub">Measure whether signal-based workflows create better timing, better context, and better revenue outcomes</div>
+
+  <div class="callout">
+    <h3>Success should be measured by action quality and revenue impact, not by the volume of AI recommendations.</h3>
+    <p>The goal is not to create more alerts. The goal is to create fewer, better-timed actions that sellers, SCs, and CSMs trust enough to act on — and that improve conversion, adoption, expansion, retention, and forecast quality.</p>
+  </div>
+
+  <table>
     <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>CEO-facing outcome</th></tr></thead>
     <tbody>
       <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
@@ -293,6 +437,21 @@
       <tr><td>CS renewal readiness</td><td>Renewal risk reduced before notice window</td><td>Usage health, support themes, stakeholder coverage, and value proof readiness</td><td>Cleaner renewals and stronger account retention</td></tr>
     </tbody>
   </table>
+
+  <div class="grid-3" style="margin-top:22px;">
+    <div class="plain-card">
+      <div class="metric-label">Adoption metrics</div>
+      <p>Recommendation acceptance rate, action completion rate, dismissal reasons, time from signal to action, and rep/CSM/SC trust in briefs.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Quality metrics</div>
+      <p>Signal precision, false-positive rate, duplicate alert rate, recommendation usefulness, data completeness, and whether recommendations point to the correct owner.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Revenue metrics</div>
+      <p>Meetings booked, opportunity creation, stage progression, expansion pipeline, renewal risk reduction, churn prevention, forecast hygiene, and close-plan readiness.</p>
+    </div>
+  </div>
 </section>
 </main>
 <div class="footer"><span>Celtra Revenue Operations · Signal-Based GTM Stack · May 2026</span><span>Confidential · Internal use</span></div>
