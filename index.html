@@ -166,7 +166,7 @@ main{max-width:1440px!important;margin:0 auto!important;padding:72px 64px!import
 th{font-family:var(--fav)!important;font-size:12px!important;line-height:14px!important;font-weight:700!important;letter-spacing:0!important;color:#1A1A1C!important;text-transform:uppercase!important;background:#F8F8F8!important;}
 table{border-collapse:separate!important;border-spacing:0!important;overflow:hidden!important;}
 .footer{background:#000005!important;color:#808082!important;border-top:0!important;font-family:var(--fav)!important;padding:36px 64px!important;}
-.footer:before{content:'Celtra-branded UI applied · Full GTM workflow content preserved';color:var(--pink);font-weight:700;margin-right:20px;}
+.footer:before{content:'Full GTM workflow content preserved';color:var(--pink);font-weight:700;margin-right:20px;}
 @media(max-width:768px){.header{padding:82px 24px 64px!important}.header:after{left:24px}.header-left h1{font-size:40px!important;line-height:40px!important}nav{padding:0 24px!important}main{padding:48px 24px!important}.section-title{font-size:32px!important;line-height:34px!important}}
 /* END CELTRA BRANDING OVERRIDE */
 
@@ -220,6 +220,16 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <div class="section-sub">Tools are organized by job: signal source, commercial truth, intelligence, execution, and measurement across AE, SC, and CS workflows</div>
   <div class="architecture">
     <div class="arch-row">
+      <div class="arch-label"><small>Layer 00</small><strong>Data Enrichment</strong></div>
+      <div class="arch-body">
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">MediaRadar</div><div class="tool-role">Advertiser intelligence<br>media spend + market context</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Adomik</div><div class="tool-role">Publisher / media intelligence<br>revenue + market signals</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
+        <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">LeadIQ</div><div class="tool-role">Contact capture<br>data quality + overlap review</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> The enrichment layer adds external market, account, company, and contact context before a signal becomes actionable. MediaRadar and Adomik help validate account relevance and market motion; Clay and LeadIQ support people/contact coverage and enrichment quality.</div>
+    </div>
+    <div class="arch-row">
       <div class="arch-label"><small>Layer 01</small><strong>Signal Sources</strong></div>
       <div class="arch-body">
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">HubSpot</div><div class="tool-role">Campaign engagement<br>forms, events, nurture</div></div>
@@ -229,9 +239,8 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gmail</div><div class="tool-role">Buyer/customer replies<br>thread activity</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Slack</div><div class="tool-role">Internal urgency, deal chatter<br>handoffs + team alignment</div></div>
         <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes<br>stakeholders, relationships</div></div>
-        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
       </div>
-      <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates engagement signals. Gmail and Gong create buyer/customer conversation signals. Slack captures internal urgency, handoffs, and cross-functional AE/SC/CS context. Pendo/Snowflake create product signals. Sales Nav/Clay create external people/account signals.</div>
+      <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates engagement signals. Gmail and Gong create buyer/customer conversation signals. Slack captures internal urgency, handoffs, and cross-functional AE/SC/CS context. Pendo/Snowflake create product signals. Sales Nav creates relationship and stakeholder-change signals.</div>
     </div>
     <div class="arch-row">
       <div class="arch-label"><small>Layer 02</small><strong>Commercial Truth</strong></div>
