@@ -188,11 +188,12 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <button onclick="show('operating-model', event)">② Agentic Operating Model</button>
   <button onclick="show('architecture', event)">③ Stack Architecture</button>
   <button onclick="show('workflows', event)">④ Seller Workflows</button>
-  <button onclick="show('sc-workflows', event)">⑤ Solutions Consulting</button>
-  <button onclick="show('cs-workflows', event)">⑥ Customer Success</button>
-  <button onclick="show('tools', event)">⑦ Tool Decisions</button>
-  <button onclick="show('roadmap', event)">⑧ From Pilot to Capability</button>
-  <button onclick="show('metrics', event)">⑨ Success Metrics</button>
+  <button onclick="show('marketing-workflows', event)">⑤ Marketing Workflows</button>
+  <button onclick="show('sc-workflows', event)">⑥ Solutions Consulting</button>
+  <button onclick="show('cs-workflows', event)">⑦ Customer Success</button>
+  <button onclick="show('tools', event)">⑧ Tool Decisions</button>
+  <button onclick="show('roadmap', event)">⑨ From Pilot to Capability</button>
+  <button onclick="show('metrics', event)">⑩ Success Metrics</button>
 </nav>
 <main>
 <section class="section active" id="sec-thesis">
@@ -209,7 +210,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   </div>
   <div class="plain-card" style="margin-top:18px;">
     <div class="metric-label">Updated understanding</div>
-    <p><strong>The GTM stack should not optimize one role in isolation.</strong> AE, Solutions Consulting, and Customer Success each own different moments in the customer journey, but they should work from the same account context, signal definitions, action queue, and outcome measurement. The goal is coordinated revenue execution from demand creation through demo, trial, close, onboarding, expansion, and renewal.</p>
+    <p><strong>The GTM stack should not optimize one role in isolation.</strong> Marketing, AE, Solutions Consulting, and Customer Success each own different moments in the customer journey, but they should work from the same account context, signal definitions, action queue, and outcome measurement. The goal is coordinated revenue execution from market sensing and demand creation through demo, trial, close, onboarding, expansion, and renewal.</p>
   </div>
   <div class="plain-card" style="margin-top:18px;">
     <div class="metric-label">Operating principle</div>
@@ -296,23 +297,25 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="plain-card"><div class="metric-label">System of engagement</div><p><strong>Where users experience the agentic workflow:</strong> Salesforce UI, Slack, Gmail, dashboards, and manager views.</p></div>
     <div class="plain-card"><div class="metric-label">System of agency</div><p><strong>Where AI reasons and recommends:</strong> Claude / Agentforce-style agents, prompts, play selection, routing logic, and human approval steps.</p></div>
     <div class="plain-card"><div class="metric-label">System of work</div><p><strong>Where business processes execute:</strong> Salesforce, Outreach, HubSpot, Zendesk, SpotDraft, Gmail, Slack, and Salesforce Flow.</p></div>
-    <div class="plain-card"><div class="metric-label">System of context</div><p><strong>Where trusted context comes from:</strong> Snowflake, Pendo, Gong, MediaRadar, Adomik, Clay, LeadIQ, Sales Nav, Salesforce history, and customer data.</p></div>
+    <div class="plain-card"><div class="metric-label">System of context</div><p><strong>Where trusted context comes from:</strong> Snowflake, Pendo, Gong, HubSpot, MediaRadar, Peec AI, Clay, LeadIQ, Sales Nav, Salesforce history, and customer data. Phase 1 should prioritize first-party and high-confidence signals before adding large intent platforms or anonymous visitor intelligence.</p></div>
   </div>
   <div class="architecture">
     <div class="arch-row">
       <div class="arch-label"><small>Layer 00</small><strong>Data Enrichment</strong></div>
       <div class="arch-body">
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">MediaRadar</div><div class="tool-role">Advertiser intelligence<br>media spend + market context</div></div>
-        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Adomik</div><div class="tool-role">Publisher / media intelligence<br>revenue + market signals</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Peec AI</div><div class="tool-role">AI search / AEO visibility<br>brand + category presence</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate later</span><div class="tool-name">Adomik</div><div class="tool-role">Publisher/media intelligence<br>only if use case is clear</div></div>
         <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
         <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">LeadIQ</div><div class="tool-role">Contact capture<br>data quality + overlap review</div></div>
       </div>
-      <div class="arch-value"><strong>Value:</strong> The enrichment layer adds external market, account, company, and contact context before a signal becomes actionable. MediaRadar and Adomik help validate account relevance and market motion; Clay and LeadIQ support people/contact coverage and enrichment quality.</div>
+      <div class="arch-value"><strong>Value:</strong> The enrichment layer adds external account, market, content, and contact context before a signal becomes actionable. Phase 1 should use MediaRadar, HubSpot, Gong, Snowflake, and Salesforce as the trusted core; evaluate Peec AI for AEO visibility and Clay for account/contact enrichment. Do not assume anonymous visitor intelligence or 6sense-style intent is required yet.</div>
     </div>
     <div class="arch-row">
       <div class="arch-label"><small>Layer 01</small><strong>Signal Sources</strong></div>
       <div class="arch-body">
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">HubSpot</div><div class="tool-role">Campaign engagement<br>forms, events, nurture</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Peec AI</div><div class="tool-role">AEO signal source<br>AI search visibility + content gaps</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gong</div><div class="tool-role">Competitors, objections<br>sentiment, next steps</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Pendo</div><div class="tool-role">Feature adoption<br>in-app usage</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Zendesk</div><div class="tool-role">Tickets, escalations<br>support blockers</div></div>
@@ -320,7 +323,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Slack</div><div class="tool-role">Internal urgency, deal chatter<br>handoffs + team alignment</div></div>
         <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes, stakeholders, relationships</div></div>
       </div>
-      <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates engagement signals. Gmail and Gong create buyer/customer conversation signals. Slack captures internal urgency, handoffs, and cross-functional AE/SC/CS context. Pendo/Snowflake create product signals. Sales Nav creates relationship and stakeholder-change signals.</div>
+      <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates marketing engagement and nurture signals. Peec AI may create AEO visibility and content gap signals. Gmail and Gong create buyer/customer conversation signals. Slack captures internal urgency, handoffs, and cross-functional context. Pendo/Snowflake create product signals. Sales Nav creates relationship and stakeholder-change signals.</div>
     </div>
     <div class="arch-row">
       <div class="arch-label"><small>Layer 02</small><strong>Commercial Truth</strong></div>
@@ -339,7 +342,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool ai"><span class="badge b-build">Build</span><div class="tool-name">Claude / Agents</div><div class="tool-role">Briefs, scoring<br>play recommendation</div></div>
         <div class="tool ai"><span class="badge b-gap">Gap</span><div class="tool-name">Orchestration</div><div class="tool-role">Salesforce Flow first<br>evaluate n8n/Make only if needed</div></div>
       </div>
-      <div class="arch-value"><strong>Value:</strong> The intelligence layer decides whether a signal is worth action, which team owns it, what brief is needed, and which channel should execute it. It should not live inside Outreach or Sales Nav.</div>
+      <div class="arch-value"><strong>Value:</strong> The intelligence layer decides whether a signal is worth action, which team owns it, what brief is needed, and which channel should execute it.</div>
     </div>
     <div class="arch-row">
       <div class="arch-label"><small>Layer 04</small><strong>Action + Execution</strong></div>
@@ -362,7 +365,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   </div>
 </section>
 <section class="section" id="sec-workflows">
-  <div class="section-title">Actual Seller Workflows</div>
+  <div class="section-title">Seller Workflows</div>
   <div class="section-sub">Named triggers, source tools, qualification logic, AE action, and execution channel</div>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 01 · Pipeline generation</div><div class="wf-title">High-fit account engages with marketing content</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot form fill, webinar attendance, product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit and no actively worked opp</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">→</span><span class="step">Salesforce campaign/member</span><span class="arrow">→</span><span class="step ai">Claude brief</span><span class="arrow">→</span><span class="step">SFDC task</span><span class="arrow">→</span><span class="step">Outreach/Gmail</span></div><div class="output"><strong>Seller sees:</strong> “Acme Retail had 2 contacts engage with creative automation content. High ICP fit. Recommended action: AE personalized follow-up. Use the webinar angle, reference the account context, and avoid a generic demo CTA.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Outreach/Gmail</span></div></div></div>
@@ -414,8 +417,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <tr><td><strong>Gmail</strong></td><td>Direct customer communication source and execution channel for high-context AE, SC, and CSM follow-ups.</td><td>Can buyer/customer replies, non-response, thread momentum, and AE/SC/CS-authored outreach become measurable signals in Salesforce?</td><td class="rec-keep">Keep + connect</td><td>Email reply/no-reply signals, last meaningful buyer touch, Claude-drafted one-off messages, task completion, and opp movement after follow-up.</td></tr>
       <tr><td><strong>Slack</strong></td><td>Internal signal and routing layer for urgent deal context, AE/SC/CSM handoffs, manager visibility, and cross-functional escalation.</td><td>Which Slack alerts deserve action, and how do we prevent AE/SC/CS context from staying trapped in channels?</td><td class="rec-keep">Keep + govern</td><td>Actionable alerts created, owner acknowledgement, escalation resolution time, AE/SC/CSM alignment, and links back to Salesforce records.</td></tr>
       <tr><td><strong>LinkedIn Sales Navigator</strong></td><td>External people and relationship signal source for job changes, new stakeholders, and account mapping.</td><td>Is $28k producing unique stakeholder/job-change signals, or is it mostly used as lookup?</td><td class="rec-eval">60-day prove-it plan</td><td>Job-change alerts acted on, new stakeholders added, relationship maps updated, meetings booked, and pipeline influenced.</td></tr>
-      <tr><td><strong>Clay</strong></td><td>Candidate enrichment and external research layer for contact gaps, hiring signals, funding/news, and closed-lost reactivation.</td><td>Can Clay replace point enrichment tools and reduce Sales Nav dependence without polluting Salesforce?</td><td class="rec-eval">Evaluate against workflows</td><td>Contact gap fill rate, new stakeholder detection, job/hiring/news signal quality, reactivation conversion, and SFDC sync accuracy.</td></tr>
+      <tr><td><strong>Clay</strong></td><td>Candidate enrichment and external research workflow layer for contact gaps, stakeholder changes, account research, and closed-lost reactivation.</td><td>Can Clay cover the practical enrichment/research workflows without requiring a full 6sense-style intent platform?</td><td class="rec-eval">Evaluate against workflows</td><td>Contact gap fill rate, new stakeholder detection, research quality, reactivation conversion, Salesforce sync accuracy, and reduction in manual seller/marketing research.</td></tr>
       <tr><td><strong>HubSpot</strong></td><td>Marketing engagement signal source for forms, events, nurture, page visits, campaign membership, and demand context.</td><td>Is engagement being routed with ICP context and next-best action, or only passed as generic MQL volume?</td><td class="rec-keep">Keep as marketing layer</td><td>High-fit engagement alerts, multi-contact account engagement, MQL-to-meeting conversion, and campaign-to-pipeline attribution.</td></tr>
+      <tr><td><strong>MediaRadar</strong></td><td>Advertiser and market intelligence source for account relevance, media spend context, and market motion.</td><td>Can MediaRadar help prioritize accounts and personalize account context without becoming another unused research tool?</td><td class="rec-keep">Keep + operationalize</td><td>Target account relevance, market-triggered account briefs, ABM list quality, AE acceptance, and pipeline influenced from MediaRadar-supported plays.</td></tr>
+      <tr><td><strong>Peec AI</strong></td><td>Candidate AEO and AI-search visibility layer for category narrative, competitor presence, and content gaps.</td><td>Can Peec AI produce actionable content and narrative decisions that Sales and Marketing can use, not just visibility reporting?</td><td class="rec-eval">Evaluate</td><td>AI-search visibility gaps, content updates shipped, narrative adoption by Sales, traffic or engagement lift, and reduction in recurring buyer confusion.</td></tr>
+      <tr><td><strong>Anonymous visitor intelligence</strong></td><td>Not recommended as a Phase 1 foundation; company-level identity can be useful, but person-level claims are often unreliable.</td><td>Is there enough traffic volume, ICP focus, and seller adoption to make this more valuable than first-party engagement signals?</td><td class="rec-cut">Defer</td><td>Only revisit if repeated account-level website activity can be validated against known engagement, opp creation, or conversion lift.</td></tr>
       <tr><td><strong>Gong</strong></td><td>Conversation intelligence source for objections, competitors, sentiment, next steps, stakeholder gaps, and forecast risk.</td><td>Can Gong outputs become structured triggers instead of post-call notes sellers have to remember?</td><td class="rec-keep">Keep + activate API</td><td>Competitor mentions, no-next-step flags, sentiment/risk signals, manager coaching queues, and stage progression after intervention.</td></tr>
       <tr><td><strong>Pendo</strong></td><td>Product usage event source for adoption, usage expansion, usage drop, feature engagement, and new team activity.</td><td>Can Pendo events, joined with Snowflake, reliably trigger expansion and churn-prevention workflows?</td><td class="rec-keep">Keep + connect to GTM</td><td>Usage spike/drop detection, active user growth, feature adoption, account health movement, expansion opps, and risk reduction.</td></tr>
       <tr><td><strong>NetSuite</strong></td><td>Billing processing system only, used after the commercial motion is complete.</td><td>How do we keep NetSuite out of GTM trigger logic while preserving clean handoff from Salesforce orders to billing?</td><td class="rec-keep">Keep as billing-only</td><td>Accurate billing handoff, invoice processing, and reconciliation. No GTM alerts, no trial triggers, no deal-stage triggers.</td></tr>
@@ -423,7 +429,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <tr><td><strong>Novatus Contracts</strong></td><td>Legacy contract repository currently being replaced by SpotDraft and Salesforce.</td><td>What contract data must be migrated or archived so teams stop depending on Novatus for active commercial work?</td><td class="rec-cut">Churn / replace</td><td>Migration completeness, searchable legacy archive, active contract coverage in SpotDraft, and Salesforce references to the correct contract source.</td></tr>
     </tbody>
   </table>
-</section>
 </section>
 <section class="section" id="sec-roadmap">
   <div class="section-title">From Pilot to Operating Capability</div>
@@ -443,7 +448,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="plain-card">
       <div class="metric-label">Phase 02 · Days 31-60</div>
       <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Build RevOps-controlled front-end workflows</h3>
-      <p>Use Salesforce-native fields, tasks, views, dashboards, flows, Slack alerts, and human-reviewed Claude briefs to pilot the operating model without waiting for full data infrastructure. Focus on workflows that use existing reliable data: HubSpot engagement, Salesforce opportunity hygiene, Gong summaries, Zendesk escalations, and manually validated usage signals.</p>
+      <p>Use Salesforce-native fields, tasks, views, dashboards, flows, Slack alerts, HubSpot workflows, and human-reviewed Claude briefs to pilot the operating model without waiting for full data infrastructure. Focus on workflows that use existing reliable data: HubSpot engagement, Salesforce opportunity hygiene, Gong summaries, Zendesk escalations, MediaRadar context, Peec AI content/AEO findings, and manually validated usage signals.</p>
     </div>
     <div class="plain-card">
       <div class="metric-label">Phase 03 · Days 61-90</div>
@@ -499,9 +504,9 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <table>
     <thead><tr><th>Priority bucket</th><th>Business value</th><th>Technical / AI readiness</th><th>Recommended workflows</th></tr></thead>
     <tbody>
-      <tr><td><strong>Low-hanging fruit</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness.</td></tr>
+      <tr><td><strong>Low-hanging fruit</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness, high-fit HubSpot engagement, campaign learning loop, and content gap intelligence.</td></tr>
       <tr><td><strong>Momentum plays</strong></td><td>High</td><td>Medium</td><td>Trial audit, competitive follow-up, late-stage close plan, support escalation, SC technical evaluation.</td></tr>
-      <tr><td><strong>Strategic investments</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, multi-agent orchestration.</td></tr>
+      <tr><td><strong>Strategic investments</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, AEO narrative optimization, market-triggered ABM, and multi-agent orchestration.</td></tr>
       <tr><td><strong>Lower priority</strong></td><td>Unproven</td><td>Variable</td><td>Fully autonomous outbound, broad omni-agent chat, ungoverned AI SDR workflows, and workflows without a clear owner or success metric.</td></tr>
     </tbody>
   </table>
@@ -520,6 +525,10 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>CEO-facing outcome</th></tr></thead>
     <tbody>
       <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
+      <tr><td>Buying committee development</td><td>New target personas engaged per account</td><td>Persona coverage, stakeholder validation, and nurture engagement</td><td>Better account penetration and less single-threaded demand</td></tr>
+      <tr><td>Content gap intelligence</td><td>Priority content gaps closed</td><td>Gong objection frequency, asset usage, and stage progression after asset launch</td><td>Marketing creates content that directly removes sales friction</td></tr>
+      <tr><td>AEO visibility and narrative gap</td><td>High-priority AI-search gaps resolved</td><td>Peec AI visibility movement, content updates shipped, and Sales narrative adoption</td><td>Celtra is represented more accurately where buyers are researching</td></tr>
+      <tr><td>Campaign learning loop</td><td>Campaign-to-opportunity conversion quality</td><td>Buying group engagement, meetings influenced, stage movement, and pipeline influenced</td><td>Marketing budget shifts toward campaigns that create revenue movement, not just engagement</td></tr>
       <tr><td>Usage spike expansion</td><td>Expansion opps created</td><td>Time from signal to AE/CSM action</td><td>More expansion from product adoption</td></tr>
       <tr><td>Renewal risk</td><td>Risks reduced before renewal</td><td>Usage recovery / ticket resolution</td><td>Lower churn risk and fewer surprises</td></tr>
       <tr><td>Competitor mention</td><td>Competitive follow-ups completed</td><td>Stage progression / win rate</td><td>More disciplined deal execution</td></tr>
@@ -549,6 +558,21 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="plain-card">
       <div class="metric-label">Revenue metrics</div>
       <p>Meetings booked, opportunity creation, stage progression, expansion pipeline, renewal risk reduction, churn prevention, forecast hygiene, and close-plan readiness.</p>
+    </div>
+  </div>
+  <div class="section-sub" style="margin-top:32px;">Evaluate · Observe · Optimize</div>
+  <div class="grid-3">
+    <div class="plain-card">
+      <div class="metric-label">Evaluate</div>
+      <p>Before launch, test whether each workflow has complete data, the right owner, an explainable recommendation, a clear action, and an acceptable false-positive rate.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Observe</div>
+      <p>After launch, monitor recommendation acceptance, ignored alerts, prompt quality, data failures, workflow latency, and whether users take the recommended action.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Continuously optimize</div>
+      <p>Review real conversations and action outcomes. Tune prompts, signal thresholds, routing rules, source data, and success metrics before expanding automation.</p>
     </div>
   </div>
 </section>
