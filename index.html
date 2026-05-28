@@ -435,114 +435,16 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 
 <section class="section" id="sec-marketing-workflows">
   <div class="section-title">Marketing Workflows</div>
-  <div class="section-sub">Signal-driven marketing motions tied directly to revenue execution, buying-group development, and GTM coordination</div>
-
+  <div class="section-sub">Marketing-owned triggers, source tools, qualification logic, next action, and closed-loop measurement</div>
   <div class="workflow-grid">
-
-    <div class="wf-card">
-      <div class="wf-head">
-        <div>
-          <div class="wf-num">Marketing Workflow 01 · Demand prioritization</div>
-          <div class="wf-title">High-fit account engagement surge</div>
-        </div>
-        <div class="wf-priority p-high">Build first</div>
-      </div>
-      <div class="wf-body">
-        <div class="signal-box">
-          <div class="label">Actual trigger</div>
-          <ul>
-            <li>HubSpot detects multi-contact engagement, webinar attendance, repeat product-page visits, or nurture interaction</li>
-            <li>Salesforce confirms ICP fit and no active late-stage opportunity</li>
-          </ul>
-        </div>
-        <div class="flow">
-          <span class="step">HubSpot</span><span class="arrow">→</span>
-          <span class="step">Salesforce ICP check</span><span class="arrow">→</span>
-          <span class="step ai">Claude account brief</span><span class="arrow">→</span>
-          <span class="step">Slack AE alert</span>
-        </div>
-        <div class="output"><strong>Marketing outcome:</strong> Marketing engagement becomes routed account intelligence instead of generic MQL volume.</div>
-      </div>
-    </div>
-
-    <div class="wf-card">
-      <div class="wf-head">
-        <div>
-          <div class="wf-num">Marketing Workflow 02 · Buying committee growth</div>
-          <div class="wf-title">Strategic opportunity is single-threaded</div>
-        </div>
-        <div class="wf-priority p-high">Build first</div>
-      </div>
-      <div class="wf-body">
-        <div class="signal-box">
-          <div class="label">Actual trigger</div>
-          <ul>
-            <li>Salesforce opportunity has fewer than 3 engaged target personas</li>
-            <li>HubSpot and Salesforce show low buying-group diversity</li>
-          </ul>
-        </div>
-        <div class="flow">
-          <span class="step">Salesforce</span><span class="arrow">→</span>
-          <span class="step">HubSpot nurture</span><span class="arrow">→</span>
-          <span class="step ai">Persona recommendations</span><span class="arrow">→</span>
-          <span class="step">AE + Marketing coordination</span>
-        </div>
-        <div class="output"><strong>Marketing outcome:</strong> Marketing supports account penetration instead of only top-of-funnel lead generation.</div>
-      </div>
-    </div>
-
-    <div class="wf-card">
-      <div class="wf-head">
-        <div>
-          <div class="wf-num">Marketing Workflow 03 · Content gap intelligence</div>
-          <div class="wf-title">Repeated objections appear in Gong calls</div>
-        </div>
-        <div class="wf-priority p-high">Build first</div>
-      </div>
-      <div class="wf-body">
-        <div class="signal-box">
-          <div class="label">Actual trigger</div>
-          <ul>
-            <li>Gong detects repeated objections, competitor mentions, or workflow confusion</li>
-            <li>Salesforce stage progression slows after those objections appear</li>
-          </ul>
-        </div>
-        <div class="flow">
-          <span class="step">Gong</span><span class="arrow">→</span>
-          <span class="step">Objection clustering</span><span class="arrow">→</span>
-          <span class="step ai">Content recommendation</span><span class="arrow">→</span>
-          <span class="step">Marketing asset creation</span>
-        </div>
-        <div class="output"><strong>Marketing outcome:</strong> Content creation becomes tied directly to revenue friction removal.</div>
-      </div>
-    </div>
-
-    <div class="wf-card">
-      <div class="wf-head">
-        <div>
-          <div class="wf-num">Marketing Workflow 04 · AEO visibility</div>
-          <div class="wf-title">AI-search narrative gaps detected</div>
-        </div>
-        <div class="wf-priority p-med">Evaluate</div>
-      </div>
-      <div class="wf-body">
-        <div class="signal-box">
-          <div class="label">Actual trigger</div>
-          <ul>
-            <li>Peec AI detects weak category positioning, missing topics, or competitor narrative dominance</li>
-            <li>Sales and Marketing agree the issue affects buyer understanding</li>
-          </ul>
-        </div>
-        <div class="flow">
-          <span class="step">Peec AI</span><span class="arrow">→</span>
-          <span class="step">Narrative gap analysis</span><span class="arrow">→</span>
-          <span class="step ai">Content recommendations</span><span class="arrow">→</span>
-          <span class="step">Marketing updates</span>
-        </div>
-        <div class="output"><strong>Marketing outcome:</strong> AI-search visibility becomes tied to actual buyer education and pipeline support.</div>
-      </div>
-    </div>
-
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 01 · High-fit engagement</div><div class="wf-title">Target account shows meaningful demand signal</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot shows form fill, webinar attendance, pricing/product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit, target segment, open-account ownership, and no duplicate active play</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">+</span><span class="step">Salesforce/Snowflake</span><span class="arrow">→</span><span class="step ai">Account engagement brief</span><span class="arrow">→</span><span class="step">SFDC campaign/member</span><span class="arrow">→</span><span class="step">AE task + Slack</span></div><div class="output"><strong>Marketing sees:</strong> “Acme has 3 contacts engaging with creative automation content and matches Tier 1 ICP. Routed to AE with campaign context; measure meeting creation and opp movement, not MQL volume.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 02 · Campaign learning loop</div><div class="wf-title">Campaign creates engagement but unclear revenue movement</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot campaign generates engagement from target accounts, but Salesforce shows weak meeting, opp, stage, or pipeline influence</li><li>Salesforce and Snowflake can connect campaign members to account, opportunity, segment, and outcome data</li></ul></div><div class="flow"><span class="step">HubSpot campaign</span><span class="arrow">+</span><span class="step">Salesforce outcomes</span><span class="arrow">→</span><span class="step ai">Campaign quality brief</span><span class="arrow">→</span><span class="step">Marketing ops review</span><span class="arrow">→</span><span class="step">Budget/content adjustment</span></div><div class="output"><strong>Marketing sees:</strong> “Webinar drove 41 target-account engagements but only 3 accepted sales actions. Best conversion came from retail creative ops. Recommended action: shift follow-up to retail workflow content and pause broad nurture.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Marketing Ops</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 03 · Buying group nurture</div><div class="wf-title">Strategic account lacks engaged target personas</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce target account or open opportunity has fewer than 3 engaged target personas across marketing, creative ops, growth, or executive roles</li><li>HubSpot shows one persona over-engaged while other buying-group roles have no recent activity</li></ul></div><div class="flow"><span class="step">Salesforce account/opp</span><span class="arrow">+</span><span class="step">HubSpot engagement</span><span class="arrow">→</span><span class="step ai">Persona gap brief</span><span class="arrow">→</span><span class="step">Segmented nurture</span><span class="arrow">→</span><span class="step">AE coordination</span></div><div class="output"><strong>Marketing sees:</strong> “Opportunity is single-threaded with a creative ops champion. Missing marketing ops and executive engagement. Recommended action: launch persona-specific nurture and give AE stakeholder language before next meeting.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">HubSpot</span><span class="tag">Clay candidate</span><span class="tag">Claude</span><span class="tag">Gmail/Outreach</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 04 · Content gap intelligence</div><div class="wf-title">Recurring buyer friction needs a revenue asset</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Gong detects repeated objections, competitor questions, implementation confusion, or missing proof points across active opportunities</li><li>Salesforce shows stage slowdown, lost reasons, or low asset usage tied to the same theme</li></ul></div><div class="flow"><span class="step">Gong</span><span class="arrow">+</span><span class="step">Salesforce stage/loss data</span><span class="arrow">→</span><span class="step ai">Content gap brief</span><span class="arrow">→</span><span class="step">Asset brief</span><span class="arrow">→</span><span class="step">Sales enablement rollout</span></div><div class="output"><strong>Marketing sees:</strong> “Governance and approval workflow objections appeared in 9 late-stage calls and 3 slipped deals. Recommended asset: one-page governance proof point with SC-validated demo notes and AE follow-up copy.”</div><div class="tags"><span class="tag">Gong</span><span class="tag">Salesforce</span><span class="tag">Claude</span><span class="tag">HubSpot</span><span class="tag">Enablement</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 05 · Market-triggered ABM</div><div class="wf-title">External account signal changes target priority</div></div><div class="wf-priority p-med">Build next</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>MediaRadar shows relevant advertiser spend, category activity, agency relationship, or market motion for target accounts</li><li>Salesforce confirms ICP fit, segment priority, owner, historical context, and no current disqualifier</li></ul></div><div class="flow"><span class="step">MediaRadar</span><span class="arrow">+</span><span class="step">Salesforce target list</span><span class="arrow">→</span><span class="step ai">ABM account brief</span><span class="arrow">→</span><span class="step">HubSpot audience/play</span><span class="arrow">→</span><span class="step">AE-approved outreach angle</span></div><div class="output"><strong>Marketing sees:</strong> “Three retail target accounts increased media activity and match the creative automation ICP. Recommended action: add to ABM pilot with spend-context message and route only accepted accounts to sellers.”</div><div class="tags"><span class="tag">MediaRadar</span><span class="tag">Salesforce</span><span class="tag">HubSpot</span><span class="tag">Claude</span><span class="tag">ABM</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 06 · Closed-lost reactivation</div><div class="wf-title">Lost account shows changed timing or priority</div></div><div class="wf-priority p-med">Build next</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce closed-lost reason was timing, budget, no priority, stakeholder gap, or competitive incumbent</li><li>HubSpot, MediaRadar, Sales Nav, or Clay finds new engagement, new executive, market activity, funding, hiring, or relevant initiative</li></ul></div><div class="flow"><span class="step">Salesforce closed-lost</span><span class="arrow">+</span><span class="step">HubSpot/MediaRadar/Clay</span><span class="arrow">→</span><span class="step ai">Changed-context brief</span><span class="arrow">→</span><span class="step">Reactivation segment</span><span class="arrow">→</span><span class="step">AE approval</span></div><div class="output"><strong>Marketing sees:</strong> “Closed-lost reason was no priority. New CMO joined and account engaged with governance content. Recommended action: add to reactivation campaign and send AE a changed-context brief, not a generic win-back sequence.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">HubSpot</span><span class="tag">MediaRadar</span><span class="tag">Clay candidate</span><span class="tag">Claude</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 07 · AEO narrative gap</div><div class="wf-title">AI-search visibility misrepresents category or value</div></div><div class="wf-priority p-med">Evaluate</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Peec AI detects weak category presence, competitor narrative dominance, missing buyer questions, or incorrect positioning in AI-search results</li><li>Gong, Salesforce, or HubSpot confirms the same narrative gap appears in buyer conversations or content engagement</li></ul></div><div class="flow"><span class="step">Peec AI</span><span class="arrow">+</span><span class="step">Gong/HubSpot validation</span><span class="arrow">→</span><span class="step ai">Narrative gap brief</span><span class="arrow">→</span><span class="step">Content update</span><span class="arrow">→</span><span class="step">Visibility tracking</span></div><div class="output"><strong>Marketing sees:</strong> “AI-search results over-index on generic creative automation and miss governance. Recommended action: update comparison, category, and proof-point pages; track visibility movement and seller narrative adoption.”</div><div class="tags"><span class="tag">Peec AI</span><span class="tag">Gong</span><span class="tag">HubSpot</span><span class="tag">Claude</span><span class="tag">Content</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 08 · Customer proof loop</div><div class="wf-title">Customer outcome becomes usable market proof</div></div><div class="wf-priority p-med">Build next</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Pendo/Snowflake shows usage growth, feature adoption, team expansion, or time-to-value improvement in a healthy customer account</li><li>Salesforce, Gong, and CSM notes confirm customer health, approved narrative, and no open escalation or renewal risk</li></ul></div><div class="flow"><span class="step">Pendo/Snowflake</span><span class="arrow">+</span><span class="step">Salesforce/CS notes</span><span class="arrow">→</span><span class="step ai">Proof-point brief</span><span class="arrow">→</span><span class="step">Customer marketing review</span><span class="arrow">→</span><span class="step">Case study/reference asset</span></div><div class="output"><strong>Marketing sees:</strong> “Customer expanded usage across 2 regions and cut campaign launch cycle time. Recommended action: validate story with CSM, create proof-point asset, and attach it to relevant sales plays.”</div><div class="tags"><span class="tag">Pendo</span><span class="tag">Snowflake</span><span class="tag">Salesforce</span><span class="tag">Gong</span><span class="tag">Claude</span></div></div></div>
   </div>
 </section>
 <section class="section" id="sec-sc-workflows">
@@ -752,19 +654,3 @@ function show(tab, e) {
 </script>
 </body>
 </html>
-
-  <div class="section-sub" style="margin-top:32px;">Evaluate · Observe · Optimize</div>
-  <div class="grid-3">
-    <div class="plain-card">
-      <div class="metric-label">Evaluate</div>
-      <p>Before launch, test whether each workflow has complete data, the right owner, an explainable recommendation, a clear action, and an acceptable false-positive rate.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Observe</div>
-      <p>After launch, monitor recommendation acceptance, ignored alerts, prompt quality, data failures, workflow latency, and whether users take the recommended action.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Continuously optimize</div>
-      <p>Review real conversations and action outcomes. Tune prompts, signal thresholds, routing rules, source data, and success metrics before expanding automation.</p>
-    </div>
-  </div>
