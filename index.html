@@ -203,6 +203,16 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <h3>We are not building a bigger sales tech stack. We are building a cross-functional signal-to-action revenue system.</h3>
     <p>The competitive advantage is not having AI. It is knowing how to operationalize AI into repeatable, measurable workflows. Salesforce remains the operating system for AE, Solutions Consulting, and Customer Success work. Snowflake unifies product, customer, and commercial data. Claude/agentic workflows interpret signals, generate role-specific recommendations, and route actions through Salesforce tasks, Gmail, Slack, HubSpot, Gong, Zendesk, Pendo, and SpotDraft only when there is a clear reason to act.</p>
   </div>
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="plain-card">
+      <div class="metric-label">Traditional GTM</div>
+      <p>Manual seller research, generic sequencing, isolated tools, quarterly planning cycles, and disconnected handoffs between Marketing, Sales, Solutions Consulting, and Customer Success.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Future-state GTM</div>
+      <p>Continuous signal monitoring, AI-assisted account understanding, coordinated pod execution, buying-group orchestration, and role-specific actions triggered by real customer context.</p>
+    </div>
+  </div>
   <div class="grid-3">
     <div class="metric-card"><div class="metric-label">Team question</div><h3>Who needs to act?</h3><p>Prioritized AE, SC, and CSM actions based on buyer engagement, product usage, support risk, trial health, commercial readiness, and renewal timing.</p></div>
     <div class="metric-card"><div class="metric-label">Timing question</div><h3>Why now?</h3><p>Every action is tied to a named trigger: campaign engagement, demo request, trial usage, technical blocker, support escalation, renewal risk, expansion signal, or stage stall.</p></div>
@@ -213,6 +223,21 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <p><strong>The GTM stack should not optimize one role in isolation.</strong> Marketing, AE, Solutions Consulting, and Customer Success each own different moments in the customer journey, but they should work from the same account context, signal definitions, action queue, and outcome measurement. The goal is coordinated revenue execution from market sensing and demand creation through demo, trial, close, onboarding, expansion, and renewal.</p>
   </div>
   <div class="plain-card" style="margin-top:18px;">
+    <div class="metric-label">Current state → future state</div>
+    <table>
+      <thead>
+        <tr><th>Today</th><th>Future state</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Manual seller research</td><td>AI-generated account briefs and recommendations</td></tr>
+        <tr><td>Generic sequencing</td><td>Trigger-based outreach</td></tr>
+        <tr><td>Rep memory and tribal knowledge</td><td>Persistent account context and shared intelligence</td></tr>
+        <tr><td>MQL routing</td><td>Buying-group orchestration</td></tr>
+        <tr><td>Quarterly reviews</td><td>Continuous signal monitoring</td></tr>
+        <tr><td>Reactive renewals</td><td>Predictive customer-health motions</td></tr>
+      </tbody>
+    </table>
+  </div>
     <div class="metric-label">Operating principle</div>
     <p><strong>Every workflow must answer five questions:</strong> What signal changed? Which role owns the next action? What context do they need? Which channel should execute it? Did it improve conversion, adoption, expansion, retention, or forecast quality? If a tool does not materially improve one of those answers, it is not strategic.</p>
   </div>
@@ -225,6 +250,17 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <div class="callout">
     <h3>Agentic selling is not a one-time workflow build. It is an operating capability.</h3>
     <p>The company should start with specific business outcomes, build around real user workflows, test recommendations continuously, and assign ownership for prompts, data definitions, releases, security, and measurement. The goal is not to launch more agents; the goal is to create a reliable system that improves revenue execution.</p>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="plain-card">
+      <div class="metric-label">AI governance</div>
+      <p><strong>Agents can:</strong> summarize, recommend, draft, route, score, prioritize, and coordinate workflows.</p>
+      <p style="margin-top:12px;"><strong>Agents cannot:</strong> autonomously negotiate pricing, send unrestricted outbound communication, modify contracts, or update critical customer/commercial data without approval.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Operational controls</div>
+      <p>Every workflow should include human approval boundaries, prompt ownership, audit logging, false-positive review, recommendation tracking, escalation paths, and measurable business outcomes.</p>
+    </div>
   </div>
 
   <div class="grid-3">
@@ -292,6 +328,20 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <div class="callout">
     <h3>Use the Agentic Enterprise architecture as the organizing model.</h3>
     <p>The stack should be explained as four connected systems: the system of engagement where users interact, the system of agency where agents reason and recommend, the system of work where business processes execute, and the system of context where governed data, enrichment, product usage, and conversation history live.</p>
+  </div>
+  <div class="plain-card" style="margin-bottom:24px; text-align:center;">
+    <div class="metric-label">Executive operating model</div>
+    <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:16px; line-height:22px;">
+      <div class="step">Signals</div>
+      <div class="arrow">→</div>
+      <div class="step ai">AI reasoning</div>
+      <div class="arrow">→</div>
+      <div class="step">Recommended action</div>
+      <div class="arrow">→</div>
+      <div class="step">Human execution</div>
+      <div class="arrow">→</div>
+      <div class="step">Outcome learning</div>
+    </div>
   </div>
   <div class="grid-2" style="margin-bottom:24px;">
     <div class="plain-card"><div class="metric-label">System of engagement</div><p><strong>Where users experience the agentic workflow:</strong> Salesforce UI, Slack, Gmail, dashboards, and manager views.</p></div>
@@ -380,6 +430,119 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 10 · Meeting prep</div><div class="wf-title">AE has an upcoming discovery, demo, or exec meeting</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce shows an upcoming event tied to a target account or open opportunity within 48 hours</li><li>Gong, Gmail, HubSpot, Sales Nav/Clay, and Snowflake provide prior conversation, engagement, stakeholder, product, and commercial context</li></ul></div><div class="flow"><span class="step">Calendar/SFDC event</span><span class="arrow">+</span><span class="step">Gong/Gmail/HubSpot</span><span class="arrow">→</span><span class="step ai">Meeting brief</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Slack manager note if strategic</span></div><div class="output"><strong>Seller sees:</strong> “Tomorrow’s meeting includes the champion and a new marketing ops stakeholder. Last call focused on governance and speed. Recommended prep: confirm success criteria, ask who owns production bottlenecks, and bring the retail template proof point.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Calendar</span><span class="tag">Gong</span><span class="tag">Gmail</span><span class="tag">HubSpot</span><span class="tag">Claude</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 11 · Post-meeting conversion</div><div class="wf-title">Important meeting ends without clear next step</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Gong detects positive sentiment, decision criteria, or buyer pain, but Salesforce has no next meeting, mutual action plan, or dated next step</li><li>Gmail shows no follow-up sent within 24 hours of the meeting</li></ul></div><div class="flow"><span class="step">Gong call</span><span class="arrow">+</span><span class="step">Salesforce opp</span><span class="arrow">+</span><span class="step">Gmail</span><span class="arrow">→</span><span class="step ai">Follow-up draft</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Manager coaching</span></div><div class="output"><strong>Seller sees:</strong> “Strong pain around manual creative QA, but no next step is logged and no recap was sent. Recommended play: send a 3-bullet value recap, propose a working session with creative ops, and attach a mutual action plan.”</div><div class="tags"><span class="tag">Gong</span><span class="tag">Salesforce</span><span class="tag">Gmail</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 12 · Late-stage close plan</div><div class="wf-title">Deal is late-stage but commercial path is not ready</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Opportunity is proposal, procurement, or commit stage with close date inside 45 days</li><li>Salesforce, SpotDraft, and quote/order fields show missing paper process, legal status, commercial terms, signature owner, procurement path, or order readiness</li></ul></div><div class="flow"><span class="step">Salesforce opp</span><span class="arrow">+</span><span class="step">SpotDraft/SFDC terms</span><span class="arrow">→</span><span class="step ai">Close plan audit</span><span class="arrow">→</span><span class="step">Slack deal desk/legal</span><span class="arrow">→</span><span class="step">AE close-plan task</span></div><div class="output"><strong>Seller sees:</strong> “Close date is 32 days out, but security review is not started, signature process is unknown, and quote approval is pending. Recommended play: confirm procurement path today, open legal/deal desk checklist, and move close date only after buyer validates timeline.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">SpotDraft</span><span class="tag">Slack</span><span class="tag">Deal Desk</span><span class="tag">Claude</span></div></div></div>
+  </div>
+  </section>
+
+<section class="section" id="sec-marketing-workflows">
+  <div class="section-title">Marketing Workflows</div>
+  <div class="section-sub">Signal-driven marketing motions tied directly to revenue execution, buying-group development, and GTM coordination</div>
+
+  <div class="workflow-grid">
+
+    <div class="wf-card">
+      <div class="wf-head">
+        <div>
+          <div class="wf-num">Marketing Workflow 01 · Demand prioritization</div>
+          <div class="wf-title">High-fit account engagement surge</div>
+        </div>
+        <div class="wf-priority p-high">Build first</div>
+      </div>
+      <div class="wf-body">
+        <div class="signal-box">
+          <div class="label">Actual trigger</div>
+          <ul>
+            <li>HubSpot detects multi-contact engagement, webinar attendance, repeat product-page visits, or nurture interaction</li>
+            <li>Salesforce confirms ICP fit and no active late-stage opportunity</li>
+          </ul>
+        </div>
+        <div class="flow">
+          <span class="step">HubSpot</span><span class="arrow">→</span>
+          <span class="step">Salesforce ICP check</span><span class="arrow">→</span>
+          <span class="step ai">Claude account brief</span><span class="arrow">→</span>
+          <span class="step">Slack AE alert</span>
+        </div>
+        <div class="output"><strong>Marketing outcome:</strong> Marketing engagement becomes routed account intelligence instead of generic MQL volume.</div>
+      </div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-head">
+        <div>
+          <div class="wf-num">Marketing Workflow 02 · Buying committee growth</div>
+          <div class="wf-title">Strategic opportunity is single-threaded</div>
+        </div>
+        <div class="wf-priority p-high">Build first</div>
+      </div>
+      <div class="wf-body">
+        <div class="signal-box">
+          <div class="label">Actual trigger</div>
+          <ul>
+            <li>Salesforce opportunity has fewer than 3 engaged target personas</li>
+            <li>HubSpot and Salesforce show low buying-group diversity</li>
+          </ul>
+        </div>
+        <div class="flow">
+          <span class="step">Salesforce</span><span class="arrow">→</span>
+          <span class="step">HubSpot nurture</span><span class="arrow">→</span>
+          <span class="step ai">Persona recommendations</span><span class="arrow">→</span>
+          <span class="step">AE + Marketing coordination</span>
+        </div>
+        <div class="output"><strong>Marketing outcome:</strong> Marketing supports account penetration instead of only top-of-funnel lead generation.</div>
+      </div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-head">
+        <div>
+          <div class="wf-num">Marketing Workflow 03 · Content gap intelligence</div>
+          <div class="wf-title">Repeated objections appear in Gong calls</div>
+        </div>
+        <div class="wf-priority p-high">Build first</div>
+      </div>
+      <div class="wf-body">
+        <div class="signal-box">
+          <div class="label">Actual trigger</div>
+          <ul>
+            <li>Gong detects repeated objections, competitor mentions, or workflow confusion</li>
+            <li>Salesforce stage progression slows after those objections appear</li>
+          </ul>
+        </div>
+        <div class="flow">
+          <span class="step">Gong</span><span class="arrow">→</span>
+          <span class="step">Objection clustering</span><span class="arrow">→</span>
+          <span class="step ai">Content recommendation</span><span class="arrow">→</span>
+          <span class="step">Marketing asset creation</span>
+        </div>
+        <div class="output"><strong>Marketing outcome:</strong> Content creation becomes tied directly to revenue friction removal.</div>
+      </div>
+    </div>
+
+    <div class="wf-card">
+      <div class="wf-head">
+        <div>
+          <div class="wf-num">Marketing Workflow 04 · AEO visibility</div>
+          <div class="wf-title">AI-search narrative gaps detected</div>
+        </div>
+        <div class="wf-priority p-med">Evaluate</div>
+      </div>
+      <div class="wf-body">
+        <div class="signal-box">
+          <div class="label">Actual trigger</div>
+          <ul>
+            <li>Peec AI detects weak category positioning, missing topics, or competitor narrative dominance</li>
+            <li>Sales and Marketing agree the issue affects buyer understanding</li>
+          </ul>
+        </div>
+        <div class="flow">
+          <span class="step">Peec AI</span><span class="arrow">→</span>
+          <span class="step">Narrative gap analysis</span><span class="arrow">→</span>
+          <span class="step ai">Content recommendations</span><span class="arrow">→</span>
+          <span class="step">Marketing updates</span>
+        </div>
+        <div class="output"><strong>Marketing outcome:</strong> AI-search visibility becomes tied to actual buyer education and pipeline support.</div>
+      </div>
+    </div>
+
   </div>
 </section>
 <section class="section" id="sec-sc-workflows">
