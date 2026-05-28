@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celtra GTM Stack · Signal-Based Selling Architecture</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f0e0c;
+    --paper: #f5f2ec;
+    --paper2: #edeae2;
+    --rule: #d8d3c8;
+    --accent: #c8502a;
+    --accent2: #2a6ec8;
+    --accent3: #2a8c5a;
+    --amber: #c88a2a;
+    --muted: #7a7468;
+    --teal: #2a8c7a;
+    --purple: #6d4ac8;
+    --red-bg: #fde8e4;
+    --green-bg: #e8f4ee;
+    --amber-bg: #fff3e0;
+    --blue-bg: #eef2ff;
+    --white: #fffdf8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Instrument Sans', sans-serif; background: var(--paper); color: var(--ink); min-height: 100vh; }
+  .header { background: var(--ink); color: var(--paper); padding: 48px 60px 40px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--accent); }
+  .header-left h1 { font-family: 'DM Serif Display', serif; font-size: 2.8rem; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 10px; }
+  .header-left p, .eyebrow { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: #9a9488; letter-spacing: 0.12em; text-transform: uppercase; }
+  .header-right { text-align: right; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: #9a9488; line-height: 1.8; }
+  nav { background: var(--ink); border-bottom: 1px solid #2a2824; display: flex; gap: 0; padding: 0 60px; overflow-x: auto; position: sticky; top: 0; z-index: 10; }
+  nav button { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #6a6560; background: none; border: none; border-bottom: 2px solid transparent; padding: 14px 18px; cursor: pointer; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
+  nav button:hover, nav button.active { color: var(--paper); }
+  nav button.active { border-bottom-color: var(--accent); }
+  main { padding: 48px 60px; max-width: 1240px; }
+  .section { display: none; }
+  .section.active { display: block; }
+  .section-title { font-family: 'DM Serif Display', serif; font-size: 1.95rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+  .section-sub { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 30px; }
+  .callout { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 26px 30px; margin-bottom: 28px; }
+  .callout h3 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; margin-bottom: 8px; }
+  .callout p { color: #d8d3c8; line-height: 1.6; font-size: 0.95rem; max-width: 980px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .metric-card, .plain-card { background: var(--white); border: 1px solid var(--rule); border-radius: 9px; padding: 18px 20px; }
+  .metric-label { font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .metric-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--accent); margin-bottom: 6px; }
+  .metric-card p, .plain-card p { color: var(--muted); font-size: 0.82rem; line-height: 1.5; }
+  .architecture { display: grid; grid-template-columns: 1fr; gap: 10px; }
+  .arch-row { display: grid; grid-template-columns: 190px 1fr 250px; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; background: var(--white); }
+  .arch-label { background: var(--ink); color: var(--paper); padding: 18px; display: flex; flex-direction: column; justify-content: center; }
+  .arch-label small { font-family:'DM Mono', monospace; color:#8a8580; text-transform:uppercase; letter-spacing:.12em; font-size:.62rem; margin-bottom:4px; }
+  .arch-label strong { font-family:'DM Serif Display', serif; font-size:1.05rem; line-height:1.2; }
+  .arch-body { padding: 15px 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; background: var(--paper2); }
+  .arch-value { padding: 15px 18px; border-left: 1px solid var(--rule); font-size: 0.8rem; line-height: 1.45; color: var(--muted); background: var(--white); }
+  .tool { position: relative; background: var(--white); border: 1px solid var(--rule); border-left: 3px solid var(--muted); border-radius: 6px; padding: 10px 12px; min-width: 130px; }
+  .tool.sfdc { border-left-color: var(--accent2); }
+  .tool.ai { border-left-color: var(--amber); }
+  .tool.green { border-left-color: var(--accent3); }
+  .tool.eval { border-left-color: var(--accent); }
+  .tool-name { font-weight: 700; font-size: .82rem; margin-bottom: 2px; }
+  .tool-role { font-family: 'DM Mono', monospace; color: var(--muted); font-size: .6rem; line-height: 1.35; }
+  .badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.04em; text-transform: uppercase; padding: 2px 5px; border-radius: 3px; margin-bottom: 5px; }
+  .b-owned { background: var(--green-bg); color: var(--accent3); }
+  .b-build { background: var(--amber-bg); color: var(--amber); }
+  .b-eval { background: var(--red-bg); color: var(--accent); }
+  .b-gap { background: #f0f0f0; color: var(--muted); }
+  .workflow-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .wf-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; }
+  .wf-head { padding: 16px 18px 14px; border-bottom: 1px solid var(--rule); display:flex; justify-content:space-between; gap:12px; }
+  .wf-num { font-family:'DM Mono', monospace; font-size:.62rem; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; margin-bottom:3px; }
+  .wf-title { font-family:'DM Serif Display', serif; font-size:1.12rem; line-height:1.15; }
+  .wf-priority { font-family:'DM Mono', monospace; font-size:.58rem; text-transform:uppercase; letter-spacing:.06em; padding:4px 7px; border-radius:4px; height:max-content; white-space:nowrap; }
+  .p-high { background:var(--green-bg); color:var(--accent3); }
+  .p-med { background:var(--amber-bg); color:var(--amber); }
+  .p-eval { background:var(--red-bg); color:var(--accent); }
+  .wf-body { padding: 16px 18px; }
+  .signal-box { background: var(--paper2); border: 1px solid var(--rule); border-radius: 6px; padding: 10px 12px; margin-bottom: 12px; }
+  .signal-box .label { font-family:'DM Mono', monospace; font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .signal-box ul { padding-left: 18px; color: var(--ink); font-size: .78rem; line-height: 1.55; }
+  .flow { display:flex; gap:6px; align-items:center; flex-wrap:wrap; margin: 12px 0; }
+  .step { font-size:.72rem; background:#fff; border:1px solid var(--rule); border-radius:4px; padding:5px 8px; }
+  .step.ai { background:#fff8e8; border-color:#f0d090; color:#8a5c00; font-weight:700; }
+  .arrow { color: var(--muted); }
+  .output { border-top: 1px solid var(--rule); padding-top: 12px; font-size: .78rem; color: var(--muted); line-height: 1.52; }
+  .output strong { color: var(--ink); }
+  .tags { display:flex; gap:5px; flex-wrap:wrap; margin-top:10px; }
+  .tag { font-family:'DM Mono', monospace; font-size:.58rem; color:var(--muted); border:1px solid var(--rule); background:white; border-radius:3px; padding:3px 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: .82rem; background: var(--white); }
+  th { font-family:'DM Mono', monospace; font-size:.64rem; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); text-align:left; padding:10px 13px; background:var(--paper2); border-bottom:1px solid var(--rule); }
+  td { padding: 12px 13px; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.45; }
+  tr:hover td { background: #faf7f0; }
+  .rec-keep { color: var(--accent3); font-weight: 700; }
+  .rec-eval { color: var(--amber); font-weight: 700; }
+  .rec-cut { color: var(--accent); font-weight: 700; }
+  .footer { margin-top: 64px; padding: 24px 60px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
+  @media (max-width: 920px) {
+    .header, nav, main, .footer { padding-left: 20px; padding-right: 20px; }
+    .header-right { display:none; }
+    .header-left h1 { font-size: 2rem; }
+    .grid-3, .grid-2, .workflow-grid { grid-template-columns: 1fr; }
+    .arch-row { grid-template-columns: 1fr; }
+    .arch-value { border-left: 0; border-top: 1px solid var(--rule); }
+  }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="header-left">
+    <h1>Signal-Based GTM Stack<br><em>Agentic Selling Architecture</em></h1>
+    <p>Celtra Revenue Operations · May 2026</p>
+  </div>
+  <div class="header-right">
+    CEO-ready operating model<br>
+    Salesforce-centered · Snowflake-powered<br>
+    Better timing · Better context · Better action
+  </div>
+</div>
+<nav>
+  <button class="active" onclick="show('thesis', event)">① Executive Thesis</button>
+  <button onclick="show('architecture', event)">② Stack Architecture</button>
+  <button onclick="show('workflows', event)">③ Seller Workflows</button>
+  <button onclick="show('tools', event)">④ Tool Decisions</button>
+  <button onclick="show('roadmap', event)">⑤ 90-Day Roadmap</button>
+</nav>
+<main>
+<section class="section active" id="sec-thesis">
+  <div class="section-title">Executive Thesis</div>
+  <div class="section-sub">Move from more activity to better-timed, better-contextualized seller action</div>
+  <div class="callout">
+    <h3>We are not building a bigger sales tech stack. We are building a signal-to-action revenue system.</h3>
+    <p>Salesforce remains the operating system. Snowflake unifies customer, product, and commercial data. Claude/agentic workflows interpret the signal and generate recommended actions. Outreach, Gmail, Salesforce tasks, Slack, HubSpot, and CS workflows execute only when there is a clear reason to act.</p>
+  </div>
+  <div class="grid-3">
+    <div class="metric-card"><div class="metric-label">Seller question</div><h3>Who should I work?</h3><p>Prioritized account and contact actions based on ICP fit, engagement, usage, relationship changes, and deal risk.</p></div>
+    <div class="metric-card"><div class="metric-label">Timing question</div><h3>Why now?</h3><p>Every action is tied to a named trigger: usage spike, new stakeholder, competitor mention, campaign engagement, renewal risk, or stage stall.</p></div>
+    <div class="metric-card"><div class="metric-label">Execution question</div><h3>What should I do?</h3><p>Agent recommends the play, drafts the message or brief, routes to the right owner, and logs the outcome for learning.</p></div>
+  </div>
+  <div class="plain-card" style="margin-top:18px;">
+    <div class="metric-label">Operating principle</div>
+    <p><strong>Every tool must answer one of four questions:</strong> Who should we focus on? Why now? What should we say or do? Did it work? If a tool does not materially improve one of those answers, it is not strategic.</p>
+  </div>
+</section>
+<section class="section" id="sec-architecture">
+  <div class="section-title">Stack Architecture</div>
+  <div class="section-sub">Tools are organized by job: signal source, source of truth, intelligence, execution, measurement</div>
+  <div class="architecture">
+    <div class="arch-row">
+      <div class="arch-label"><small>Layer 01</small><strong>Signal Sources</strong></div>
+      <div class="arch-body">
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">HubSpot</div><div class="tool-role">Campaign engagement<br>forms, events, nurture</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gong</div><div class="tool-role">Competitors, objections<br>sentiment, next steps</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Pendo</div><div class="tool-role">Feature adoption<br>in-app usage</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Zendesk</div><div class="tool-role">Tickets, escalations<br>support blockers</div></div>
+        <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes<br>stakeholders, relationships</div></div>
+        <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates engagement signals. Gong creates conversation signals. Pendo/Snowflake create product signals. Sales Nav/Clay create external people/account signals.</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-label"><small>Layer 02</small><strong>Commercial Truth</strong></div>
+      <div class="arch-body">
+        <div class="tool sfdc"><span class="badge b-owned">Owned</span><div class="tool-name">Salesforce</div><div class="tool-role">Accounts, Contacts<br>Opps, Quotes, Orders</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">NetSuite</div><div class="tool-role">Billing, ERP<br>revenue recognition</div></div>
+        <div class="tool green"><span class="badge b-owned">Signed</span><div class="tool-name">SpotDraft</div><div class="tool-role">Legal workflow<br>contract status + terms</div></div>
+        <div class="tool sfdc"><span class="badge b-build">Building</span><div class="tool-name">Native CPQ</div><div class="tool-role">SFDC Quotes<br>Contracts + Orders</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> Internal commercial signals: renewal dates, order status, contract status, payment friction, non-standard terms, and quote/order readiness.</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-label"><small>Layer 03</small><strong>Data + Intelligence</strong></div>
+      <div class="arch-body">
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Snowflake</div><div class="tool-role">Product, CRM<br>customer + outcome data</div></div>
+        <div class="tool ai"><span class="badge b-build">Build</span><div class="tool-name">Claude / Agents</div><div class="tool-role">Briefs, scoring<br>play recommendation</div></div>
+        <div class="tool ai"><span class="badge b-gap">Gap</span><div class="tool-name">Orchestration</div><div class="tool-role">Salesforce Flow first<br>evaluate n8n/Make only if needed</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> The intelligence layer decides whether a signal is worth action. It should not live inside Outreach or Sales Nav.</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-label"><small>Layer 04</small><strong>Action + Execution</strong></div>
+      <div class="arch-body">
+        <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Outreach</div><div class="tool-role">Sequences + governed<br>outbound execution</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gmail</div><div class="tool-role">AE one-off sends<br>Claude-drafted messages</div></div>
+        <div class="tool sfdc"><span class="badge b-owned">Owned</span><div class="tool-name">SFDC Tasks</div><div class="tool-role">Seller queue<br>next-best-action</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Slack</div><div class="tool-role">Alerts, briefs<br>manager visibility</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> Outreach is useful only when sequencing is needed. Strategic account actions, renewal risk, expansion, and deal recovery should usually be routed through Salesforce/Gmail/Slack.</div>
+    </div>
+    <div class="arch-row">
+      <div class="arch-label"><small>Layer 05</small><strong>Measurement</strong></div>
+      <div class="arch-body">
+        <div class="tool sfdc"><span class="badge b-owned">Owned</span><div class="tool-name">Salesforce</div><div class="tool-role">Play triggered<br>accepted, acted, outcome</div></div>
+        <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Snowflake</div><div class="tool-role">Conversion by signal<br>pipeline + renewal impact</div></div>
+      </div>
+      <div class="arch-value"><strong>Value:</strong> The stack learns which signals create replies, meetings, pipeline, expansion, renewals, and better forecast accuracy.</div>
+    </div>
+  </div>
+</section>
+<section class="section" id="sec-workflows">
+  <div class="section-title">Actual Seller Workflows</div>
+  <div class="section-sub">Named triggers, source tools, qualification logic, seller action, and execution channel</div>
+  <div class="workflow-grid">
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 01 · Pipeline generation</div><div class="wf-title">High-fit account engages with marketing content</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot form fill, webinar attendance, product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit and no actively worked opp</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">→</span><span class="step">Salesforce campaign/member</span><span class="arrow">→</span><span class="step ai">Claude brief</span><span class="arrow">→</span><span class="step">SFDC task</span><span class="arrow">→</span><span class="step">Outreach/Gmail</span></div><div class="output"><strong>Seller sees:</strong> “Acme Retail had 2 contacts engage with creative automation content. High ICP fit. Recommended action: SDR personalized follow-up, AE notified. Use the webinar angle; do not send generic demo CTA.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Outreach/Gmail</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 02 · Expansion</div><div class="wf-title">Existing customer usage spike</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Snowflake/Pendo shows 30%+ usage increase, new team usage, or new users from a region/business unit</li><li>Salesforce confirms white space and Zendesk does not show active escalation</li></ul></div><div class="flow"><span class="step">Snowflake/Pendo</span><span class="arrow">→</span><span class="step">SFDC account flag</span><span class="arrow">→</span><span class="step ai">Expansion brief</span><span class="arrow">→</span><span class="step">Slack AE+CSM</span><span class="arrow">→</span><span class="step">Value review task</span></div><div class="output"><strong>Seller sees:</strong> “Usage increased 42% in 30 days, 11 new users added, no major support risk. Recommended play: AE + CSM value review. Create expansion opp only after customer confirms broader rollout need.”</div><div class="tags"><span class="tag">Snowflake</span><span class="tag">Pendo</span><span class="tag">Salesforce</span><span class="tag">Zendesk</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 03 · Retention</div><div class="wf-title">Usage drop + renewal risk</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Renewal within 120 days in Salesforce</li><li>Usage down 25%+ in Snowflake/Pendo, open high-severity Zendesk tickets, negative Gong sentiment, or champion engagement drop</li></ul></div><div class="flow"><span class="step">SFDC renewal</span><span class="arrow">+</span><span class="step">Snowflake/Zendesk/Gong</span><span class="arrow">→</span><span class="step ai">Risk brief</span><span class="arrow">→</span><span class="step">CSM task</span><span class="arrow">→</span><span class="step">Manager alert</span></div><div class="output"><strong>Seller/CSM sees:</strong> “Renewal is 103 days away, usage down 31%, 3 tickets open, champion inactive. Recommended play: adoption recovery call before commercial renewal conversation.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Pendo</span><span class="tag">Zendesk</span><span class="tag">Gong</span><span class="tag">Claude</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 04 · Stakeholder change</div><div class="wf-title">New executive joins target/customer account</div></div><div class="wf-priority p-med">Requires source decision</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Sales Nav or Clay detects new VP Marketing, CMO, Creative Ops, Marketing Ops, Growth, or relevant exec</li><li>Account is Tier 1 target, customer, open opp, or closed-lost with changed context</li></ul></div><div class="flow"><span class="step">Sales Nav/Clay</span><span class="arrow">→</span><span class="step">SFDC contact update</span><span class="arrow">→</span><span class="step ai">Stakeholder brief</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Gmail/LinkedIn</span></div><div class="output"><strong>Seller sees:</strong> “New VP Marketing joined Acme 3 weeks ago. Prior closed-lost reason was timing. Recommended play: AE intro, not SDR sequence. Angle: scaling campaign production in new role.”</div><div class="tags"><span class="tag">Sales Nav</span><span class="tag">Clay candidate</span><span class="tag">Salesforce</span><span class="tag">Claude</span><span class="tag">Gmail</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 05 · Active deal risk</div><div class="wf-title">Competitor mentioned on Gong call</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Gong detects competitor name, comparison question, incumbent vendor, or competitive objection</li><li>Opportunity is open and stage is Discovery or later</li></ul></div><div class="flow"><span class="step">Gong</span><span class="arrow">→</span><span class="step">SFDC opp field</span><span class="arrow">→</span><span class="step ai">Competitive brief</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Email draft</span></div><div class="output"><strong>Seller sees:</strong> “Buyer asked how Celtra compares to Competitor X. Concern centered on workflow governance and speed. Recommended play: clarify evaluation criteria and send proof point.”</div><div class="tags"><span class="tag">Gong</span><span class="tag">Salesforce</span><span class="tag">Claude</span><span class="tag">Gmail</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 06 · Forecast quality</div><div class="wf-title">Stalled opportunity recovery</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Opportunity has no next step, no buyer activity in 14-21 days, stage age above threshold, or close date pushed twice</li><li>Gong confirms last call ended without mutual action plan</li></ul></div><div class="flow"><span class="step">Salesforce</span><span class="arrow">+</span><span class="step">Gong/Gmail</span><span class="arrow">→</span><span class="step ai">Deal recovery brief</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Manager coaching</span></div><div class="output"><strong>Seller sees:</strong> “No buyer response in 18 days, stage age 42 days, no economic buyer. Recommended action: send mutual action plan email or qualify out.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Gong</span><span class="tag">Gmail</span><span class="tag">Claude</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 07 · Reactivation</div><div class="wf-title">Closed-lost account shows changed context</div></div><div class="wf-priority p-med">Clay candidate</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Closed-lost reason was timing, budget, no priority, or stakeholder gap</li><li>Clay/Sales Nav/web finds new exec, funding, relevant hiring, campaign engagement, or initiative</li></ul></div><div class="flow"><span class="step">SFDC closed-lost</span><span class="arrow">→</span><span class="step">Clay/Sales Nav research</span><span class="arrow">→</span><span class="step ai">Reactivation brief</span><span class="arrow">→</span><span class="step">AE task</span><span class="arrow">→</span><span class="step">Gmail/Outreach</span></div><div class="output"><strong>Seller sees:</strong> “Closed-lost reason was no budget. New signal: company announced digital investment and hired VP Growth. Recommended play: AE reactivation with changed-context message.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Clay candidate</span><span class="tag">Sales Nav</span><span class="tag">Claude</span></div></div></div>
+    <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 08 · Buying committee</div><div class="wf-title">Strategic account has contact gaps</div></div><div class="wf-priority p-med">Clay candidate</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Tier 1 account or open opp has fewer than 3 target-persona contacts</li><li>No known economic buyer, creative ops stakeholder, or marketing ops stakeholder in Salesforce</li></ul></div><div class="flow"><span class="step">Salesforce</span><span class="arrow">→</span><span class="step">Clay finds contacts</span><span class="arrow">→</span><span class="step ai">Persona rationale</span><span class="arrow">→</span><span class="step">AE approves</span><span class="arrow">→</span><span class="step">Outreach if appropriate</span></div><div class="output"><strong>Seller sees:</strong> “Account has only one marketing contact and no ops/creative stakeholder. Recommended contacts added for review; approve before sequencing.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Clay candidate</span><span class="tag">Claude</span><span class="tag">Outreach</span></div></div></div>
+  </div>
+</section>
+<section class="section" id="sec-tools">
+  <div class="section-title">Tool Decisions</div>
+  <div class="section-sub">Evaluate tools by signal quality, actionability, adoption, and measurable revenue impact</div>
+  <table>
+    <thead><tr><th>Tool</th><th>Role in future-state</th><th>Critical decision</th><th>Recommended stance</th><th>Proof required</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Salesforce</strong></td><td>Operational source of truth and seller action queue</td><td>How much of the seller workflow can be native?</td><td class="rec-keep">Keep + deepen</td><td>Signal fields, tasks, recommended plays, accepted/dismissed actions, outcomes.</td></tr>
+      <tr><td><strong>Snowflake</strong></td><td>Unified product/customer/commercial data and scoring foundation</td><td>Can product usage and outcomes be structured for GTM?</td><td class="rec-keep">Keep + deepen</td><td>Usage spike/drop, expansion propensity, health/risk scoring.</td></tr>
+      <tr><td><strong>Claude / Agentic layer</strong></td><td>Reasoning, summaries, play recommendations, message drafts</td><td>Where can agents create rep leverage without autonomous sending?</td><td class="rec-keep">Build</td><td>Brief quality, seller acceptance rate, time saved, pipeline impact.</td></tr>
+      <tr><td><strong>Outreach</strong></td><td>Execution rail for sequences only</td><td>Is $18k justified by actual sequence-driven meetings/pipeline?</td><td class="rec-eval">Audit before renewal</td><td>Weekly active users, active sequences, reply rates, meetings, opps, pipeline sourced/influenced.</td></tr>
+      <tr><td><strong>LinkedIn Sales Navigator</strong></td><td>People/relationship signal source</td><td>Is $28k producing unique stakeholder/job-change signals, or just lookup?</td><td class="rec-eval">60-day prove-it plan</td><td>Job-change alerts acted on, new stakeholders added, relationship maps, meetings/pipeline influenced.</td></tr>
+      <tr><td><strong>Clay</strong></td><td>Candidate external signal + enrichment layer</td><td>Can it replace LeadIQ and reduce Sales Nav dependence?</td><td class="rec-eval">Evaluate/add if workflows prove need</td><td>Contact gap fill, new stakeholder detection, job/hiring signals, closed-lost reactivation quality, SFDC sync quality.</td></tr>
+      <tr><td><strong>HubSpot</strong></td><td>Marketing engagement signal source</td><td>Is engagement routed with enough context?</td><td class="rec-keep">Keep as marketing layer</td><td>High-fit engagement alerts, MQL quality, campaign-to-pipeline attribution.</td></tr>
+      <tr><td><strong>Gong</strong></td><td>Conversation signal source</td><td>Can Gong outputs trigger deal risk workflows?</td><td class="rec-keep">Keep + activate API</td><td>Competitor mentions, next-step gaps, sentiment/risk, manager coaching list.</td></tr>
+      <tr><td><strong>Pendo</strong></td><td>Product usage event source</td><td>Can Pendo/Snowflake feed expansion and churn workflows?</td><td class="rec-keep">Keep + connect to GTM</td><td>Usage spike/drop detection tied to tasks/opps/risk reduction.</td></tr>
+      <tr><td><strong>NetSuite</strong></td><td>Billing, finance, rev rec</td><td>Not a market signal source; use for commercial timing/risk only</td><td class="rec-keep">Keep</td><td>Order/billing status visible where commercial action is needed.</td></tr>
+      <tr><td><strong>SpotDraft</strong></td><td>Contract/legal workflow</td><td>Can legal status and contract terms become commercial risk/timing signals?</td><td class="rec-keep">Keep + integrate</td><td>Contract stuck alerts, non-standard terms, renewal notice windows, signature status.</td></tr>
+    </tbody>
+  </table>
+</section>
+<section class="section" id="sec-roadmap">
+  <div class="section-title">90-Day Roadmap</div>
+  <div class="section-sub">Build high-confidence workflows first; do not buy more tooling until workflows prove the gap</div>
+  <div class="grid-3">
+    <div class="plain-card"><div class="metric-label">Days 1-30</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Instrument the signals</h3><p>Define Salesforce fields for Signal Type, Signal Source, Recommended Play, Action Owner, Accepted/Dismissed, and Outcome. Pull Outreach and Sales Nav usage. Identify the first 10 named triggers.</p></div>
+    <div class="plain-card"><div class="metric-label">Days 31-60</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Build first workflows</h3><p>Launch high-fit HubSpot engagement, usage spike expansion, renewal risk, competitor mention, and stalled opportunity recovery. Use Salesforce Flow first; add orchestration only if native flows are insufficient.</p></div>
+    <div class="plain-card"><div class="metric-label">Days 61-90</div><h3 style="font-family:'DM Serif Display',serif; margin-bottom:8px;">Make vendor decisions</h3><p>Decide whether Outreach and Sales Nav are earning their spend. Evaluate Clay only against concrete workflows: stakeholder change, contact gaps, closed-lost reactivation, and enrichment quality.</p></div>
+  </div>
+  <table style="margin-top:22px;">
+    <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>CEO-facing outcome</th></tr></thead>
+    <tbody>
+      <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
+      <tr><td>Usage spike expansion</td><td>Expansion opps created</td><td>Time from signal to AE/CSM action</td><td>More expansion from product adoption</td></tr>
+      <tr><td>Renewal risk</td><td>Risks reduced before renewal</td><td>Usage recovery / ticket resolution</td><td>Lower churn risk and fewer surprises</td></tr>
+      <tr><td>Competitor mention</td><td>Competitive follow-ups completed</td><td>Stage progression / win rate</td><td>More disciplined deal execution</td></tr>
+      <tr><td>Stalled opp recovery</td><td>Next steps confirmed or deals qualified out</td><td>Stage aging reduction</td><td>Cleaner forecast and less pipeline fiction</td></tr>
+      <tr><td>New stakeholder / contact gap</td><td>New target contacts engaged</td><td>Multi-threading coverage</td><td>Better account penetration</td></tr>
+    </tbody>
+  </table>
+</section>
+</main>
+<div class="footer"><span>Celtra Revenue Operations · Signal-Based GTM Stack · May 2026</span><span>Confidential · Internal use</span></div>
+<script>
+function show(tab, e) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + tab).classList.add('active');
+  if (e && e.target) e.target.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
