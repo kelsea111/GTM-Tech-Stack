@@ -185,13 +185,14 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 </div>
 <nav>
   <button class="active" onclick="show('thesis', event)">① Executive Thesis</button>
-  <button onclick="show('architecture', event)">② Stack Architecture</button>
-  <button onclick="show('workflows', event)">③ Seller Workflows</button>
-  <button onclick="show('sc-workflows', event)">④ Solutions Consulting</button>
-  <button onclick="show('cs-workflows', event)">⑤ Customer Success</button>
-  <button onclick="show('tools', event)">⑥ Tool Decisions</button>
-  <button onclick="show('roadmap', event)">⑦ 90-Day Roadmap</button>
-  <button onclick="show('metrics', event)">⑧ Success Metrics</button>
+  <button onclick="show('operating-model', event)">② Agentic Operating Model</button>
+  <button onclick="show('architecture', event)">③ Stack Architecture</button>
+  <button onclick="show('workflows', event)">④ Seller Workflows</button>
+  <button onclick="show('sc-workflows', event)">⑤ Solutions Consulting</button>
+  <button onclick="show('cs-workflows', event)">⑥ Customer Success</button>
+  <button onclick="show('tools', event)">⑦ Tool Decisions</button>
+  <button onclick="show('roadmap', event)">⑧ From Pilot to Capability</button>
+  <button onclick="show('metrics', event)">⑨ Success Metrics</button>
 </nav>
 <main>
 <section class="section active" id="sec-thesis">
@@ -199,7 +200,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <div class="section-sub">Move from isolated activity to coordinated, signal-driven revenue execution</div>
   <div class="callout">
     <h3>We are not building a bigger sales tech stack. We are building a cross-functional signal-to-action revenue system.</h3>
-    <p>Salesforce remains the operating system for AE, Solutions Consulting, and Customer Success work. Snowflake unifies product, customer, and commercial data. Claude/agentic workflows interpret signals, generate role-specific recommendations, and route actions through Salesforce tasks, Gmail, Slack, HubSpot, Gong, Zendesk, Pendo, and SpotDraft only when there is a clear reason to act.</p>
+    <p>The competitive advantage is not having AI. It is knowing how to operationalize AI into repeatable, measurable workflows. Salesforce remains the operating system for AE, Solutions Consulting, and Customer Success work. Snowflake unifies product, customer, and commercial data. Claude/agentic workflows interpret signals, generate role-specific recommendations, and route actions through Salesforce tasks, Gmail, Slack, HubSpot, Gong, Zendesk, Pendo, and SpotDraft only when there is a clear reason to act.</p>
   </div>
   <div class="grid-3">
     <div class="metric-card"><div class="metric-label">Team question</div><h3>Who needs to act?</h3><p>Prioritized AE, SC, and CSM actions based on buyer engagement, product usage, support risk, trial health, commercial readiness, and renewal timing.</p></div>
@@ -215,9 +216,88 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <p><strong>Every workflow must answer five questions:</strong> What signal changed? Which role owns the next action? What context do they need? Which channel should execute it? Did it improve conversion, adoption, expansion, retention, or forecast quality? If a tool does not materially improve one of those answers, it is not strategic.</p>
   </div>
 </section>
+
+<section class="section" id="sec-operating-model">
+  <div class="section-title">Agentic Operating Model</div>
+  <div class="section-sub">Move from AI pilots to a governed revenue capability</div>
+
+  <div class="callout">
+    <h3>Agentic selling is not a one-time workflow build. It is an operating capability.</h3>
+    <p>The company should start with specific business outcomes, build around real user workflows, test recommendations continuously, and assign ownership for prompts, data definitions, releases, security, and measurement. The goal is not to launch more agents; the goal is to create a reliable system that improves revenue execution.</p>
+  </div>
+
+  <div class="grid-3">
+    <div class="metric-card">
+      <div class="metric-label">01 · Assist</div>
+      <h3>Summarize and draft</h3>
+      <p>Meeting briefs, account summaries, call recaps, stakeholder notes, and first-draft emails. Primary KPI: hours saved and prep completion.</p>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">02 · Act</div>
+      <h3>Execute bounded tasks</h3>
+      <p>Create Salesforce tasks, draft Gmail follow-ups, update fields, route Slack alerts, and suggest Outreach sequence enrollment. Primary KPI: tasks completed.</p>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">03 · Assure</div>
+      <h3>Operate with guardrails</h3>
+      <p>Human-reviewed recommendations, approval gates, source-of-truth rules, false-positive review, and prompt/data testing. Primary KPI: recommendation accuracy and accepted actions.</p>
+    </div>
+  </div>
+  <div class="grid-2" style="margin-top:18px;">
+    <div class="metric-card">
+      <div class="metric-label">04 · Orchestrate</div>
+      <h3>Coordinate across teams</h3>
+      <p>AE, SC, CSM, Legal, Deal Desk, and Support workflows connected through shared account context and owner-specific actions. Primary KPI: resolution time and cross-functional handoff completion.</p>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">05 · Transform</div>
+      <h3>Optimize business outcomes</h3>
+      <p>Agents influence pipeline creation, trial conversion, expansion, retention, forecast hygiene, and renewal readiness. Primary KPI: revenue impact, churn reduction, and customer experience improvement.</p>
+    </div>
+  </div>
+
+  <div class="plain-card" style="margin-top:22px;">
+    <div class="metric-label">Use case intake framework</div>
+    <table>
+      <thead><tr><th>Question</th><th>What Celtra should define</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>What outcome matters?</strong></td><td>Pick one business result and one primary metric before building.</td><td>Improve trial-to-close conversion, reduce stale opps, increase expansion opp creation.</td></tr>
+        <tr><td><strong>Who benefits most?</strong></td><td>Build around a specific person’s workflow, not a whole department.</td><td>AE, SC, CSM, Sales Manager, Deal Desk, Legal, Support, or RevOps.</td></tr>
+        <tr><td><strong>Where does friction live?</strong></td><td>Name the manual, repetitive, judgment-heavy, or cross-system step slowing the team down.</td><td>Reps miss follow-up, SCs lack demo context, CSMs see renewal risk too late.</td></tr>
+        <tr><td><strong>What data already exists?</strong></td><td>Confirm which CRM, product, conversation, support, contract, enrichment, and engagement data is ready enough to trust.</td><td>Salesforce opp fields, Gong summaries, HubSpot campaign activity, Pendo/Snowflake usage, Zendesk tickets.</td></tr>
+        <tr><td><strong>What does success look like?</strong></td><td>Define the metric that proves the workflow is worth keeping.</td><td>Accepted recommendations, meetings booked, stage progression, expansion opps, risks reduced, time to action.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid-3" style="margin-top:22px;">
+    <div class="plain-card">
+      <div class="metric-label">Build</div>
+      <p>Start with low-risk, high-value workflows where the user remains in control: meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, and renewal readiness.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Operate</div>
+      <p>Review real recommendations and conversations weekly. Track ignored alerts, false positives, bad data, prompt issues, and actions that failed to produce outcomes.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Scale</div>
+      <p>Only promote a workflow into automation when the signal is reliable, the owner is clear, the action is accepted, and the business impact is measurable.</p>
+    </div>
+  </div>
+</section>
 <section class="section" id="sec-architecture">
   <div class="section-title">Stack Architecture</div>
   <div class="section-sub">Tools are organized by job: signal source, commercial truth, intelligence, execution, and measurement across AE, SC, and CS workflows</div>
+  <div class="callout">
+    <h3>Use the Agentic Enterprise architecture as the organizing model.</h3>
+    <p>The stack should be explained as four connected systems: the system of engagement where users interact, the system of agency where agents reason and recommend, the system of work where business processes execute, and the system of context where governed data, enrichment, product usage, and conversation history live.</p>
+  </div>
+  <div class="grid-2" style="margin-bottom:24px;">
+    <div class="plain-card"><div class="metric-label">System of engagement</div><p><strong>Where users experience the agentic workflow:</strong> Salesforce UI, Slack, Gmail, dashboards, and manager views.</p></div>
+    <div class="plain-card"><div class="metric-label">System of agency</div><p><strong>Where AI reasons and recommends:</strong> Claude / Agentforce-style agents, prompts, play selection, routing logic, and human approval steps.</p></div>
+    <div class="plain-card"><div class="metric-label">System of work</div><p><strong>Where business processes execute:</strong> Salesforce, Outreach, HubSpot, Zendesk, SpotDraft, Gmail, Slack, and Salesforce Flow.</p></div>
+    <div class="plain-card"><div class="metric-label">System of context</div><p><strong>Where trusted context comes from:</strong> Snowflake, Pendo, Gong, MediaRadar, Adomik, Clay, LeadIQ, Sales Nav, Salesforce history, and customer data.</p></div>
+  </div>
   <div class="architecture">
     <div class="arch-row">
       <div class="arch-label"><small>Layer 00</small><strong>Data Enrichment</strong></div>
@@ -238,7 +318,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Zendesk</div><div class="tool-role">Tickets, escalations<br>support blockers</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Gmail</div><div class="tool-role">Buyer/customer replies<br>thread activity</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">Slack</div><div class="tool-role">Internal urgency, deal chatter<br>handoffs + team alignment</div></div>
-        <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes<br>stakeholders, relationships</div></div>
+        <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">Sales Nav</div><div class="tool-role">Job changes, stakeholders, relationships</div></div>
       </div>
       <div class="arch-value"><strong>Value:</strong> These tools do not all create the same signal. HubSpot creates engagement signals. Gmail and Gong create buyer/customer conversation signals. Slack captures internal urgency, handoffs, and cross-functional AE/SC/CS context. Pendo/Snowflake create product signals. Sales Nav creates relationship and stakeholder-change signals.</div>
     </div>
@@ -248,7 +328,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool sfdc"><span class="badge b-owned">Owned</span><div class="tool-name">Salesforce</div><div class="tool-role">Accounts, Contacts<br>Opps, Quotes/CPQ<br>Orders</div></div>
         <div class="tool green"><span class="badge b-owned">Owned</span><div class="tool-name">NetSuite</div><div class="tool-role">Billing processing only<br>no GTM triggers</div></div>
         <div class="tool green"><span class="badge b-owned">Signed</span><div class="tool-name">SpotDraft</div><div class="tool-role">Contracts, legal workflow<br>terms + signature status</div></div>
-        <div class="tool eval"><span class="badge b-eval">Churning</span><div class="tool-name">Novatus Contracts</div><div class="tool-role">Legacy contract archive<br>replace with SpotDraft/SFDC</div></div>
+        <div class="tool eval"><span class="badge b-eval">Churning</span><div class="tool-name">Novatus Contracts</div><div class="tool-role">Legacy contract archive<br>replace with SpotDraft / SFDC</div></div>
       </div>
       <div class="arch-value"><strong>Value:</strong> Internal commercial signals should come from Salesforce and SpotDraft: renewal dates, quote and CPQ readiness, order path, contract status, legal review, signature status, and commercial terms. NetSuite is billing-only and should not trigger GTM workflows.</div>
     </div>
@@ -346,12 +426,12 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 </section>
 </section>
 <section class="section" id="sec-roadmap">
-  <div class="section-title">90-Day Roadmap</div>
-  <div class="section-sub">Build the signal operating model while the company establishes the AI and data foundation</div>
+  <div class="section-title">From Pilot to Operating Capability</div>
+  <div class="section-sub">Build the signal operating model while establishing governance, testing, ownership, and data readiness</div>
 
   <div class="callout">
-    <h3>The roadmap should separate what RevOps can control now from what depends on the broader AI architecture.</h3>
-    <p>Signal-based selling will only scale if the company defines a durable data layer, governance model, integration pattern, and AI operating architecture. RevOps does not need to wait for every foundational decision to be complete, but it should avoid building brittle automations that duplicate the future data layer or create a second source of truth outside Salesforce and Snowflake.</p>
+    <h3>The roadmap should turn AI experimentation into a durable operating capability.</h3>
+    <p>Signal-based selling will only scale if the company defines a durable data layer, governance model, integration pattern, testing discipline, release process, and AI operating architecture. RevOps does not need to wait for every foundational decision to be complete, but it should avoid building brittle automations that duplicate the future data layer or create a second source of truth outside Salesforce and Snowflake.</p>
   </div>
 
   <div class="grid-3">
@@ -415,6 +495,16 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <tr><td><strong>Tool rationalization</strong></td><td>Audit Outreach, Sales Nav, Clay candidates, and actual seller use cases.</td><td>Compare tool signals against enterprise data model and governed signal needs.</td><td>Which tools provide unique signals or execution capabilities that the data layer cannot replace?</td></tr>
     </tbody>
   </table>
+  <div class="section-sub" style="margin-top:32px;">Use case prioritization</div>
+  <table>
+    <thead><tr><th>Priority bucket</th><th>Business value</th><th>Technical / AI readiness</th><th>Recommended workflows</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Low-hanging fruit</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness.</td></tr>
+      <tr><td><strong>Momentum plays</strong></td><td>High</td><td>Medium</td><td>Trial audit, competitive follow-up, late-stage close plan, support escalation, SC technical evaluation.</td></tr>
+      <tr><td><strong>Strategic investments</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, multi-agent orchestration.</td></tr>
+      <tr><td><strong>Lower priority</strong></td><td>Unproven</td><td>Variable</td><td>Fully autonomous outbound, broad omni-agent chat, ungoverned AI SDR workflows, and workflows without a clear owner or success metric.</td></tr>
+    </tbody>
+  </table>
 </section>
 
 <section class="section" id="sec-metrics">
@@ -475,3 +565,19 @@ function show(tab, e) {
 </script>
 </body>
 </html>
+
+  <div class="section-sub" style="margin-top:32px;">Evaluate · Observe · Optimize</div>
+  <div class="grid-3">
+    <div class="plain-card">
+      <div class="metric-label">Evaluate</div>
+      <p>Before launch, test whether each workflow has complete data, the right owner, an explainable recommendation, a clear action, and an acceptable false-positive rate.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Observe</div>
+      <p>After launch, monitor recommendation acceptance, ignored alerts, prompt quality, data failures, workflow latency, and whether users take the recommended action.</p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Continuously optimize</div>
+      <p>Review real conversations and action outcomes. Tune prompts, signal thresholds, routing rules, source data, and success metrics before expanding automation.</p>
+    </div>
+  </div>
