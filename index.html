@@ -184,162 +184,149 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   </div>
 </div>
 <nav>
-  <button class="active" onclick="show('thesis', event)">① Executive Thesis</button>
-  <button onclick="show('operating-model', event)">② Agentic Operating Model</button>
+  <button class="active" onclick="show('thesis', event)">① Executive Narrative</button>
+  <button onclick="show('operating-plan', event)">② Operating Plan</button>
   <button onclick="show('architecture', event)">③ Stack Architecture</button>
   <button onclick="show('workflows', event)">④ Seller Workflows</button>
   <button onclick="show('marketing-workflows', event)">⑤ Marketing Workflows</button>
   <button onclick="show('sc-workflows', event)">⑥ Solutions Consulting</button>
   <button onclick="show('cs-workflows', event)">⑦ Customer Success</button>
   <button onclick="show('tools', event)">⑧ Tool Decisions</button>
-  <button onclick="show('roadmap', event)">⑨ From Pilot to Capability</button>
-  <button onclick="show('metrics', event)">⑩ Success Metrics</button>
+  <button onclick="show('metrics', event)">⑨ Success Metrics</button>
 </nav>
 <main>
 <section class="section active" id="sec-thesis">
-  <div class="section-title">Executive Thesis</div>
-  <div class="section-sub">Move from isolated activity to coordinated, signal-driven revenue execution</div>
+  <div class="section-title">Executive Narrative</div>
+  <div class="section-sub">What we are building, why it matters, and what leadership needs to align on</div>
   <div class="callout">
-    <h3>We are not building a bigger sales tech stack. We are building a cross-functional signal-to-action revenue system.</h3>
-    <p>The competitive advantage is not having AI. It is knowing how to operationalize AI into repeatable, measurable workflows. Salesforce remains the operating system for AE, Solutions Consulting, and Customer Success work. Snowflake unifies product, customer, and commercial data. Claude/agentic workflows interpret signals, generate role-specific recommendations, and route actions through Salesforce tasks, Gmail, Slack, HubSpot, Gong, Zendesk, Pendo, and SpotDraft only when there is a clear reason to act.</p>
-  </div>
-  <div class="plain-card" style="margin-bottom:24px;">
-    <div class="metric-label">Architectural bet</div>
-    <p><strong>Snowflake should become Celtra's governed GTM data record and trust layer.</strong> Salesforce remains the system of engagement for revenue execution, but account, product, customer, support, commercial, and outcome signals should be modeled in Snowflake, then exposed back through controlled workflows in Salesforce, Slack, Gmail, HubSpot, Claude, and dashboards. This keeps flexibility at the edge without creating competing sources of truth.</p>
+    <h3>Celtra does not need a collection of AI experiments. We need a governed signal-to-action operating model for GTM.</h3>
+    <p>Revenue Operations should help turn scattered GTM activity into coordinated execution: identify meaningful customer and market signals, decide which role owns the next action, provide trusted context, route work through the systems teams already use, and measure whether the action improved conversion, adoption, expansion, retention, or forecast quality.</p>
   </div>
   <div class="grid-2" style="margin-bottom:24px;">
     <div class="plain-card">
-      <div class="metric-label">Traditional GTM</div>
-      <p>Manual seller research, generic sequencing, isolated tools, quarterly planning cycles, and disconnected handoffs between Marketing, Sales, Solutions Consulting, and Customer Success.</p>
+      <div class="metric-label">Strategic bet</div>
+      <p><strong>Snowflake should become Celtra's governed GTM data record and trust layer.</strong> Account, product, customer, support, commercial, engagement, and outcome signals should be modeled there, then exposed through controlled workflows in Salesforce, Slack, Gmail, HubSpot, Claude, and dashboards.</p>
     </div>
     <div class="plain-card">
-      <div class="metric-label">Future-state GTM</div>
-      <p>Continuous signal monitoring, AI-assisted account understanding, coordinated pod execution, buying-group orchestration, and role-specific actions triggered by real customer context.</p>
+      <div class="metric-label">Operating posture</div>
+      <p><strong>Salesforce remains the revenue operating surface.</strong> RevOps should not create a second source of truth. We should design workflows that use Salesforce for account ownership, tasks, opportunity/customer context, and outcome logging while Snowflake becomes the trusted data foundation underneath.</p>
     </div>
   </div>
-  <div class="grid-3">
-    <div class="metric-card"><div class="metric-label">Team question</div><h3>Who needs to act?</h3><p>Prioritized AE, SC, and CSM actions based on buyer engagement, product usage, support risk, trial health, commercial readiness, and renewal timing.</p></div>
-    <div class="metric-card"><div class="metric-label">Timing question</div><h3>Why now?</h3><p>Every action is tied to a named trigger: campaign engagement, demo request, trial usage, technical blocker, support escalation, renewal risk, expansion signal, or stage stall.</p></div>
-    <div class="metric-card"><div class="metric-label">Execution question</div><h3>What should we do?</h3><p>Agent recommends the play, drafts the message or brief, routes to the right owner, coordinates the pod, and logs the outcome for learning.</p></div>
-  </div>
   <div class="plain-card" style="margin-top:18px;">
-    <div class="metric-label">Updated understanding</div>
-    <p><strong>The GTM stack should not optimize one role in isolation.</strong> Marketing, AE, Solutions Consulting, and Customer Success each own different moments in the customer journey, but they should work from the same account context, signal definitions, action queue, and outcome measurement. The goal is coordinated revenue execution from market sensing and demand creation through demo, trial, close, onboarding, expansion, and renewal.</p>
-  </div>
-  <div class="plain-card" style="margin-top:18px;">
-    <div class="metric-label">Current state → future state</div>
+    <div class="metric-label">Narrative arc</div>
     <table>
-      <thead>
-        <tr><th>Today</th><th>Future state</th></tr>
-      </thead>
+      <thead><tr><th>Today</th><th>What changes</th><th>Leadership implication</th></tr></thead>
       <tbody>
-        <tr><td>Manual seller research</td><td>AI-generated account briefs and recommendations</td></tr>
-        <tr><td>Generic sequencing</td><td>Trigger-based outreach</td></tr>
-        <tr><td>Rep memory and tribal knowledge</td><td>Persistent account context and shared intelligence</td></tr>
-        <tr><td>MQL routing</td><td>Buying-group orchestration</td></tr>
-        <tr><td>Quarterly reviews</td><td>Continuous signal monitoring</td></tr>
-        <tr><td>Reactive renewals</td><td>Predictive customer-health motions</td></tr>
+        <tr><td>Manual research and generic sequencing</td><td>Role-specific briefs and recommended plays based on named signals</td><td>AI is used to improve timing and context, not to create more outbound noise.</td></tr>
+        <tr><td>Disconnected handoffs across Marketing, Sales, SC, and CS</td><td>Shared signal definitions, account context, action owners, and outcome measurement</td><td>Functional leaders need to agree on ownership rules and adoption expectations.</td></tr>
+        <tr><td>Data spread across engagement, product, CRM, support, and contract systems</td><td>Snowflake-modeled signals surfaced back through controlled front-end workflows</td><td>DI and RevOps need a shared architecture before automation scales.</td></tr>
+        <tr><td>Quarterly reviews and reactive renewal motions</td><td>Continuous monitoring for pipeline, trial, expansion, adoption, support, and renewal signals</td><td>Success is measured by conversion, adoption, expansion, retention, and forecast quality.</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="plain-card" style="margin-top:18px;">
-    <div class="metric-label">Operating principle</div>
-    <p><strong>Every workflow must answer five questions:</strong> What signal changed? Which role owns the next action? What context do they need? Which channel should execute it? Did it improve conversion, adoption, expansion, retention, or forecast quality? If a tool does not materially improve one of those answers, it is not strategic.</p>
-  </div>
-  <div class="grid-3" style="margin-top:18px;">
-    <div class="plain-card">
-      <div class="metric-label">What we need from leadership</div>
-      <p><strong>Agreement on the operating model:</strong> RevOps can own GTM workflow design, pilot governance, adoption, and measurement; DI owns the scalable data architecture; functional leaders own whether their teams act on the recommendations.</p>
+  <div class="grid-3" style="margin-top:22px;">
+    <div class="metric-card">
+      <div class="metric-label">Question 01</div>
+      <h3>What changed?</h3>
+      <p>Every workflow starts with a named signal: buyer engagement, trial activity, usage change, stakeholder movement, support risk, commercial blocker, or renewal window.</p>
     </div>
-    <div class="plain-card">
-      <div class="metric-label">What remains outstanding</div>
-      <p><strong>Snowflake is the target trust layer, not yet the complete operating layer.</strong> We still need canonical account identity, signal definitions, permissions, data freshness expectations, and a durable recommendation/outcome logging model.</p>
+    <div class="metric-card">
+      <div class="metric-label">Question 02</div>
+      <h3>Who owns action?</h3>
+      <p>Marketing, AE, SC, CSM, Legal, Deal Desk, Support, or leadership owns the next step based on the signal and account context.</p>
     </div>
-    <div class="plain-card">
-      <div class="metric-label">Near-term goal</div>
-      <p><strong>Prove the motion before scaling automation.</strong> Start with controlled workflows in Salesforce, Slack, Gmail, HubSpot, and Claude; measure adoption and outcomes; then promote reliable signals into governed Snowflake-modeled infrastructure.</p>
+    <div class="metric-card">
+      <div class="metric-label">Question 03</div>
+      <h3>Did it work?</h3>
+      <p>Recommendations must produce measurable outcomes: meetings, stage progression, trial conversion, expansion pipeline, risk reduction, or forecast hygiene.</p>
     </div>
   </div>
 </section>
-
-<section class="section" id="sec-operating-model">
-  <div class="section-title">Agentic Operating Model</div>
-  <div class="section-sub">Move from AI pilots to a governed revenue capability</div>
+<section class="section" id="sec-operating-plan">
+  <div class="section-title">Operating Plan</div>
+  <div class="section-sub">How RevOps pilots controlled workflows while the data foundation matures</div>
 
   <div class="callout">
-    <h3>Agentic selling is not a one-time workflow build. It is an operating capability.</h3>
-    <p>The company should start with specific business outcomes, build around real user workflows, test recommendations continuously, and assign ownership for prompts, data definitions, releases, security, and measurement. The goal is not to launch more agents; the goal is to create a reliable system that improves revenue execution.</p>
-  </div>
-  <div class="grid-2" style="margin-bottom:24px;">
-    <div class="plain-card">
-      <div class="metric-label">AI governance</div>
-      <p><strong>Agents can:</strong> summarize, recommend, draft, route, score, prioritize, and coordinate workflows.</p>
-      <p style="margin-top:12px;"><strong>Agents cannot:</strong> autonomously negotiate pricing, send unrestricted outbound communication, modify contracts, or update critical customer/commercial data without approval.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Operational controls</div>
-      <p>Every workflow should include human approval boundaries, prompt ownership, audit logging, false-positive review, recommendation tracking, escalation paths, and measurable business outcomes. Customer-facing sends, contract changes, pricing actions, and critical customer or commercial data updates require human approval.</p>
-    </div>
+    <h3>The path is controlled pilots now, governed infrastructure next.</h3>
+    <p>RevOps can create near-term value by piloting human-reviewed workflows in Salesforce, Slack, Gmail, HubSpot, and Claude using trusted existing data. The scalable version requires DI and functional leadership alignment on Snowflake-modeled signals, identity resolution, permissions, recommendation logging, and adoption accountability.</p>
   </div>
 
   <div class="grid-3">
-    <div class="metric-card">
-      <div class="metric-label">01 · Assist</div>
-      <h3>Summarize and draft</h3>
-      <p>Meeting briefs, account summaries, call recaps, stakeholder notes, and first-draft emails. Primary KPI: hours saved and prep completion.</p>
+    <div class="plain-card">
+      <div class="metric-label">Phase 01 · Decide</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Define the operating rules</h3>
+      <p>Align RevOps, DI, Sales, Marketing, CS, Product, Legal, and Finance on source-of-truth rules, signal taxonomy, account identity, AI access, human approval boundaries, and where recommendations and outcomes should be logged.</p>
     </div>
-    <div class="metric-card">
-      <div class="metric-label">02 · Act</div>
-      <h3>Execute bounded tasks</h3>
-      <p>Create Salesforce tasks, draft Gmail follow-ups, update fields, route Slack alerts, and suggest Outreach sequence enrollment. Primary KPI: tasks completed.</p>
+    <div class="plain-card">
+      <div class="metric-label">Phase 02 · Pilot</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Run controlled front-end workflows</h3>
+      <p>Use Salesforce tasks and fields, Slack alerts, Gmail drafts, HubSpot workflows, Gong summaries, Zendesk context, and Claude-generated briefs. Keep humans in control and measure recommendation acceptance, completion, and outcomes.</p>
     </div>
-    <div class="metric-card">
-      <div class="metric-label">03 · Assure</div>
-      <h3>Operate with guardrails</h3>
-      <p>Human-reviewed recommendations, approval gates, source-of-truth rules, false-positive review, and prompt/data testing. Primary KPI: recommendation accuracy and accepted actions.</p>
+    <div class="plain-card">
+      <div class="metric-label">Phase 03 · Scale</div>
+      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Promote reliable signals into infrastructure</h3>
+      <p>Move validated signals into Snowflake-modeled definitions, retire manual workarounds, document field and prompt rules, and decide which tools deserve investment based on unique signal, context, execution, or measurement value.</p>
     </div>
   </div>
-  <div class="grid-2" style="margin-top:18px;">
-    <div class="metric-card">
-      <div class="metric-label">04 · Orchestrate</div>
-      <h3>Coordinate across teams</h3>
-      <p>AE, SC, CSM, Legal, Deal Desk, and Support workflows connected through shared account context and owner-specific actions. Primary KPI: resolution time and cross-functional handoff completion.</p>
+
+  <div class="grid-2" style="margin-top:22px;">
+    <div class="plain-card">
+      <div class="metric-label">RevOps ownership</div>
+      <p><strong>RevOps owns the GTM workflow layer:</strong> use-case intake, pilot prioritization, Salesforce workflow design, prompt/business-rule documentation, user adoption, action measurement, and tool rationalization. RevOps can move before the full architecture is complete, but should avoid brittle automations that duplicate the future data layer.</p>
     </div>
-    <div class="metric-card">
-      <div class="metric-label">05 · Transform</div>
-      <h3>Optimize business outcomes</h3>
-      <p>Agents influence pipeline creation, trial conversion, expansion, retention, forecast hygiene, and renewal readiness. Primary KPI: revenue impact, churn reduction, and customer experience improvement.</p>
+    <div class="plain-card">
+      <div class="metric-label">Governance boundary</div>
+      <p><strong>Agents can summarize, recommend, draft, route, score, and prioritize.</strong> They cannot autonomously negotiate pricing, send unrestricted outbound communication, modify contracts, or update critical customer/commercial data. Customer-facing sends, contract changes, pricing actions, and critical record updates require human approval.</p>
     </div>
   </div>
 
   <div class="plain-card" style="margin-top:22px;">
-    <div class="metric-label">Use case intake framework</div>
+    <div class="metric-label">Use case intake</div>
     <table>
       <thead><tr><th>Question</th><th>What Celtra should define</th><th>Example</th></tr></thead>
       <tbody>
-        <tr><td><strong>What outcome matters?</strong></td><td>Pick one business result and one primary metric before building.</td><td>Improve trial-to-close conversion, reduce stale opps, increase expansion opp creation.</td></tr>
-        <tr><td><strong>Who benefits most?</strong></td><td>Build around a specific person’s workflow, not a whole department.</td><td>AE, SC, CSM, Sales Manager, Deal Desk, Legal, Support, or RevOps.</td></tr>
-        <tr><td><strong>Where does friction live?</strong></td><td>Name the manual, repetitive, judgment-heavy, or cross-system step slowing the team down.</td><td>Reps miss follow-up, SCs lack demo context, CSMs see renewal risk too late.</td></tr>
-        <tr><td><strong>What data already exists?</strong></td><td>Confirm which CRM, product, conversation, support, contract, enrichment, and engagement data is ready enough to trust.</td><td>Salesforce opp fields, Gong summaries, HubSpot campaign activity, Pendo/Snowflake usage, Zendesk tickets.</td></tr>
-        <tr><td><strong>What does success look like?</strong></td><td>Define the metric that proves the workflow is worth keeping.</td><td>Accepted recommendations, meetings booked, stage progression, expansion opps, risks reduced, time to action.</td></tr>
+        <tr><td><strong>Outcome</strong></td><td>Pick one business result and one primary metric before building.</td><td>Improve trial-to-close conversion, reduce stale opps, increase expansion opp creation.</td></tr>
+        <tr><td><strong>Owner</strong></td><td>Build around a specific person’s workflow, not a whole department.</td><td>AE, SC, CSM, Sales Manager, Deal Desk, Legal, Support, Marketing Ops, or RevOps.</td></tr>
+        <tr><td><strong>Signal</strong></td><td>Name the trigger and confirm which source is reliable enough to use.</td><td>Gong competitor mention, HubSpot engagement, Pendo usage drop, Zendesk escalation, SpotDraft blocker.</td></tr>
+        <tr><td><strong>Action</strong></td><td>Define the recommended play, channel, approval gate, and outcome logging path.</td><td>Salesforce task, Gmail draft, Slack alert, HubSpot nurture, manager coaching note.</td></tr>
+        <tr><td><strong>Proof</strong></td><td>Define the metric that proves the workflow is worth keeping.</td><td>Accepted recommendations, meetings booked, stage progression, expansion opps, risks reduced, time to action.</td></tr>
       </tbody>
     </table>
   </div>
 
-  <div class="grid-3" style="margin-top:22px;">
-    <div class="plain-card">
-      <div class="metric-label">Build</div>
-      <p>Start with low-risk, high-value workflows where the user remains in control: meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, and renewal readiness.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Operate</div>
-      <p>Review real recommendations and conversations weekly. Track ignored alerts, false positives, bad data, prompt issues, and actions that failed to produce outcomes.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Scale</div>
-      <p>Only promote a workflow into automation when the signal is reliable, the owner is clear, the action is accepted, and the business impact is measurable.</p>
-    </div>
-  </div>
+  <table style="margin-top:22px;">
+    <thead><tr><th>Workstream</th><th>RevOps can own now</th><th>Partner dependency</th><th>Decision needed</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Signal taxonomy</strong></td><td>Define practical GTM categories and pilot fields in Salesforce.</td><td>DI creates governed enterprise definitions and shared semantic layer.</td><td>Which signals are official enough to trigger action?</td></tr>
+      <tr><td><strong>Account/customer graph</strong></td><td>Use Salesforce account hierarchy and validated contacts for workflow routing.</td><td>DI unifies CRM accounts, product users, domains, parent/child relationships, and customer entities.</td><td>What is the canonical account identity?</td></tr>
+      <tr><td><strong>AI recommendations</strong></td><td>Use Claude to draft briefs and recommendations for human review.</td><td>Security/DI define approved AI access pattern, permissions, prompt governance, audit logs, and feedback loop.</td><td>Where should recommendations live and how should outcomes be logged?</td></tr>
+      <tr><td><strong>Workflow execution</strong></td><td>Use Salesforce tasks, Gmail drafts, Slack alerts, HubSpot workflows, and Salesforce Flow.</td><td>Functional leaders enforce adoption and approve cross-system automation boundaries.</td><td>Which actions stay in Salesforce versus a durable orchestration layer?</td></tr>
+      <tr><td><strong>Tool rationalization</strong></td><td>Audit Outreach, Sales Nav, LeadIQ, Clay candidates, and actual user behavior.</td><td>Finance and functional leaders align renewal/budget decisions to measurable workflow value.</td><td>Which tools provide unique signal, context, execution, or measurement value?</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-sub" style="margin-top:32px;">What RevOps needs from partner teams</div>
+  <table>
+    <thead><tr><th>Team</th><th>Needed contribution</th><th>Why it matters</th><th>Near-term artifact</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Data / DI</strong></td><td>Define the governed account/customer graph, Snowflake access pattern, signal freshness rules, and approved AI data path.</td><td>Prevents pilots from becoming one-off automations or competing sources of truth.</td><td>Canonical object map, signal taxonomy, and AI access decision.</td></tr>
+      <tr><td><strong>Sales leadership</strong></td><td>Confirm AE ownership rules, acceptable seller actions, manager coaching expectations, and adoption accountability.</td><td>Recommendations only create value if sellers trust, accept, and complete the right next action.</td><td>Workflow owner matrix and pilot seller cohort.</td></tr>
+      <tr><td><strong>Marketing</strong></td><td>Map campaign, content, AEO, and ABM signals to account-stage context and sales follow-up expectations.</td><td>Shifts Marketing from MQL volume toward demand quality, buying-group development, and pipeline movement.</td><td>Campaign-to-signal definitions and content-gap operating loop.</td></tr>
+      <tr><td><strong>Customer Success</strong></td><td>Define health, adoption, expansion, support, and renewal-risk thresholds that should trigger CSM action.</td><td>Turns post-sale data into proactive adoption, expansion, and retention workflows instead of retrospective reporting.</td><td>CS signal thresholds and renewal readiness checklist.</td></tr>
+      <tr><td><strong>Product / Support / Legal / Finance</strong></td><td>Identify product events, support escalation rules, contract terms, order readiness, and approval gates that affect GTM execution.</td><td>Cross-functional blockers often determine whether a signal can become a useful customer-facing action.</td><td>Critical-field inventory and escalation/approval paths.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="section-sub" style="margin-top:32px;">Use case prioritization</div>
+  <table>
+    <thead><tr><th>Priority bucket</th><th>Business value</th><th>Technical / AI readiness</th><th>Recommended workflows</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Start here</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness, high-fit HubSpot engagement, campaign learning loop, and content gap intelligence.</td></tr>
+      <tr><td><strong>Build next</strong></td><td>High</td><td>Medium</td><td>Trial audit, competitive follow-up, late-stage close plan, support escalation, SC technical evaluation, and customer proof loop.</td></tr>
+      <tr><td><strong>Scale after validation</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, AEO narrative optimization, market-triggered ABM, and multi-agent orchestration.</td></tr>
+      <tr><td><strong>Defer</strong></td><td>Unproven</td><td>Variable</td><td>Fully autonomous outbound, broad omni-agent chat, ungoverned AI SDR workflows, anonymous visitor intelligence as a Phase 1 foundation, and workflows without a clear owner or success metric.</td></tr>
+    </tbody>
+  </table>
 </section>
 <section class="section" id="sec-architecture">
   <div class="section-title">Stack Architecture</div>
@@ -519,99 +506,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </tbody>
   </table>
 </section>
-<section class="section" id="sec-roadmap">
-  <div class="section-title">From Pilot to Operating Capability</div>
-  <div class="section-sub">Build the signal operating model while establishing governance, testing, ownership, and data readiness</div>
-
-  <div class="callout">
-    <h3>The roadmap should turn AI experimentation into a durable operating capability.</h3>
-    <p>Signal-based selling will only scale if the company defines a durable data layer, governance model, integration pattern, testing discipline, release process, and AI operating architecture. RevOps does not need to wait for every foundational decision to be complete, but it should avoid building brittle automations that duplicate the future data layer or create a second source of truth outside Salesforce and Snowflake.</p>
-  </div>
-
-  <div class="grid-3">
-    <div class="plain-card">
-      <div class="metric-label">Phase 01 · Days 1-30</div>
-      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Define the architecture decisions</h3>
-      <p>Align RevOps, DI, Sales, CS, Product, and Finance on the foundational choices that determine whether signal-based AI can scale: canonical account model, data ownership, identity resolution, source-of-truth rules, AI access patterns, governance, and where recommendations should be surfaced.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Phase 02 · Days 31-60</div>
-      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Build RevOps-controlled front-end workflows</h3>
-      <p>Use Salesforce-native fields, tasks, views, dashboards, flows, Slack alerts, HubSpot workflows, and human-reviewed Claude briefs to pilot the operating model without waiting for full data infrastructure. Focus on workflows that use existing reliable data: HubSpot engagement, Salesforce opportunity hygiene, Gong summaries, Zendesk escalations, MediaRadar context, Peec AI content/AEO findings, and manually validated usage signals.</p>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">Phase 03 · Days 61-90</div>
-      <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Transition pilots into governed infrastructure</h3>
-      <p>Compare pilot outcomes against the emerging data architecture. Promote validated triggers into Snowflake-modeled signals, retire manual workarounds, document field definitions, and decide whether external signal tooling like Clay, Sales Navigator, or Outreach is still needed based on measurable workflow value.</p>
-    </div>
-  </div>
-
-  <div class="grid-2" style="margin-top:22px;">
-    <div class="plain-card">
-      <div class="metric-label">Foundational AI architecture decisions</div>
-      <p><strong>Before scaling signal-based AI, the company should decide:</strong></p>
-      <ul style="margin-top:12px; padding-left:20px; color:#4d4d4f; font-size:15px; line-height:23px;">
-        <li><strong>Canonical account and contact model:</strong> which object IDs, hierarchies, domains, parent/child relationships, and buyer roles define the customer graph.</li>
-        <li><strong>Source-of-truth rules:</strong> which system owns account data, product usage, contract status, support risk, billing status, engagement, and outcome history.</li>
-        <li><strong>Identity resolution:</strong> how contacts, users, domains, product users, buying committee members, and customer stakeholders are matched across systems.</li>
-        <li><strong>Signal taxonomy:</strong> what counts as a usage signal, engagement signal, stakeholder signal, deal risk, support risk, expansion signal, or renewal risk.</li>
-        <li><strong>Data freshness expectations:</strong> which signals need real-time updates, daily refresh, weekly refresh, or manual validation.</li>
-        <li><strong>AI access pattern:</strong> whether agents query Snowflake directly, call governed APIs, read from Salesforce, or operate through approved semantic models.</li>
-        <li><strong>Governance and permissions:</strong> what customer, product, contract, support, and email data AI can access; how PII and confidential data are protected.</li>
-        <li><strong>Recommendation logging:</strong> where AI recommendations, seller acceptance, dismissals, edits, actions, and outcomes are stored for learning.</li>
-        <li><strong>Human-in-the-loop rules:</strong> which actions AI may draft, recommend, route, update, or execute; and which actions require seller, CSM, manager, Legal, or Finance approval.</li>
-      </ul>
-    </div>
-    <div class="plain-card">
-      <div class="metric-label">What RevOps can do without owning the full architecture</div>
-      <p><strong>RevOps can still create meaningful front-end value while DI builds the data layer:</strong></p>
-      <ul style="margin-top:12px; padding-left:20px; color:#4d4d4f; font-size:15px; line-height:23px;">
-        <li>Create Salesforce fields for Signal Type, Signal Source, Recommended Play, Action Owner, Action Status, Dismissal Reason, and Outcome.</li>
-        <li>Build prioritized Salesforce list views for AEs, SCs, and CSMs using trusted existing fields.</li>
-        <li>Use Salesforce Flow for simple routing before adding separate orchestration tooling.</li>
-        <li>Generate Claude-assisted briefs from Salesforce, Gong summaries, HubSpot activity, Zendesk case summaries, and manually reviewed Snowflake/Pendo exports.</li>
-        <li>Create Slack alerts that link back to Salesforce records instead of letting recommendations live only in Slack.</li>
-        <li>Run controlled pilots with human review before automating any customer-facing action.</li>
-        <li>Measure action acceptance, completion, and outcome manually at first so DI knows which signals deserve production modeling.</li>
-        <li>Document definitions and workflow rules so pilots can migrate cleanly into the future company-wide AI architecture.</li>
-      </ul>
-    </div>
-  </div>
-
-  <table style="margin-top:22px;">
-    <thead><tr><th>Roadmap workstream</th><th>RevOps-owned now</th><th>Requires DI / company architecture</th><th>Decision to make</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Signal taxonomy</strong></td><td>Define practical GTM categories and pilot fields in Salesforce.</td><td>Create governed enterprise definitions and shared semantic layer.</td><td>Which signals are official enough to trigger seller action?</td></tr>
-      <tr><td><strong>Account/customer graph</strong></td><td>Use Salesforce account hierarchy and validated contacts for workflow routing.</td><td>Unify CRM accounts, product users, domains, parent/child relationships, and customer entities.</td><td>What is the canonical account identity?</td></tr>
-      <tr><td><strong>Usage and health signals</strong></td><td>Start with manually reviewed Snowflake/Pendo exports or high-confidence fields.</td><td>Model production-grade usage thresholds, health scores, and product adoption events.</td><td>Which usage changes should trigger expansion or risk workflows?</td></tr>
-      <tr><td><strong>AI recommendations</strong></td><td>Use Claude to draft briefs and recommendations for human review.</td><td>Create approved AI access pattern, prompt governance, audit logs, and feedback loop.</td><td>Where should recommendations live and how should outcomes be logged?</td></tr>
-      <tr><td><strong>Workflow execution</strong></td><td>Use Salesforce tasks, Gmail drafts, Slack alerts, and Flow-based routing.</td><td>Evaluate durable orchestration layer if cross-system workflows exceed Salesforce Flow.</td><td>Which actions should stay in Salesforce versus a dedicated orchestration layer?</td></tr>
-      <tr><td><strong>Tool rationalization</strong></td><td>Audit Outreach, Sales Nav, Clay candidates, and actual seller use cases.</td><td>Compare tool signals against enterprise data model and governed signal needs.</td><td>Which tools provide unique signals or execution capabilities that the data layer cannot replace?</td></tr>
-    </tbody>
-  </table>
-  <div class="section-sub" style="margin-top:32px;">What RevOps needs from partner teams</div>
-  <table>
-    <thead><tr><th>Team</th><th>Needed contribution</th><th>Why it matters</th><th>Near-term artifact</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Data / DI</strong></td><td>Define the governed account/customer graph, Snowflake access pattern, signal freshness rules, and approved AI data path.</td><td>Prevents pilots from becoming one-off automations or competing sources of truth.</td><td>Canonical object map, signal taxonomy, and AI access decision.</td></tr>
-      <tr><td><strong>Sales leadership</strong></td><td>Confirm AE ownership rules, acceptable seller actions, manager coaching expectations, and adoption accountability.</td><td>Recommendations only create value if sellers trust, accept, and complete the right next action.</td><td>Workflow owner matrix and pilot seller cohort.</td></tr>
-      <tr><td><strong>Marketing</strong></td><td>Map campaign, content, AEO, and ABM signals to account-stage context and sales follow-up expectations.</td><td>Shifts Marketing from MQL volume toward demand quality, buying-group development, and pipeline movement.</td><td>Campaign-to-signal definitions and content-gap operating loop.</td></tr>
-      <tr><td><strong>Customer Success</strong></td><td>Define health, adoption, expansion, support, and renewal-risk thresholds that should trigger CSM action.</td><td>Turns post-sale data into proactive adoption, expansion, and retention workflows instead of retrospective reporting.</td><td>CS signal thresholds and renewal readiness checklist.</td></tr>
-      <tr><td><strong>Product / Support / Legal / Finance</strong></td><td>Identify product events, support escalation rules, contract terms, order readiness, and approval gates that affect GTM execution.</td><td>Cross-functional blockers often determine whether a signal can become a useful customer-facing action.</td><td>Critical-field inventory and escalation/approval paths.</td></tr>
-    </tbody>
-  </table>
-  <div class="section-sub" style="margin-top:32px;">Use case prioritization</div>
-  <table>
-    <thead><tr><th>Priority bucket</th><th>Business value</th><th>Technical / AI readiness</th><th>Recommended workflows</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Low-hanging fruit</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness, high-fit HubSpot engagement, campaign learning loop, and content gap intelligence.</td></tr>
-      <tr><td><strong>Momentum plays</strong></td><td>High</td><td>Medium</td><td>Trial audit, competitive follow-up, late-stage close plan, support escalation, SC technical evaluation.</td></tr>
-      <tr><td><strong>Strategic investments</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, AEO narrative optimization, market-triggered ABM, and multi-agent orchestration.</td></tr>
-      <tr><td><strong>Lower priority</strong></td><td>Unproven</td><td>Variable</td><td>Fully autonomous outbound, broad omni-agent chat, ungoverned AI SDR workflows, and workflows without a clear owner or success metric.</td></tr>
-    </tbody>
-  </table>
-</section>
-
 <section class="section" id="sec-metrics">
   <div class="section-title">Success Metrics</div>
   <div class="section-sub">Measure whether signal-based workflows create better timing, better context, and better revenue outcomes</div>
