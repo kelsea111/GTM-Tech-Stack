@@ -1,0 +1,201 @@
+Goal:
+
+Add a new tab/page called “Today vs Tomorrow” immediately after “③ Stack Architecture” and before “Seller Workflows.”
+
+Important content rules:
+
+- Do not include SpotDraft anywhere on this new page.
+
+- Treat MediaRadar as research/context, not as a signal source.
+
+- It is acceptable to recommend possible purchases such as Agentforce or Gong Engage where appropriate.
+
+- Stay visually consistent with the existing Celtra-branded page design.
+
+- Reuse existing card, table, callout, workflow, and grid styling where possible.
+
+- If new CSS is needed, add it inside the existing style block and keep it consistent with the Celtra override styles.
+
+Navigation:
+
+Add a nav button:
+
+<button onclick="show('future-stack', event)">④ Today vs Tomorrow</button>
+
+Then renumber the existing buttons after it:
+
+Seller Workflows becomes ⑤
+
+Marketing Workflows becomes ⑥
+
+Solutions Consulting becomes ⑦
+
+Customer Success becomes ⑧
+
+Tool Decisions becomes ⑨
+
+Success Metrics becomes ⑩
+
+New section:
+
+Insert this new section immediately after the Stack Architecture section and before the Seller Workflows section:
+
+<section class="section" id="sec-future-stack">
+
+  <div class="section-title">Today vs. Tomorrow</div>
+
+  <div class="section-sub">How Celtra evolves the current GTM stack from record-keeping to coordinated action</div>
+
+  <div class="callout">
+
+    <h3>The future-state stack does not require ripping out what Celtra already owns.</h3>
+
+    <p>The core move is to use Gong, Salesforce, Slack, Google Workspace, and HubSpot more deeply: capture better signals, assemble trusted context, recommend next steps, route work into existing surfaces, and measure whether the action changed pipeline, conversion, expansion, retention, or forecast quality. New purchases should be evaluated where they strengthen execution, governance, or scale.</p>
+
+  </div>
+
+  Create a two-column comparison called:
+
+  “What we have today”
+
+  and
+
+  “What we will have tomorrow”
+
+  For each core tool, include these ideas:
+
+  Salesforce:
+
+  Today: CRM, activities, opportunities, reporting, tasks, stage tracking.
+
+  Tomorrow: revenue command center for next-best-action queues, manager inspection, trial audits, renewal readiness, expansion plays, and measurable recommendation outcomes.
+
+  Add-on: Agentforce; Salesforce Flow for near-term orchestration; Slack Sales Elevate if useful.
+
+  HubSpot:
+
+  Today: marketing automation, forms, lists, campaign engagement, nurture, basic scoring.
+
+  Tomorrow: demand signal engine connected to account engagement, buying-group coverage, campaign quality, and seller routing.
+
+  Add-on: Operations Hub/Data Sync, better Salesforce campaign/member sync, account-based workflows, lifecycle scoring, attribution cleanup.
+
+  Gong:
+
+  Today: call recording, transcripts, summaries, coaching, deal visibility.
+
+  Tomorrow: conversation signal engine for risk, objections, competitors, sentiment, missing next steps, and follow-up quality.
+
+  Add-on: Gong Engage if Celtra wants governed outbound execution tied to Gong insights; Gong Forecast if forecasting inspection needs mature.
+
+  Slack:
+
+  Today: internal communication, manual deal chatter, informal handoffs, alerts.
+
+  Tomorrow: revenue coordination surface for deal rooms, trial rooms, renewal rooms, exception alerts, approval loops, and manager visibility.
+
+  Add-on: Slack Workflow Builder, Salesforce app, Slack AI, Sales Elevate, controlled channel templates.
+
+  Google Workspace:
+
+  Today: email, calendar, docs, spreadsheets, shared files.
+
+  Tomorrow: execution and knowledge surface for meeting prep, account briefs, follow-up drafts, QBR drafts, renewal recaps, and playbook management.
+
+  Add-on: Gemini for Workspace, controlled prompt/playbook libraries in Drive, calendar-triggered meeting prep, standardized Docs templates.
+
+  MediaRadar:
+
+  Today: research source for market, spend, advertiser, and agency context.
+
+  Tomorrow: context enrichment for ABM prioritization, reactivation, expansion hypotheses, and account-specific outreach angles.
+
+  Add-on: use as enrichment/context in account briefs; do not treat as an automated trigger unless combined with Salesforce, HubSpot, or Gong activity.
+
+  Add a future-state operating flow section:
+
+  Signal → Context → Decision → Action → Measurement
+
+  Define the five steps:
+
+  1. Signal: Something happens in HubSpot, Gong, Salesforce, Pendo/Snowflake, Zendesk, Gmail, or Slack that may require action.
+
+  2. Context: Salesforce, Snowflake, Gong history, Google Workspace, and MediaRadar explain whether the signal matters and what is already known.
+
+  3. Decision: Rules and AI determine the owner, recommended play, risk level, approval requirement, and best execution surface.
+
+  4. Action: Work appears in Salesforce, Slack, Gmail, HubSpot, Gong Engage, or Google Workspace with a clear owner and next step.
+
+  5. Measurement: Celtra tracks accepted recommendations, completed actions, meetings created, stage movement, trial conversion, expansion, retention, and forecast impact.
+
+  Add a table:
+
+  Core tool | Today | Tomorrow | Add-on or deeper capability to evaluate
+
+  Add three recommendation cards:
+
+  1. Gong Engage
+
+     Label: Buy if execution needs scale
+
+     Message: Best fit if Celtra wants governed outbound and follow-up execution tightly connected to Gong insights.
+
+     Bullets: Sequence governance; Call-to-follow-up workflows; Persona plays; Activity measurement.
+
+  2. Agentforce
+
+     Label: Buy if Salesforce is the action hub
+
+     Message: Best fit if Celtra wants AI recommendations and workflow agents embedded directly into Salesforce records and seller work.
+
+     Bullets: Account and opportunity agents; Next-best-action guidance; Case and workflow agents; Human-approved execution.
+
+  3. Data + orchestration add-ons
+
+     Label: Buy only when the data model is ready
+
+     Message: Evaluate Hightouch, Clay, n8n, Make, or enrichment platforms when the signal taxonomy and ownership rules are clear.
+
+     Bullets: Reverse ETL; Account/contact enrichment; External research automation; Workflow orchestration.
+
+CSS requirements:
+
+Create responsive styling if needed for:
+
+.stack-state-grid
+
+.stack-state
+
+.stack-state-head
+
+.stack-state-body
+
+.stack-row
+
+.stack-tool
+
+.stack-desc
+
+.tomorrow-flow
+
+.tomorrow-flow-grid
+
+.tomorrow-flow-card
+
+.upgrade-grid
+
+.upgrade-card
+
+Make the layout:
+
+- Two columns on desktop for Today/Tomorrow
+
+- Five compact cards for the operating flow
+
+- Three cards for recommendations
+
+- Single column on mobile
+
+Do not break the existing show(section, event) behavior.
+
+Do not change existing section IDs except nav numbering labels.
