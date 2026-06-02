@@ -6,6 +6,10 @@
 <title>Celtra GTM Stack · Signal-Based Selling Architecture</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
   :root {
     --ink: #0f0e0c;
     --paper: #f5f2ec;
@@ -99,7 +103,7 @@
   .exec-hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; margin-bottom: 24px; }
   .exec-hero-main { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 34px 38px; border: 1px solid #2a2824; }
   .exec-hero-main .eyebrow { margin-bottom: 12px; }
-  .exec-hero-main h2 { font-family: 'DM Serif Display', serif; font-size: 2.35rem; line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 920px; }
+  .exec-hero-main h2 { font-family: 'Celtra Favorit', serif; font-size: 2.35rem; line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 920px; }
   .exec-hero-main h2 em { color: var(--accent); font-style: normal; }
   .exec-hero-main p { color: #d8d3c8; font-size: 1rem; line-height: 1.62; max-width: 960px; }
   .exec-hero-side { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 26px 28px; }
@@ -365,17 +369,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </table>
   </div>
 
-  <table style="margin-top:22px;">
-    <thead><tr><th>Workstream</th><th>RevOps can own now</th><th>Partner dependency</th><th>Decision needed</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Signal taxonomy</strong></td><td>Define practical GTM categories and pilot fields in Salesforce.</td><td>DI creates governed enterprise definitions and shared semantic layer.</td><td>Which signals are official enough to trigger action?</td></tr>
-      <tr><td><strong>Account/customer graph</strong></td><td>Use Salesforce account hierarchy and validated contacts for workflow routing.</td><td>DI unifies CRM accounts, product users, domains, parent/child relationships, and customer entities.</td><td>What is the canonical account identity?</td></tr>
-      <tr><td><strong>AI recommendations</strong></td><td>Use Claude to draft briefs and recommendations for human review.</td><td>Security/DI define approved AI access pattern, permissions, prompt governance, audit logs, and feedback loop.</td><td>Where should recommendations live and how should outcomes be logged?</td></tr>
-      <tr><td><strong>Workflow execution</strong></td><td>Use Salesforce tasks, Gmail drafts, Slack alerts, HubSpot workflows, and Salesforce Flow.</td><td>Functional leaders enforce adoption and approve cross-system automation boundaries.</td><td>Which actions stay in Salesforce versus a durable orchestration layer?</td></tr>
-      <tr><td><strong>Tool rationalization</strong></td><td>Audit Outreach, Sales Nav, LeadIQ, Clay candidates, and actual user behavior.</td><td>Finance and functional leaders align renewal/budget decisions to measurable workflow value.</td><td>Which tools provide unique signal, context, execution, or measurement value?</td></tr>
-    </tbody>
-  </table>
-
   <div class="section-sub" style="margin-top:32px;">What RevOps needs from partner teams</div>
   <table>
     <thead><tr><th>Team</th><th>Needed contribution</th><th>Why it matters</th><th>Near-term artifact</th></tr></thead>
@@ -388,16 +381,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </tbody>
   </table>
 
-  <div class="section-sub" style="margin-top:32px;">Use case prioritization</div>
-  <table>
-    <thead><tr><th>Priority bucket</th><th>Business value</th><th>Technical / AI readiness</th><th>Recommended workflows</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Start here</strong></td><td>High</td><td>High</td><td>Meeting prep, post-meeting follow-up, stalled opportunity recovery, demo readiness, renewal readiness, high-fit HubSpot engagement, campaign learning loop, and content gap intelligence.</td></tr>
-      <tr><td><strong>Build next</strong></td><td>High</td><td>Medium</td><td>Trial audit, competitive follow-up, late-stage close plan, support escalation, SC technical evaluation, and customer proof loop.</td></tr>
-      <tr><td><strong>Scale after validation</strong></td><td>High</td><td>Lower today</td><td>Usage-based expansion, enrichment-driven account selection, contact gap automation, closed-lost reactivation, AEO narrative optimization, market-triggered ABM, and multi-agent orchestration.</td></tr>
-      <tr><td><strong>Defer</strong></td><td>Unproven</td><td>Variable</td><td>Fully autonomous outbound, broad omni-agent chat, ungoverned AI SDR workflows, anonymous visitor intelligence as a Phase 1 foundation, and workflows without a clear owner or success metric.</td></tr>
-    </tbody>
-  </table>
 </section>
 <section class="section" id="sec-architecture">
   <div class="section-title">Stack Architecture</div>
@@ -406,20 +389,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <h3>Use the Agentic Enterprise architecture as the organizing model.</h3>
     <p>The stack should be explained as four connected systems: the system of engagement where users interact, the system of agency where agents reason and recommend, the system of work where business processes execute, and the system of context where governed data, enrichment, product usage, and conversation history live.</p>
   </div>
-  <div class="plain-card" style="margin-bottom:24px; text-align:center;">
-    <div class="metric-label">Executive operating model</div>
-    <div style="display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:14px; margin-top:10px; font-size:16px; line-height:22px;">
-      <div class="step">Signals</div>
-      <div class="arrow">→</div>
-      <div class="step ai">AI reasoning</div>
-      <div class="arrow">→</div>
-      <div class="step">Recommended action</div>
-      <div class="arrow">→</div>
-      <div class="step">Human execution</div>
-      <div class="arrow">→</div>
-      <div class="step">Outcome learning</div>
-    </div>
-  </div>
+
   <div class="grid-2" style="margin-bottom:24px;">
     <div class="plain-card"><div class="metric-label">System of engagement</div><p><strong>Where users experience the agentic workflow:</strong> Salesforce UI, Slack, Gmail, dashboards, and manager views.</p></div>
     <div class="plain-card"><div class="metric-label">System of agency</div><p><strong>Where AI reasons and recommends:</strong> Claude / Agentforce-style agents, prompts, play selection, routing logic, and human approval steps.</p></div>
@@ -436,7 +406,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         <div class="tool eval"><span class="badge b-gap">Evaluate</span><div class="tool-name">Clay</div><div class="tool-role">External account/person<br>enrichment + research</div></div>
         <div class="tool eval"><span class="badge b-eval">Audit</span><div class="tool-name">LeadIQ</div><div class="tool-role">Contact capture<br>data quality + overlap review</div></div>
       </div>
-      <div class="arch-value"><strong>Value:</strong> The enrichment layer adds external account, market, content, and contact context before a signal becomes actionable. Phase 1 should use MediaRadar, HubSpot, Gong, Snowflake, and Salesforce as the trusted core; evaluate Peec AI for AEO visibility and Clay for account/contact enrichment. Do not assume anonymous visitor intelligence or 6sense-style intent is required yet.</div>
+      <div class="arch-value"><strong>Value:</strong> The enrichment layer adds external account, market, content, and contact context before a signal becomes actionable. Phase 1 should use MediaRadar, HubSpot, Gong, Snowflake, and Salesforce as the trusted core; evaluate Peec AI for AEO visibility and Clay for account/contact enrichment.</div>
     </div>
     <div class="arch-row">
       <div class="arch-label"><small>Layer 01</small><strong>Signal Sources</strong></div>
@@ -568,10 +538,9 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <tr><td><strong>HubSpot</strong></td><td>Marketing engagement signal source for forms, events, nurture, page visits, campaign membership, and demand context.</td><td>Is engagement being routed with ICP context and next-best action, or only passed as generic MQL volume?</td><td class="rec-keep">Keep as marketing layer</td><td>High-fit engagement alerts, multi-contact account engagement, MQL-to-meeting conversion, and campaign-to-pipeline attribution.</td></tr>
       <tr><td><strong>MediaRadar</strong></td><td>Advertiser and market intelligence source for account relevance, media spend context, and market motion.</td><td>Can MediaRadar help prioritize accounts and personalize account context without becoming another unused research tool?</td><td class="rec-keep">Keep + operationalize</td><td>Target account relevance, market-triggered account briefs, ABM list quality, AE acceptance, and pipeline influenced from MediaRadar-supported plays.</td></tr>
       <tr><td><strong>Peec AI</strong></td><td>Candidate AEO and AI-search visibility layer for category narrative, competitor presence, and content gaps.</td><td>Can Peec AI produce actionable content and narrative decisions that Sales and Marketing can use, not just visibility reporting?</td><td class="rec-eval">Evaluate</td><td>AI-search visibility gaps, content updates shipped, narrative adoption by Sales, traffic or engagement lift, and reduction in recurring buyer confusion.</td></tr>
-      <tr><td><strong>Anonymous visitor intelligence</strong></td><td>Not recommended as a Phase 1 foundation. Company-level identity can be useful, but person-level claims are often unreliable, so this should wait behind first-party HubSpot, Salesforce, Gong, Pendo, and Snowflake signals.</td><td>Is there enough traffic volume, ICP focus, and seller adoption to make this more valuable than first-party engagement signals?</td><td class="rec-cut">Defer</td><td>Only revisit if repeated account-level website activity can be validated against known engagement, opp creation, or conversion lift.</td></tr>
       <tr><td><strong>Gong</strong></td><td>Conversation intelligence source for objections, competitors, sentiment, next steps, stakeholder gaps, and forecast risk.</td><td>Can Gong outputs become structured triggers instead of post-call notes sellers have to remember?</td><td class="rec-keep">Keep + activate API</td><td>Competitor mentions, no-next-step flags, sentiment/risk signals, manager coaching queues, and stage progression after intervention.</td></tr>
       <tr><td><strong>Pendo</strong></td><td>Product usage event source for adoption, usage expansion, usage drop, feature engagement, and new team activity.</td><td>Can Pendo events, joined with Snowflake, reliably trigger expansion and churn-prevention workflows?</td><td class="rec-keep">Keep + connect to GTM</td><td>Usage spike/drop detection, active user growth, feature adoption, account health movement, expansion opps, and risk reduction.</td></tr>
-      <tr><td><strong>NetSuite</strong></td><td>Billing processing system only, used after the commercial motion is complete.</td><td>How do we keep NetSuite out of GTM trigger logic while preserving clean handoff from Salesforce orders to billing?</td><td class="rec-keep">Keep as billing-only</td><td>Accurate billing handoff, invoice processing, and reconciliation. No GTM alerts, no trial triggers, no deal-stage triggers.</td></tr>
+      <tr><td><strong>NetSuite</strong></td><td>Billing processing system only, used after the commercial motion is complete.</td><td>How do we stay on top of clients who are behind on payments?</td><td class="rec-keep">Continue as usual</td><td>Accurate billing handoff, invoice processing, and reconciliation. Can CSMs be notified early in the process of billing issues?</td></tr>
       <tr><td><strong>SpotDraft</strong></td><td>Contract workflow and legal/commercial terms source for review status, clauses, approvals, signature progress, and renewal notice windows.</td><td>Can SpotDraft and Salesforce become the single operating layer for contract status and commercial readiness?</td><td class="rec-keep">Keep + integrate</td><td>Contract stuck alerts, signature status, non-standard terms, approval blockers, renewal notice windows, and deal-cycle impact.</td></tr>
       <tr><td><strong>Novatus Contracts</strong></td><td>Legacy contract repository currently being replaced by SpotDraft and Salesforce.</td><td>What contract data must be migrated or archived so teams stop depending on Novatus for active commercial work?</td><td class="rec-cut">Churn / replace</td><td>Migration completeness, searchable legacy archive, active contract coverage in SpotDraft, and Salesforce references to the correct contract source.</td></tr>
     </tbody>
@@ -585,31 +554,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <h3>Success should be measured by action quality and revenue impact, not by the volume of AI recommendations.</h3>
     <p>The goal is not to create more alerts. The goal is to create fewer, better-timed actions that sellers, SCs, and CSMs trust enough to act on, and that answer the executive test: did this improve conversion, adoption, expansion, retention, or forecast quality?</p>
   </div>
-
-  <table>
-    <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>CEO-facing outcome</th></tr></thead>
-    <tbody>
-      <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
-      <tr><td>Buying committee development</td><td>New target personas engaged per account</td><td>Persona coverage, stakeholder validation, and nurture engagement</td><td>Better account penetration and less single-threaded demand</td></tr>
-      <tr><td>Content gap intelligence</td><td>Priority content gaps closed</td><td>Gong objection frequency, asset usage, and stage progression after asset launch</td><td>Marketing creates content that directly removes sales friction</td></tr>
-      <tr><td>AEO visibility and narrative gap</td><td>High-priority AI-search gaps resolved</td><td>Peec AI visibility movement, content updates shipped, and Sales narrative adoption</td><td>Celtra is represented more accurately where buyers are researching</td></tr>
-      <tr><td>Campaign learning loop</td><td>Campaign-to-opportunity conversion quality</td><td>Buying group engagement, meetings influenced, stage movement, and pipeline influenced</td><td>Marketing budget shifts toward campaigns that create revenue movement, not just engagement</td></tr>
-      <tr><td>Usage spike expansion</td><td>Expansion opps created</td><td>Time from signal to AE/CSM action</td><td>More expansion from product adoption</td></tr>
-      <tr><td>Renewal risk</td><td>Risks reduced before renewal</td><td>Usage recovery / ticket resolution</td><td>Lower churn risk and fewer surprises</td></tr>
-      <tr><td>Competitor mention</td><td>Competitive follow-ups completed</td><td>Stage progression / win rate</td><td>More disciplined deal execution</td></tr>
-      <tr><td>Stalled opp recovery</td><td>Next steps confirmed or deals qualified out</td><td>Stage aging reduction</td><td>Cleaner forecast and less pipeline fiction</td></tr>
-      <tr><td>New stakeholder / contact gap</td><td>New target contacts engaged</td><td>Multi-threading coverage</td><td>Better account penetration</td></tr>
-      <tr><td>Trial account audit</td><td>Trial-to-close conversion</td><td>Activation, target-feature usage, buyer engagement, and legal/deal-desk readiness</td><td>Higher trial conversion and fewer end-of-trial surprises</td></tr>
-      <tr><td>AE meeting prep</td><td>Meeting-to-next-step conversion</td><td>Prep completion, stakeholder coverage, and buyer-specific agenda quality</td><td>Better discovery and executive conversations without extra headcount</td></tr>
-      <tr><td>Post-meeting conversion</td><td>Next steps created within 24 hours</td><td>Follow-up sent, mutual action plan created, and stalled-after-meeting rate</td><td>More buyer momentum from meetings already earned</td></tr>
-      <tr><td>Late-stage close plan</td><td>Deals closing without commercial blockers</td><td>Legal status, deal desk approval, quote readiness, and procurement path clarity</td><td>Cleaner commit deals and fewer quarter-end surprises</td></tr>
-      <tr><td>SC demo qualification</td><td>Demo-to-next-step conversion</td><td>Demo plan quality, technical question coverage, and AE/SC prep completion</td><td>Higher-quality demos tied to real buyer pain</td></tr>
-      <tr><td>SC technical evaluation</td><td>Proof-plan completion</td><td>Trial activation, success-criteria progress, and technical blocker resolution</td><td>More evaluations converting into commercial momentum</td></tr>
-      <tr><td>CS onboarding activation</td><td>Time to first value</td><td>Admin setup, active users, template creation, and invited-user activation</td><td>Faster adoption after close</td></tr>
-      <tr><td>CS support escalation</td><td>Risk cases resolved before renewal</td><td>Ticket aging, escalation response time, and customer comms completion</td><td>Fewer support surprises in renewal and expansion cycles</td></tr>
-      <tr><td>CS renewal readiness</td><td>Renewal risk reduced before notice window</td><td>Usage health, support themes, stakeholder coverage, and value proof readiness</td><td>Cleaner renewals and stronger account retention</td></tr>
-    </tbody>
-  </table>
 
   <div class="grid-3" style="margin-top:22px;">
     <div class="plain-card">
@@ -640,6 +584,31 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <p>Review real conversations and action outcomes. Tune prompts, signal thresholds, routing rules, source data, and success metrics before expanding automation.</p>
     </div>
   </div>
+  
+  <table>
+    <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>Outcome</th></tr></thead>
+    <tbody>
+      <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
+      <tr><td>Buying committee development</td><td>New target personas engaged per account</td><td>Persona coverage, stakeholder validation, and nurture engagement</td><td>Better account penetration and less single-threaded demand</td></tr>
+      <tr><td>Content gap intelligence</td><td>Priority content gaps closed</td><td>Gong objection frequency, asset usage, and stage progression after asset launch</td><td>Marketing creates content that directly removes sales friction</td></tr>
+      <tr><td>AEO visibility and narrative gap</td><td>High-priority AI-search gaps resolved</td><td>Peec AI visibility movement, content updates shipped, and Sales narrative adoption</td><td>Celtra is represented more accurately where buyers are researching</td></tr>
+      <tr><td>Campaign learning loop</td><td>Campaign-to-opportunity conversion quality</td><td>Buying group engagement, meetings influenced, stage movement, and pipeline influenced</td><td>Marketing budget shifts toward campaigns that create revenue movement, not just engagement</td></tr>
+      <tr><td>Usage spike expansion</td><td>Expansion opps created</td><td>Time from signal to AE/CSM action</td><td>More expansion from product adoption</td></tr>
+      <tr><td>Renewal risk</td><td>Risks reduced before renewal</td><td>Usage recovery / ticket resolution</td><td>Lower churn risk and fewer surprises</td></tr>
+      <tr><td>Competitor mention</td><td>Competitive follow-ups completed</td><td>Stage progression / win rate</td><td>More disciplined deal execution</td></tr>
+      <tr><td>Stalled opp recovery</td><td>Next steps confirmed or deals qualified out</td><td>Stage aging reduction</td><td>Cleaner forecast and less pipeline fiction</td></tr>
+      <tr><td>New stakeholder / contact gap</td><td>New target contacts engaged</td><td>Multi-threading coverage</td><td>Better account penetration</td></tr>
+      <tr><td>Trial account audit</td><td>Trial-to-close conversion</td><td>Activation, target-feature usage, buyer engagement, and legal/deal-desk readiness</td><td>Higher trial conversion and fewer end-of-trial surprises</td></tr>
+      <tr><td>AE meeting prep</td><td>Meeting-to-next-step conversion</td><td>Prep completion, stakeholder coverage, and buyer-specific agenda quality</td><td>Better discovery and executive conversations without extra headcount</td></tr>
+      <tr><td>Post-meeting conversion</td><td>Next steps created within 24 hours</td><td>Follow-up sent, mutual action plan created, and stalled-after-meeting rate</td><td>More buyer momentum from meetings already earned</td></tr>
+      <tr><td>Late-stage close plan</td><td>Deals closing without commercial blockers</td><td>Legal status, deal desk approval, quote readiness, and procurement path clarity</td><td>Cleaner commit deals and fewer quarter-end surprises</td></tr>
+      <tr><td>SC demo qualification</td><td>Demo-to-next-step conversion</td><td>Demo plan quality, technical question coverage, and AE/SC prep completion</td><td>Higher-quality demos tied to real buyer pain</td></tr>
+      <tr><td>SC technical evaluation</td><td>Proof-plan completion</td><td>Trial activation, success-criteria progress, and technical blocker resolution</td><td>More evaluations converting into commercial momentum</td></tr>
+      <tr><td>CS onboarding activation</td><td>Time to first value</td><td>Admin setup, active users, template creation, and invited-user activation</td><td>Faster adoption after close</td></tr>
+      <tr><td>CS support escalation</td><td>Risk cases resolved before renewal</td><td>Ticket aging, escalation response time, and customer comms completion</td><td>Fewer support surprises in renewal and expansion cycles</td></tr>
+      <tr><td>CS renewal readiness</td><td>Renewal risk reduced before notice window</td><td>Usage health, support themes, stakeholder coverage, and value proof readiness</td><td>Cleaner renewals and stronger account retention</td></tr>
+    </tbody>
+  </table>
 </section>
 </main>
 <div class="footer"><span>Celtra Revenue Operations · Signal-Based GTM Stack · May 2026</span><span>Confidential · Internal use</span></div>
