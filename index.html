@@ -96,11 +96,39 @@
   .rec-eval { color: var(--amber); font-weight: 700; }
   .rec-cut { color: var(--accent); font-weight: 700; }
   .footer { margin-top: 64px; padding: 24px 60px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
+  .exec-hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; margin-bottom: 24px; }
+  .exec-hero-main { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 34px 38px; border: 1px solid #2a2824; }
+  .exec-hero-main .eyebrow { margin-bottom: 12px; }
+  .exec-hero-main h2 { font-family: 'DM Serif Display', serif; font-size: 2.35rem; line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 920px; }
+  .exec-hero-main h2 em { color: var(--accent); font-style: normal; }
+  .exec-hero-main p { color: #d8d3c8; font-size: 1rem; line-height: 1.62; max-width: 960px; }
+  .exec-hero-side { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 26px 28px; }
+  .exec-hero-side h3 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; line-height: 1.15; margin-bottom: 12px; }
+  .exec-hero-side p { color: var(--muted); font-size: .86rem; line-height: 1.52; margin-bottom: 12px; }
+  .exec-stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 22px 0 24px; }
+  .exec-stack-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; min-height: 160px; }
+  .exec-stack-card h3 { font-family: 'DM Serif Display', serif; font-size: 1.18rem; line-height: 1.18; margin-bottom: 8px; }
+  .exec-stack-card p { color: var(--muted); font-size: .8rem; line-height: 1.5; }
+  .exec-shift { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 26px 30px; margin-bottom: 24px; }
+  .exec-shift h3 { font-family: 'DM Serif Display', serif; font-size: 1.65rem; line-height: 1.15; margin-bottom: 16px; }
+  .exec-flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 12px 0 18px; }
+  .exec-flow-step { background: var(--paper2); border: 1px solid var(--rule); border-radius: 8px; padding: 12px 10px; text-align: center; font-size: .74rem; line-height: 1.35; font-weight: 700; }
+  .exec-flow-step.ai { background: var(--amber-bg); color: var(--amber); }
+  .exec-flow-step.approval { background: var(--green-bg); color: var(--accent3); }
+  .exec-decisions { display: grid; grid-template-columns: .8fr 1.2fr; gap: 18px; align-items: stretch; margin-top: 24px; }
+  .exec-decision-lead { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 28px 30px; }
+  .exec-decision-lead h3 { font-family: 'DM Serif Display', serif; font-size: 1.65rem; line-height: 1.12; margin-bottom: 12px; }
+  .exec-decision-lead p { color: #d8d3c8; font-size: .9rem; line-height: 1.55; }
+  .exec-outcomes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 22px; }
+  .exec-outcome { background: var(--white); border: 1px solid var(--rule); border-radius: 9px; padding: 16px 14px; }
+  .exec-outcome strong { display:block; font-size:.88rem; line-height:1.2; margin-bottom:6px; }
+  .exec-outcome span { display:block; color:var(--muted); font-size:.74rem; line-height:1.35; }
   @media (max-width: 920px) {
     .header, nav, main, .footer { padding-left: 20px; padding-right: 20px; }
     .header-right { display:none; }
     .header-left h1 { font-size: 2rem; }
-    .grid-3, .grid-2, .workflow-grid { grid-template-columns: 1fr; }
+    .grid-3, .grid-2, .workflow-grid, .exec-hero, .exec-stack, .exec-decisions, .exec-outcomes { grid-template-columns: 1fr; }
+    .exec-flow { grid-template-columns: 1fr 1fr; }
     .arch-row { grid-template-columns: 1fr; }
     .arch-value { border-left: 0; border-top: 1px solid var(--rule); }
   }
@@ -195,53 +223,96 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   <button onclick="show('metrics', event)">⑨ Success Metrics</button>
 </nav>
 <main>
-<section class="section active" id="sec-thesis">
-  <div class="section-title">Executive Narrative</div>
-  <div class="section-sub">What we are building, why it matters, and what leadership needs to align on</div>
-  <div class="callout">
-    <h3>Celtra does not need a collection of AI experiments. We need a governed signal-to-action operating model for GTM.</h3>
-    <p>Revenue Operations should help turn scattered GTM activity into coordinated execution: identify meaningful customer and market signals, decide which role owns the next action, provide trusted context, route work through the systems teams already use, and measure whether the action improved conversion, adoption, expansion, retention, or forecast quality.</p>
-  </div>
-  <div class="grid-2" style="margin-bottom:24px;">
-    <div class="plain-card">
-      <div class="metric-label">Strategic bet</div>
-      <p><strong>Snowflake should become Celtra's governed GTM data record and trust layer.</strong> Account, product, customer, support, commercial, engagement, and outcome signals should be modeled there, then exposed through controlled workflows in Salesforce, Slack, Gmail, HubSpot, Claude, and dashboards.</p>
+  <section class="section active" id="sec-thesis">
+    <div class="section-title">Executive Narrative</div>
+    <div class="section-sub">Celtra's path from disconnected GTM signals to coordinated revenue execution</div>
+  
+    <div class="exec-hero">
+      <div class="exec-hero-main">
+        <div class="eyebrow">Executive thesis</div>
+        <h2>Celtra's next GTM advantage is not more data. It is <em>better coordination.</em></h2>
+        <p>Celtra already captures meaningful signals across the customer lifecycle: marketing engagement, buyer conversations, product adoption, support risk, commercial activity, contract progress, and market intelligence. The opportunity is to turn those disconnected signals into a governed operating model that helps every GTM team know what changed, who owns the next step, what action to take, and whether it worked.</p>
+      </div>
+      <div class="exec-hero-side">
+        <div class="metric-label">Why this matters now</div>
+        <h3>AI is useful only when the operating model is clear.</h3>
+        <p>AI can summarize, recommend, draft, score, and route. But without shared signal definitions, ownership rules, source-of-truth decisions, and outcome measurement, automation will only scale inconsistency.</p>
+        <p><strong>RevOps should become the orchestration layer that connects Celtra's systems, teams, and customer motions.</strong></p>
+      </div>
     </div>
-    <div class="plain-card">
-      <div class="metric-label">Operating posture</div>
-      <p><strong>Salesforce remains the revenue operating surface.</strong> RevOps should not create a second source of truth. We should design workflows that use Salesforce for account ownership, tasks, opportunity/customer context, and outcome logging while Snowflake becomes the trusted data foundation underneath.</p>
+  
+    <div class="exec-stack">
+      <div class="exec-stack-card">
+        <div class="metric-label">Signal reality</div>
+        <h3>Celtra has signals everywhere.</h3>
+        <p>HubSpot, Gong, Pendo, Zendesk, Salesforce, SpotDraft, MediaRadar, Gmail, and Slack all capture fragments of customer and market intent.</p>
+      </div>
+      <div class="exec-stack-card">
+        <div class="metric-label">Operating gap</div>
+        <h3>The signals do not consistently become action.</h3>
+        <p>Marketing sees engagement. Sales sees pipeline. SC sees evaluations. CS sees adoption and risk. Leadership sees forecasts. The connective tissue is still too manual.</p>
+      </div>
+      <div class="exec-stack-card">
+        <div class="metric-label">Strategic bet</div>
+        <h3>Snowflake becomes the trust layer.</h3>
+        <p>Snowflake should model governed account, product, customer, commercial, and outcome data so Celtra can decide which signals are reliable enough to trigger action.</p>
+      </div>
+      <div class="exec-stack-card">
+        <div class="metric-label">Operating surface</div>
+        <h3>Salesforce remains the revenue front door.</h3>
+        <p>Recommended actions should appear where teams already work: Salesforce, Slack, Gmail, HubSpot, dashboards, and manager views.</p>
+      </div>
     </div>
-  </div>
-  <div class="plain-card" style="margin-top:18px;">
-    <div class="metric-label">Narrative arc</div>
+  
+    <div class="exec-shift">
+      <div class="metric-label">The shift</div>
+      <h3>Celtra is not building AI experiments. Celtra is building a signal-to-action system.</h3>
+      <div class="exec-flow">
+        <div class="exec-flow-step">Signal detected</div>
+        <div class="exec-flow-step ai">AI reasoning</div>
+        <div class="exec-flow-step">Owner assigned</div>
+        <div class="exec-flow-step approval">Human approval</div>
+        <div class="exec-flow-step">Action executed</div>
+        <div class="exec-flow-step">Outcome measured</div>
+      </div>
+      <p>Every workflow should start with a named customer, market, product, commercial, or operational signal. The system determines whether the signal matters, which role owns the next step, what action is recommended, where the action should happen, and how Celtra will measure whether the recommendation improved pipeline, conversion, adoption, expansion, retention, or forecast quality.</p>
+    </div>
+  
     <table>
-      <thead><tr><th>Today</th><th>What changes</th><th>Leadership implication</th></tr></thead>
+      <thead><tr><th>Celtra today</th><th>What changes</th><th>Why leadership should care</th></tr></thead>
       <tbody>
-        <tr><td>Manual research and generic sequencing</td><td>Role-specific briefs and recommended plays based on named signals</td><td>AI is used to improve timing and context, not to create more outbound noise.</td></tr>
-        <tr><td>Disconnected handoffs across Marketing, Sales, SC, and CS</td><td>Shared signal definitions, account context, action owners, and outcome measurement</td><td>Functional leaders need to agree on ownership rules and adoption expectations.</td></tr>
-        <tr><td>Data spread across engagement, product, CRM, support, and contract systems</td><td>Snowflake-modeled signals surfaced back through controlled front-end workflows</td><td>DI and RevOps need a shared architecture before automation scales.</td></tr>
-        <tr><td>Quarterly reviews and reactive renewal motions</td><td>Continuous monitoring for pipeline, trial, expansion, adoption, support, and renewal signals</td><td>Success is measured by conversion, adoption, expansion, retention, and forecast quality.</td></tr>
+        <tr><td>Teams research accounts, calls, activity, usage, and risks manually.</td><td>AI-assisted briefs surface relevant context from trusted systems.</td><td>Less time spent searching; more time spent acting with the right customer context.</td></tr>
+        <tr><td>Marketing, Sales, SC, CS, Legal, and Finance see different slices of the customer journey.</td><td>Shared signal definitions connect engagement, evaluation, adoption, contract, and commercial readiness.</td><td>Cleaner handoffs and fewer missed moments across the revenue lifecycle.</td></tr>
+        <tr><td>Salesforce captures commercial activity, but many signals live outside the CRM.</td><td>Snowflake becomes the governed data foundation, with Salesforce as the operating surface.</td><td>Better trust in recommendations and less pressure to force every signal into Salesforce first.</td></tr>
+        <tr><td>AI value is fragmented across tools and one-off workflows.</td><td>AI is governed around specific use cases: summarize, recommend, draft, route, score, and measure.</td><td>Celtra scales useful decision support without creating uncontrolled autonomous selling.</td></tr>
       </tbody>
     </table>
-  </div>
-  <div class="grid-3" style="margin-top:22px;">
-    <div class="metric-card">
-      <div class="metric-label">Question 01</div>
-      <h3>What changed?</h3>
-      <p>Every workflow starts with a named signal: buyer engagement, trial activity, usage change, stakeholder movement, support risk, commercial blocker, or renewal window.</p>
+  
+    <div class="exec-decisions">
+      <div class="exec-decision-lead">
+        <h3>Leadership alignment determines whether this scales.</h3>
+        <p>The technology decisions matter, but the operating decisions matter more. Celtra needs shared rules for which signals are trusted, who owns the response, where recommendations live, and how outcomes are measured.</p>
+      </div>
+      <table>
+        <thead><tr><th>Decision</th><th>Definition Celtra needs</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Trusted signals</strong></td><td>Which customer, market, product, engagement, contract, and support signals are reliable enough to trigger action?</td></tr>
+          <tr><td><strong>Source of truth</strong></td><td>Which data lives in Salesforce, which data is modeled in Snowflake, and which tools provide context only?</td></tr>
+          <tr><td><strong>Action ownership</strong></td><td>When does the next step belong to Marketing, AE, SC, CSM, Deal Desk, Legal, Support, Finance, or leadership?</td></tr>
+          <tr><td><strong>Recommendation surface</strong></td><td>Where should each team receive and complete work: Salesforce, Slack, Gmail, HubSpot, dashboards, or manager views?</td></tr>
+          <tr><td><strong>Outcome measurement</strong></td><td>How will Celtra measure accepted recommendations, completed actions, pipeline movement, trial conversion, expansion, risk reduction, and forecast quality?</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="metric-card">
-      <div class="metric-label">Question 02</div>
-      <h3>Who owns action?</h3>
-      <p>Marketing, AE, SC, CSM, Legal, Deal Desk, Support, or leadership owns the next step based on the signal and account context.</p>
+  
+    <div class="exec-outcomes">
+      <div class="exec-outcome"><strong>Pipeline creation</strong><span>High-fit engagement becomes timely seller action.</span></div>
+      <div class="exec-outcome"><strong>Deal progression</strong><span>Stalled opportunities get recovery plays and manager visibility.</span></div>
+      <div class="exec-outcome"><strong>Trial conversion</strong><span>Evaluations are actively audited against success criteria and blockers.</span></div>
+      <div class="exec-outcome"><strong>Expansion</strong><span>Usage growth and white space become AE + CSM value motions.</span></div>
+      <div class="exec-outcome"><strong>Retention</strong><span>Usage drops, support risk, and renewal windows trigger earlier intervention.</span></div>
     </div>
-    <div class="metric-card">
-      <div class="metric-label">Question 03</div>
-      <h3>Did it work?</h3>
-      <p>Recommendations must produce measurable outcomes: meetings, stage progression, trial conversion, expansion pipeline, risk reduction, or forecast hygiene.</p>
-    </div>
-  </div>
-</section>
+  </section>
 <section class="section" id="sec-operating-plan">
   <div class="section-title">Operating Plan</div>
   <div class="section-sub">How RevOps pilots controlled workflows while the data foundation matures</div>
