@@ -308,14 +308,6 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         </tbody>
       </table>
     </div>
-  
-    <div class="exec-outcomes">
-      <div class="exec-outcome"><strong>Pipeline creation</strong><span>High-fit engagement becomes timely seller action.</span></div>
-      <div class="exec-outcome"><strong>Deal progression</strong><span>Stalled opportunities get recovery plays and manager visibility.</span></div>
-      <div class="exec-outcome"><strong>Trial conversion</strong><span>Evaluations are audited against success criteria and blockers.</span></div>
-      <div class="exec-outcome"><strong>Expansion</strong><span>Usage growth and white space become AE + CSM value motions.</span></div>
-      <div class="exec-outcome"><strong>Retention</strong><span>Usage drops, support risk, and renewal windows trigger earlier intervention.</span></div>
-    </div>
   </section>
 <section class="section" id="sec-operating-plan">
   <div class="section-title">Operating Plan</div>
@@ -352,6 +344,96 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="plain-card">
       <div class="metric-label">Governance boundary</div>
       <p><strong>Agents can summarize, recommend, draft, route, score, and prioritize.</strong> They cannot autonomously negotiate pricing, send unrestricted outbound communication, modify contracts, or update critical customer/commercial data. Customer-facing sends, contract changes, pricing actions, and critical record updates require human approval.</p>
+    </div>
+  </div>
+  <div class="section-sub" style="margin-top:32px;">When do we agent, and when do we human?</div>
+
+  <div class="plain-card" style="margin-bottom:24px;">
+    <div class="metric-label">Decision framework</div>
+    <p style="margin-bottom:24px;"><strong>The goal is not to maximize AI usage.</strong> The goal is to improve GTM outcomes with the simplest reliable solution. Every workflow should start with automation, add AI only where interpretation is required, and introduce agents only when multiple decisions must be made dynamically.</p>
+
+    <div style="display:flex; flex-direction:column; align-items:center; gap:12px; margin:28px 0; text-align:center;">
+      <div class="step" style="padding:12px 18px; font-weight:700;">Can the workflow be fully mapped before build?</div>
+
+      <div style="font-size:22px; color:var(--muted);">↓</div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; max-width:900px;">
+
+        <div style="border:1px solid var(--rule); border-radius:12px; padding:18px; background:rgba(0,166,106,.06);">
+          <div class="metric-label">YES</div>
+          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; margin-bottom:8px;">Use Automation</h3>
+          <p>Salesforce Flow, validation rules, task creation, routing, alerts, approvals, SLAs, dashboards, and structured business logic.</p>
+        </div>
+
+        <div style="border:1px solid var(--rule); border-radius:12px; padding:18px; background:rgba(255,81,167,.06);">
+          <div class="metric-label">NO</div>
+          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; margin-bottom:8px;">Requires Interpretation</h3>
+          <p>The workflow depends on context, judgment, unstructured information, or dynamic decision making.</p>
+
+          <div style="margin-top:16px; display:flex; flex-direction:column; align-items:center; gap:10px;">
+            <div class="step">Does it require reasoning or judgment?</div>
+            <div style="font-size:20px; color:var(--muted);">↓</div>
+            <div class="step ai">AI Assistance</div>
+            <div style="font-size:20px; color:var(--muted);">↓</div>
+            <div class="step">Could it impact customers, contracts, pricing, forecasts, or commitments?</div>
+            <div style="font-size:20px; color:var(--muted);">↓</div>
+            <div class="step approval">Human Approval Required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table style="margin-bottom:24px;">
+    <thead>
+      <tr>
+        <th>Type of work</th>
+        <th>Best fit</th>
+        <th>Celtra example</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Rules-based execution</strong></td>
+        <td>Salesforce Flow / Automation</td>
+        <td>Create renewal tasks, route approvals, enforce stage requirements, trigger alerts.</td>
+      </tr>
+      <tr>
+        <td><strong>Signal detection</strong></td>
+        <td>Gong, HubSpot, Pendo, Salesforce</td>
+        <td>Competitor mention, engagement spike, usage decline, stalled opportunity.</td>
+      </tr>
+      <tr>
+        <td><strong>Interpretation</strong></td>
+        <td>Claude or Agentforce</td>
+        <td>Summarize risk, identify themes, recommend next steps, generate account briefs.</td>
+      </tr>
+      <tr>
+        <td><strong>Coordination</strong></td>
+        <td>Slack</td>
+        <td>Route work to AE, SC, CSM, leadership, or cross-functional teams.</td>
+      </tr>
+      <tr>
+        <td><strong>Execution</strong></td>
+        <td>Human</td>
+        <td>Run meetings, negotiate deals, manage customers, approve outbound communication.</td>
+      </tr>
+      <tr>
+        <td><strong>Learning</strong></td>
+        <td>Salesforce + Snowflake</td>
+        <td>Measure accepted recommendations, pipeline impact, conversion, retention, and forecast quality.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2" style="margin-bottom:28px;">
+    <div class="plain-card">
+      <div class="metric-label">Good agent candidates</div>
+      <p><strong>Meeting prep, post-call follow-up drafts, trial audits, renewal readiness reviews, expansion opportunity identification, account research, competitive intelligence summaries, and content-gap analysis.</strong></p>
+    </div>
+    <div class="plain-card">
+      <div class="metric-label">Keep human-owned</div>
+      <p><strong>Pricing decisions, contract negotiation, forecast commits, pipeline stage changes, customer-facing communication without review, renewal decisions, and commercial approvals.</strong></p>
     </div>
   </div>
 
