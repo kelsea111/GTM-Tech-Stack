@@ -217,7 +217,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 </div>
 <nav>
   <button class="active" onclick="show('thesis', event)">① The Big Opportunity</button>
-  <button onclick="show('operating-plan', event)">② Operating Plan</button>
+  <button onclick="show('operating-plan', event)">② Operating Model</button>
   <button onclick="show('architecture', event)">③ Stack Architecture</button>
   <button onclick="show('workflows', event)">④ Seller Workflows</button>
   <button onclick="show('marketing-workflows', event)">⑤ Marketing Workflows</button>
@@ -240,21 +240,20 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <div class="exec-hero-side">
         <div class="metric-label">Why now</div>
         <h3>The pace of GTM work is increasing faster than our operating model.</h3>
-        <p>AI can help teams summarize, prioritize, recommend, draft, and route work. But it only creates leverage when Celtra has shared rules for trusted signals, ownership, handoffs, approval, and measurement.</p>
-        <p><strong>The goal is not more automation. The goal is faster, more coordinated execution.</strong></p>
+        <p>We have rich signals scattered across HubSpot, Gong, Pendo, Zendesk, Salesforce, and Gmail. But teams see different slices of the customer journey. The work of connecting context, deciding ownership, and triggering action still depends on manual follow-up, heroics, and luck. As revenue cycles get longer and buyer committees get wider, we're stuck in a cycle where more signals mean more noise, not more clarity.</p>
       </div>
     </div>
   
     <div class="exec-stack">
       <div class="exec-stack-card">
-        <div class="metric-label">What we have</div>
-        <h3>Rich signals across the business.</h3>
-        <p>HubSpot, Gong, Pendo, Zendesk, Salesforce, Gmail, and Slack all capture important customer, market, product, and commercial context.</p>
+        <div class="metric-label">Current reality</div>
+        <h3>Teams spend time searching instead of selling.</h3>
+        <p>AEs search across Gong, Gmail, Salesforce, Slack, and account history to find context before calls. Marketing doesn't know if campaigns are moving deals. CS waits for renewal surprises instead of acting on adoption signals. Deal desk and legal don't have prioritized signals until late-stage.</p>
       </div>
       <div class="exec-stack-card">
-        <div class="metric-label">What gets in the way</div>
-        <h3>Signals are still too fragmented.</h3>
-        <p>Teams see different slices of the customer journey, and the work of connecting context, deciding ownership, and triggering action often depends on manual follow-up.</p>
+        <div class="metric-label">Cost of fragmentation</div>
+        <h3>Signal isolation kills timing and context.</h3>
+        <p>Expansion signals appear in Pendo, but Salesforce doesn't know. Competitor mentions appear in Gong, but only the AE who was on the call remembers. Renewal risk appears in usage, but CSMs don't see it until it's too late. We're leaving money on the table because the right person doesn't know the right signal in time.</p>
       </div>
       <div class="exec-stack-card">
         <div class="metric-label">What is possible</div>
@@ -283,19 +282,27 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </div>
   
     <table>
-      <thead><tr><th>Current reality</th><th>The big opportunity</th><th>Why it matters</th></tr></thead>
+      <thead><tr><th>Symptom</th><th>Root Cause</th><th>Implication</th></tr></thead>
       <tbody>
-        <tr><td>Teams spend time searching across systems, threads, calls, dashboards, and account history.</td><td>AI-assisted briefs bring trusted context to the person who needs to act.</td><td>Less time looking for information; more time moving customers, prospects, and deals forward.</td></tr>
-        <tr><td>Marketing, Sales, SC, CS, Legal, and Finance each see part of the customer journey.</td><td>Shared signal definitions connect engagement, evaluation, adoption, contract, commercial, and risk moments.</td><td>Cleaner handoffs, fewer missed moments, and better cross-functional accountability.</td></tr>
-        <tr><td>Salesforce captures commercial activity, but many signals originate outside the CRM.</td><td>Snowflake models trusted context, while Salesforce remains the place revenue teams act.</td><td>Celtra can use more of its data without forcing every signal to become a Salesforce field first.</td></tr>
-        <tr><td>AI value is emerging in isolated tools and one-off workflows.</td><td>AI is governed around specific jobs: summarize, recommend, draft, route, score, and measure.</td><td>Celtra scales decision support without losing human judgment or operational control.</td></tr>
+        <tr><td>Stalled opportunities linger because nobody noticed there's no next step</td>
+          <td>Forecast risk is invisible until weekly review</td>
+          <td>Pipeline fiction, forecasting innacuracy, and quarter-end surprises</td></tr>
+        <tr><td>Renewal churn surprises us; CSMs don't have adoption signals</td>
+          <td>Usage data lives in Pendo, not connected to customer health</td>
+          <td>Lower retention and harder expansion motion</td></tr>
+        <tr><td>Sales reps and CSMs spend time searching for account context instead of selling</td>
+          <td>Context is distributed across five systems with no single brief</td>
+          <td>Less time with customers; slower deal progression</td></tr>
+        <tr><td>Legal, finance, and deal desk aren't visible until it's too late</td>
+          <td>Commercial readiness (contract, approvals, terms) isn't surfaced early</td>
+          <td>Deals slip or close unprepared; vendor management friction</td></tr>
       </tbody>
     </table>
   
     <div class="exec-decisions">
       <div class="exec-decision-lead">
         <h3>To make this real, Celtra needs alignment on the operating rules.</h3>
-        <p>The tools matter, but the shared commitments matter more. The business needs agreement on which signals deserve action, who owns the response, where the work happens, and how success is measured.</p>
+        <p>This is the operating principle that guides every workflow, tool decision, and governance rule. Before we automate, add AI, or route work, we ask: What is the simplest reliable solution? When in doubt, we favor discipline over scale.</p>
       </div>
       <table>
         <thead><tr><th>Shared commitment</th><th>Decision Celtra needs</th></tr></thead>
@@ -310,7 +317,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </div>
   </section>
 <section class="section" id="sec-operating-plan">
-  <div class="section-title">Operating Plan</div>
+  <div class="section-title">Operating Model</div>
   <div class="section-sub">Build the house before buying the furniture</div>
   <div class="plain-card" style="padding:22px; margin-bottom:28px;">
 
@@ -374,12 +381,17 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
         </div>
       </div>
     </div>
-
-    <div class="callout" style="margin-top:28px; margin-bottom:0;">
-      <h3>Think of this deck as window shopping.</h3>
-      <p>It is useful to gather ideas early and imagine how people might work in the future. But we should avoid making major purchasing or architecture decisions until we know what kind of house we are building. The workflows in this document help define the desired experience; the foundation, walls, and roof determine which tools actually belong inside.</p>
+      <div class="plain-card">
+        <div class="metric-label">Data democratization</div>
+        <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Access trumps ownership</h3>
+        <p>RevOps owns the plumbing that lets every GTM team access the context they need. This isn't about data loss-of-control. It's about empowering teams with better answers faster. Salesforce remains the revenue operating surface. Snowflake becomes the trusted context layer that connects engagement, adoption, commercial, and outcome data.</p>
+      </div>
     </div>
-
+      <div class="plain-card">
+        <div class="metric-label">Governance before scale</div>
+        <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Discipline enables speed</h3>
+        <p>We define which signals are reliable enough to trigger action, who owns each response, where the work appears, which decisions humans keep, and how we measure impact. This takes 4 weeks upfront to save 4 months of fragmentation later.</p>
+      </div>
   </div>
   <div class="plain-card" style="padding:22px; margin-bottom:28px;">
     <div class="grid-3">
@@ -645,52 +657,10 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       </div>
     </div>
   </div>
-
-  <table style="margin-bottom:24px;">
-    <thead>
-      <tr>
-        <th>Type of work</th>
-        <th>Best fit</th>
-        <th>Celtra example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Rules-based execution</strong></td>
-        <td>Salesforce Flow / Automation</td>
-        <td>Create renewal tasks, route approvals, enforce stage requirements, trigger alerts.</td>
-      </tr>
-      <tr>
-        <td><strong>Signal detection</strong></td>
-        <td>Gong, HubSpot, Pendo, Salesforce</td>
-        <td>Competitor mention, engagement spike, usage decline, stalled opportunity.</td>
-      </tr>
-      <tr>
-        <td><strong>Interpretation</strong></td>
-        <td>Claude or Agentforce</td>
-        <td>Summarize risk, identify themes, recommend next steps, generate account briefs.</td>
-      </tr>
-      <tr>
-        <td><strong>Coordination</strong></td>
-        <td>Slack</td>
-        <td>Route work to AE, SC, CSM, leadership, or cross-functional teams.</td>
-      </tr>
-      <tr>
-        <td><strong>Execution</strong></td>
-        <td>Human</td>
-        <td>Run meetings, negotiate deals, manage customers, approve outbound communication.</td>
-      </tr>
-      <tr>
-        <td><strong>Learning</strong></td>
-        <td>Salesforce + Snowflake</td>
-        <td>Measure accepted recommendations, pipeline impact, conversion, retention, and forecast quality.</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
-<div class="plain-card" style="padding:22px; margin-bottom:28px;">
+<div class="plain-card" style="padding:22px; margin-bottom:12px;">
 
-  <div class="section-sub" style="margin-top:32px;">What RevOps needs from partner teams</div>
+  <div class="section-sub" style="margin-top:18px;">What RevOps needs from partner teams</div>
   <table>
     <thead><tr><th>Team</th><th>Needed contribution</th><th>Why it matters</th><th>Near-term artifact</th></tr></thead>
     <tbody>
