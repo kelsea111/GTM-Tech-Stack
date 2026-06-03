@@ -45,7 +45,7 @@
   .section-sub { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 30px; }
   .callout { background: var(--ink); color: var(--paper); border-radius: 10px; padding: 26px 30px; margin-bottom: 28px; }
   .callout h3 { font-family: 'Celtra Favorit', serif; font-size: 1.45rem; margin-bottom: 8px; }
-  .callout p { color: #d8d3c8; line-height: 1.6; font-size: 0.95rem; max-width: 980px; }
+  .callout p { color: #f5f2ec; line-height: 1.6; font-size: 0.95rem; max-width: 980px; }
   .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
   .metric-card, .plain-card { background: var(--white); border: 1px solid var(--rule); border-radius: 9px; padding: 18px 20px; }
@@ -326,21 +326,21 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 
     <div style="max-width:1000px; margin:0 auto;">
 
-      <div style="background:#000005; color:#F8F8F8; border-radius:18px 18px 0 0; padding:24px; text-align:center; margin:0 auto; max-width:700px;">
+      <div style="background:#000005; color:#F8F8F8; border-radius:18px 18px 0 0; padding:24px; text-align:center; margin:0 auto; max-width:1000px;">
         <div class="metric-label" style="color:#ff51a7;">THE ROOF</div>
         <h3 style="font-family:var(--fav); font-size:28px; line-height:30px; font-weight:500; margin-bottom:10px;">Executive Direction</h3>
         <p style="color:#b4b4b4;">Strategic priorities • Investment decisions • Cross-functional accountability • Leadership commitment • “This is how we operate.”</p>
       </div>
 
-      <div class="grid-2" style="margin-top:0; gap:18px; align-items:stretch;">
+      <div class="grid-2" style="margin-top:0; gap:200px; align-items:stretch;">
 
-        <div class="plain-card" style="background:rgba(23,89,140,.06); border:1px solid rgba(23,89,140,.20);">
+        <div class="plain-card" style="background:rgba(23,89,140,.06); border:1px solid rgba(23,89,140,.20);max-width:400px;">
           <div class="metric-label">LEFT WALL</div>
           <h3 style="font-family:var(--fav); font-size:26px; line-height:28px; font-weight:500; margin-bottom:10px;">Governance</h3>
           <p>Security, permissions, AI guardrails, approved data access, compliance requirements, and human approval boundaries.</p>
         </div>
 
-        <div class="plain-card" style="background:rgba(255,81,167,.06); border:1px solid rgba(255,81,167,.20);">
+        <div class="plain-card" style="background:rgba(255,81,167,.06); border:1px solid rgba(255,81,167,.20);max-width:400px;">
           <div class="metric-label">RIGHT WALL</div>
           <h3 style="font-family:var(--fav); font-size:26px; line-height:28px; font-weight:500; margin-bottom:10px;">Operating Framework</h3>
           <p>Signal definitions, ownership rules, workflow standards, escalation paths, measurement requirements, and decision rights.</p>
@@ -400,40 +400,247 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       </div>
     </div>
   </div>
-<div class="plain-card" style="padding:22px; margin-bottom:28px;">
-  <div class="section-sub" style="margin-top:32px;">When do we agent, and when do we human?</div>
-
+<div class="plain-card" style="padding: 28px; margin-bottom: 28px;">
+  <h3 style="font-family:var(--fav); font-size:34px; line-height:38px; font-weight:500; letter-spacing:-.02em; margin-bottom:16px; max-width:1000px;">
+    When do we automate, add AI, or handle manually?</h3>
   <div class="plain-card" style="margin-bottom:24px;">
     <div class="metric-label">Decision framework</div>
-    <p style="margin-bottom:24px;"><strong>The goal is not to maximize AI usage.</strong> The goal is to improve GTM outcomes with the simplest reliable solution. Every workflow should start with automation, add AI only where interpretation is required, and introduce agents only when multiple decisions must be made dynamically.</p>
+    <p style="margin-bottom:24px;"><strong>The goal is not to maximize AI usage.</strong> The goal is to improve GTM outcomes with the simplest reliable solution. Choose between three approaches: automation (Salesforce Flow, Gong alerts for fully-mapped rules), AI assistance (Claude for interpretation and recommendations), or manual work (human judgment for high-stakes decisions).</p>
 
-    <div style="display:flex; flex-direction:column; align-items:center; gap:12px; margin:28px 0; text-align:center;">
-      <div class="step" style="padding:12px 18px; font-weight:700;">Can the workflow be fully mapped before build?</div>
+    <style>
+.fw-container { padding: 0; }
+.fw-factors { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+.fw-factors-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.fw-factor-row { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 0.75rem; align-items: flex-start; }
+.fw-factor-row:last-child { margin-bottom: 0; }
+.fw-factor-label { font-size: 12px; font-weight: 600; color: #1a1a1c; padding-top: 0.25rem; }
+.fw-factor-items { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.fw-factor-item { font-size: 11px; padding: 0.3rem 0.6rem; border-radius: 6px; border: 0.5px solid var(--rule); white-space: nowrap; }
+.fw-factor-item.auto { background: rgba(0,166,106,0.08); color: #0f6e56; }
+.fw-factor-item.ai { background: rgba(255,176,0,0.08); color: #854f0b; }
+.fw-factor-item.manual { background: rgba(128,128,130,0.08); color: #5f5e5a; }
+.fw-pathways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+.fw-pathway { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
+.fw-pathway-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.fw-pathway.auto .fw-pathway-label { color: #0f6e56; }
+.fw-pathway.ai .fw-pathway-label { color: #854f0b; }
+.fw-pathway.manual .fw-pathway-label { color: #5f5e5a; }
+.fw-pathway h4 { font-family: var(--fav); font-size: 16px; font-weight: 500; color: #1a1a1c; margin-bottom: 0.75rem; }
+.fw-criteria { background: #f8f8f8; border: 0.5px solid var(--rule); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem; }
+.fw-criteria-title { font-size: 11px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.fw-criteria ul { font-size: 12px; color: #4a4a4a; line-height: 1.5; margin-left: 1rem; }
+.fw-criteria li { margin-bottom: 0.25rem; }
+.fw-examples { margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
+.fw-examples-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
+.fw-example-tag { display: inline-block; font-size: 11px; padding: 0.35rem 0.6rem; background: #f5f5f5; color: #5f5e5a; border-radius: 6px; margin: 0.25rem 0.25rem 0.25rem 0; line-height: 1; border: 0.5px solid var(--rule); }
+.fw-tree { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
+.fw-tree-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.fw-tree-node { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--rule); }
+.fw-tree-node:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+.fw-tree-q { font-size: 12px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
+.fw-tree-q:before { content: "Q"; position: absolute; left: 0; font-size: 10px; color: var(--muted); font-weight: 700; }
+.fw-tree-a { font-size: 12px; color: var(--muted); padding-left: 1.25rem; margin-bottom: 0.25rem; }
+.fw-tree-a strong { color: #1a1a1c; }
+.fw-routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
+.fw-route { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem; border-radius: 6px; text-align: center; }
+.fw-route.auto { background: rgba(0,166,106,0.12); color: #0f6e56; }
+.fw-route.ai { background: rgba(255,176,0,0.12); color: #854f0b; }
+.fw-route.manual { background: rgba(128,128,130,0.12); color: #5f5e5a; }
+.fw-govlimit { background: rgba(239,68,68,0.05); border: 0.5px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 0.75rem; margin-top: 1rem; font-size: 12px; color: var(--muted); }
+.fw-govlimit strong { color: #1a1a1c; }
+@media (max-width: 900px) { .fw-pathways { grid-template-columns: 1fr; } .fw-factor-row { grid-template-columns: 100px 1fr; } }
+    </style>
 
-      <div style="font-size:22px; color:var(--muted);">↓</div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; width:100%; max-width:900px;">
-
-        <div style="border:1px solid var(--rule); border-radius:12px; padding:18px; background:rgba(0,166,106,.06);">
-          <div class="metric-label">YES</div>
-          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; margin-bottom:8px;">Use Automation</h3>
-          <p>Salesforce Flow, validation rules, task creation, routing, alerts, approvals, SLAs, dashboards, and structured business logic.</p>
+    <div class="fw-container">
+      <div class="fw-factors">
+        <div class="fw-factors-title">Key decision dimensions</div>
+        
+        <div class="fw-factor-row">
+          <div class="fw-factor-label">Rule clarity</div>
+          <div class="fw-factor-items">
+            <span class="fw-factor-item auto">✓ Fully mapped before build</span>
+            <span class="fw-factor-item ai">△ Mostly clear, needs interpretation</span>
+            <span class="fw-factor-item manual">✗ Requires judgment call</span>
+          </div>
         </div>
 
-        <div style="border:1px solid var(--rule); border-radius:12px; padding:18px; background:rgba(255,81,167,.06);">
-          <div class="metric-label">NO</div>
-          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; margin-bottom:8px;">Requires Interpretation</h3>
-          <p>The workflow depends on context, judgment, unstructured information, or dynamic decision making.</p>
-
-          <div style="margin-top:16px; display:flex; flex-direction:column; align-items:center; gap:10px;">
-            <div class="step">Does it require reasoning or judgment?</div>
-            <div style="font-size:20px; color:var(--muted);">↓</div>
-            <div class="step ai">AI Assistance</div>
-            <div style="font-size:20px; color:var(--muted);">↓</div>
-            <div class="step">Could it impact customers, contracts, pricing, forecasts, or commitments?</div>
-            <div style="font-size:20px; color:var(--muted);">↓</div>
-            <div class="step approval">Human Approval Required</div>
+        <div class="fw-factor-row">
+          <div class="fw-factor-label">Business stakes</div>
+          <div class="fw-factor-items">
+            <span class="fw-factor-item auto">Low: Operational efficiency</span>
+            <span class="fw-factor-item ai">Med: Timing and quality</span>
+            <span class="fw-factor-item manual">High: Customer/contract/pricing impact</span>
           </div>
+        </div>
+
+        <div class="fw-factor-row">
+          <div class="fw-factor-label">Data availability</div>
+          <div class="fw-factor-items">
+            <span class="fw-factor-item auto">Complete in SFDC/Gong/system</span>
+            <span class="fw-factor-item ai">Mostly available, context-dependent</span>
+            <span class="fw-factor-item manual">Fragmented, requires human context</span>
+          </div>
+        </div>
+
+        <div class="fw-factor-row">
+          <div class="fw-factor-label">Frequency of change</div>
+          <div class="fw-factor-items">
+            <span class="fw-factor-item auto">Stable: Rules don't change often</span>
+            <span class="fw-factor-item ai">Moderate: Quarterly/project-based</span>
+            <span class="fw-factor-item manual">High: Deal-by-deal variation</span>
+          </div>
+        </div>
+
+        <div class="fw-factor-row">
+          <div class="fw-factor-label">Speed requirement</div>
+          <div class="fw-factor-items">
+            <span class="fw-factor-item auto">Can be batch or on-demand</span>
+            <span class="fw-factor-item ai">Same-day or next-morning</span>
+            <span class="fw-factor-item manual">Can wait for human attention</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-pathways">
+        <div class="fw-pathway auto">
+          <div class="fw-pathway-label">Approach 01</div>
+          <h4>Automation</h4>
+          
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Build in Salesforce Flow or Gong alerts when:</div>
+            <ul>
+              <li>Rules are fully mapped before build</li>
+              <li>No edge cases or exceptions</li>
+              <li>Low business impact if wrong</li>
+              <li>Data is complete and structured</li>
+              <li>Runs repeatedly with same logic</li>
+            </ul>
+          </div>
+
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Governor limits to watch:</div>
+            <ul>
+              <li>Flow bulk limit: 5K bulk API calls/txn</li>
+              <li>SOQL queries per flow: 100</li>
+              <li>Complex loops with collects = slow</li>
+              <li>Use pre-fetch if querying N records</li>
+            </ul>
+          </div>
+
+          <div class="fw-examples">
+            <div class="fw-examples-title">Celtra examples</div>
+            <span class="fw-example-tag">Trial account status rollup</span>
+            <span class="fw-example-tag">Lead scoring routing</span>
+            <span class="fw-example-tag">SLA age tracking</span>
+            <span class="fw-example-tag">Quote auto-sync to Order</span>
+            <span class="fw-example-tag">Contract signal to Salesforce</span>
+            <span class="fw-example-tag">Task creation on stage change</span>
+          </div>
+        </div>
+
+        <div class="fw-pathway ai">
+          <div class="fw-pathway-label">Approach 02</div>
+          <h4>AI Assistance</h4>
+          
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Use Claude/AI when:</div>
+            <ul>
+              <li>Logic is context-dependent</li>
+              <li>Decision depends on judgment</li>
+              <li>Lower business impact (timing, quality)</li>
+              <li>Data from unstructured sources</li>
+              <li>Recommendations, not execution</li>
+            </ul>
+          </div>
+
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Approval strategy:</div>
+            <ul>
+              <li>AI recommends; human accepts/rejects</li>
+              <li>Log all recommendations + outcomes</li>
+              <li>Monitor accuracy before auto-execution</li>
+              <li>Can be async (next day okay)</li>
+            </ul>
+          </div>
+
+          <div class="fw-examples">
+            <div class="fw-examples-title">Celtra examples</div>
+            <span class="fw-example-tag">Call summary + next steps</span>
+            <span class="fw-example-tag">Account brief for AE</span>
+            <span class="fw-example-tag">Email draft (seller edits)</span>
+            <span class="fw-example-tag">Content gap identification</span>
+            <span class="fw-example-tag">Trial readiness scoring</span>
+            <span class="fw-example-tag">Expansion opportunity ranking</span>
+          </div>
+        </div>
+
+        <div class="fw-pathway manual">
+          <div class="fw-pathway-label">Approach 03</div>
+          <h4>Manual + Human Judgment</h4>
+          
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Keep human-owned when:</div>
+            <ul>
+              <li>High business stakes</li>
+              <li>Impacts customer/pricing/contract</li>
+              <li>Decision varies deal-to-deal</li>
+              <li>Requires legal/finance review</li>
+              <li>Creates precedent or exception</li>
+            </ul>
+          </div>
+
+          <div class="fw-criteria">
+            <div class="fw-criteria-title">Where humans add value:</div>
+            <ul>
+              <li>Pricing exceptions &amp; discounts</li>
+              <li>Deal restructuring decisions</li>
+              <li>Contract term exceptions</li>
+              <li>Cross-functional alignment</li>
+            </ul>
+          </div>
+
+          <div class="fw-examples">
+            <div class="fw-examples-title">Celtra examples</div>
+            <span class="fw-example-tag">Pricing override approval</span>
+            <span class="fw-example-tag">Deal close plan review</span>
+            <span class="fw-example-tag">Contract term negotiation</span>
+            <span class="fw-example-tag">Forecast adjustment</span>
+            <span class="fw-example-tag">Commitment override</span>
+            <span class="fw-example-tag">Strategic account decisions</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fw-tree">
+        <div class="fw-tree-title">Decision sequence</div>
+        
+        <div class="fw-tree-node">
+          <div class="fw-tree-q">Can we fully map the rules before building?</div>
+          <div class="fw-tree-a"><strong>YES:</strong> Automation (Flow, Gong, rules-based logic)</div>
+          <div class="fw-tree-a"><strong>NO:</strong> Requires interpretation; continue below</div>
+        </div>
+
+        <div class="fw-tree-node">
+          <div class="fw-tree-q">Does the decision depend on context, judgment, or unstructured info?</div>
+          <div class="fw-tree-a"><strong>NO (mostly structured):</strong> Automation with conditional logic</div>
+          <div class="fw-tree-a"><strong>YES:</strong> AI Assistance or Manual; continue below</div>
+        </div>
+
+        <div class="fw-tree-node">
+          <div class="fw-tree-q">Could a wrong decision impact customers, pricing, contracts, or forecasts?</div>
+          <div class="fw-tree-a"><strong>YES (high stakes):</strong> AI recommends; human decides</div>
+          <div class="fw-tree-a"><strong>NO (lower stakes):</strong> AI assists; humans review later</div>
+          <div class="fw-tree-a"><strong>CRITICAL:</strong> Keep fully manual + approval chain</div>
+        </div>
+
+        <div class="fw-routes">
+          <div class="fw-route auto">→ Use Automation</div>
+          <div class="fw-route ai">→ Use AI + Review</div>
+          <div class="fw-route manual">→ Keep Manual</div>
+        </div>
+
+        <div class="fw-govlimit">
+          <strong>⚠️ Salesforce Flow reality check:</strong> Before building complex automation, audit governor limits. Multi-account contracts, trial rollups, and order orchestration often need pre-fetch architectures and record-type filtering to avoid bulk API or SOQL limits. When in doubt, ask: "Can this fit in 100 SOQL + 5K bulk calls per transaction?" If no, consider async processing or API-driven automation outside Flow.
         </div>
       </div>
     </div>
