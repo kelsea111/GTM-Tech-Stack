@@ -6,10 +6,6 @@
 <title>Celtra GTM Stack · Signal-Based Selling Architecture</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:'Celtra Favorit';src:url('https://celtra.com/wp-content/themes/celtra/assets/fonts/CeltraFavorit-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
-
   :root {
     --ink: #0f0e0c;
     --paper: #f5f2ec;
@@ -100,15 +96,6 @@
   .rec-eval { color: var(--amber); font-weight: 700; }
   .rec-cut { color: var(--accent); font-weight: 700; }
   .footer { margin-top: 64px; padding: 24px 60px; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; align-items: center; font-family: 'DM Mono', monospace; font-size: 0.65rem; color: var(--muted); letter-spacing: 0.06em; }
-  .exec-hero { display: grid; grid-template-columns: 1.25fr .75fr; gap: 22px; margin-bottom: 24px; }
-  .exec-hero-main { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 34px 38px; border: 1px solid #2a2824; }
-  .exec-hero-main .eyebrow { margin-bottom: 12px; }
-  .exec-hero-main h2 { font-family: 'Celtra Favorit', serif; font-size: 2.35rem; line-height: 1.04; letter-spacing: -0.02em; margin-bottom: 16px; max-width: 920px; }
-  .exec-hero-main h2 em { color: var(--accent); font-style: normal; }
-  .exec-hero-main p { color: #d8d3c8; font-size: 1rem; line-height: 1.62; max-width: 960px; }
-  .exec-hero-side { background: var(--white); border: 1px solid var(--rule); border-radius: 12px; padding: 26px 28px; }
-  .exec-hero-side h3 { font-family: 'Celtra Favorit', serif; font-size: 1.45rem; line-height: 1.15; margin-bottom: 12px; }
-  .exec-hero-side p { color: var(--muted); font-size: .86rem; line-height: 1.52; margin-bottom: 12px; }
   .exec-stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 22px 0 24px; }
   .exec-stack-card { background: var(--white); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; min-height: 160px; }
   .exec-stack-card h3 { font-family: 'Celtra Favorit', serif; font-size: 1.18rem; line-height: 1.18; margin-bottom: 8px; }
@@ -123,18 +110,445 @@
   .exec-decision-lead { background: var(--ink); color: var(--paper); border-radius: 12px; padding: 28px 30px; }
   .exec-decision-lead h3 { font-family: 'Celtra Favorit', serif; font-size: 1.65rem; line-height: 1.12; margin-bottom: 12px; }
   .exec-decision-lead p { color: #d8d3c8; font-size: .9rem; line-height: 1.55; }
-  .exec-outcomes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 22px; }
-  .exec-outcome { background: var(--white); border: 1px solid var(--rule); border-radius: 9px; padding: 16px 14px; }
-  .exec-outcome strong { display:block; font-size:.88rem; line-height:1.2; margin-bottom:6px; }
-  .exec-outcome span { display:block; color:var(--muted); font-size:.74rem; line-height:1.35; }
+  .exec-decisions + .callout { margin-top: 28px; }
+  .metrics-summary-table { margin-top: 22px; }
+  .skip-link {
+    position: absolute;
+    left: 16px;
+    top: -48px;
+    z-index: 20;
+    padding: 10px 14px;
+    background: #000005;
+    color: #f8f8f8;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+  }
+  .skip-link:focus {
+    top: 16px;
+  }
+  .fw-container { padding: 0; }
+  .fw-factors { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+  .fw-factors-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .fw-factor-row { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 0.75rem; align-items: flex-start; }
+  .fw-factor-row:last-child { margin-bottom: 0; }
+  .fw-factor-label { font-size: 12px; font-weight: 600; color: #1a1a1c; padding-top: 0.25rem; }
+  .fw-factor-items { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .fw-factor-item { font-size: 11px; padding: 0.3rem 0.6rem; border-radius: 6px; border: 0.5px solid var(--rule); white-space: nowrap; }
+  .fw-factor-item.auto { background: rgba(0,166,106,0.08); color: #0f6e56; }
+  .fw-factor-item.ai { background: rgba(255,176,0,0.08); color: #854f0b; }
+  .fw-factor-item.manual { background: rgba(128,128,130,0.08); color: #5f5e5a; }
+  .fw-pathways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .fw-pathway { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
+  .fw-pathway-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .fw-pathway.auto .fw-pathway-label { color: #0f6e56; }
+  .fw-pathway.ai .fw-pathway-label { color: #854f0b; }
+  .fw-pathway.manual .fw-pathway-label { color: #5f5e5a; }
+  .fw-pathway h4 { font-family: var(--fav); font-size: 16px; font-weight: 500; color: #1a1a1c; margin-bottom: 0.75rem; }
+  .fw-criteria { background: #f8f8f8; border: 0.5px solid var(--rule); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem; }
+  .fw-criteria-title { font-size: 11px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  .fw-criteria ul { font-size: 12px; color: #4a4a4a; line-height: 1.5; margin-left: 1rem; }
+  .fw-criteria li { margin-bottom: 0.25rem; }
+  .fw-examples { margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
+  .fw-examples-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
+  .fw-example-tag { display: inline-block; font-size: 11px; padding: 0.35rem 0.6rem; background: #f5f5f5; color: #5f5e5a; border-radius: 6px; margin: 0.25rem 0.25rem 0.25rem 0; line-height: 1; border: 0.5px solid var(--rule); }
+  .fw-tree { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
+  .fw-tree-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .fw-tree-node { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--rule); }
+  .fw-tree-node:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .fw-tree-q { font-size: 12px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
+  .fw-tree-q:before { content: "Q"; position: absolute; left: 0; font-size: 10px; color: var(--muted); font-weight: 700; }
+  .fw-tree-a { font-size: 12px; color: var(--muted); padding-left: 1.25rem; margin-bottom: 0.25rem; }
+  .fw-tree-a strong { color: #1a1a1c; }
+  .fw-routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
+  .fw-route { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem; border-radius: 6px; text-align: center; }
+  .fw-route.auto { background: rgba(0,166,106,0.12); color: #0f6e56; }
+  .fw-route.ai { background: rgba(255,176,0,0.12); color: #854f0b; }
+  .fw-route.manual { background: rgba(128,128,130,0.12); color: #5f5e5a; }
+  .fw-govlimit { background: rgba(239,68,68,0.05); border: 0.5px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 0.75rem; margin-top: 1rem; font-size: 12px; color: var(--muted); }
+  .fw-govlimit strong { color: #1a1a1c; }
+  .foundation-hero {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 20px;
+  padding: 34px 38px;
+  margin-bottom: 28px;
+  border: 1px solid #333;
+  box-shadow: 0 0 84px -30px rgba(255,45,107,.55);
+}
+
+.foundation-hero h3 {
+  font-family: var(--fav);
+  font-size: 34px;
+  line-height: 38px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.foundation-hero p {
+  color: #b4b4b4;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 1040px;
+}
+
+.house-diagram,
+.owner-card,
+.work-breakdown {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  box-shadow: 0 0 40px -22px rgba(255,45,107,.28);
+}
+
+.house-diagram {
+  padding: 26px;
+  margin-bottom: 22px;
+}
+
+.house-tier {
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 22px 24px;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.house-tier:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.house-tier.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(255,45,107,.14);
+}
+
+.house-tier-label {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.house-tier h3 {
+  font-family: var(--fav);
+  font-size: 30px;
+  line-height: 32px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.house-tier p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 21px;
+}
+
+.house-roof {
+  background: rgba(195, 78, 78, 0.1);
+  color: var(--muted);
+  border-color: #333;
+  text-align: center;
+  border-radius: 18px 18px 8px 8px;
+}
+
+.house-roof p {
+  color: #8c8b8b;
+}
+
+.house-middle {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin: 18px 0;
+}
+
+.house-wall {
+  background: #F8F8F8;
+  min-height: 158px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.house-owner {
+  display: inline-flex;
+  width: max-content;
+  font-size: 11px;
+  line-height: 13px;
+  font-weight: 700;
+  color: #c9006b;
+  background: rgba(255,45,107,.10);
+  border-radius: 999px;
+  padding: 5px 9px 4px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.house-foundation {
+  background: rgba(23,89,140,.10);
+  border-color: rgba(23,89,140,.20);
+  text-align: center;
+  border-radius: 8px 8px 18px 18px;
+}
+
+.house-expansion {
+  display: none;
+  background: #F8F8F8;
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-top: 18px;
+}
+
+.house-expansion.active {
+  display: block;
+}
+
+.house-expansion p {
+  font-size: 16px;
+  line-height: 23px;
+  color: #4d4d4f;
+  max-width: 1080px;
+}
+
+.owner-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.owner-card {
+  padding: 22px;
+}
+
+.owner-card h3 {
+  font-family: var(--fav);
+  font-size: 26px;
+  line-height: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.owner-card p {
+  font-size: 15px;
+  line-height: 21px;
+  color: #4d4d4f;
+  margin-bottom: 10px;
+}
+
+.work-breakdown {
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.work-toggle {
+  width: 100%;
+  border: 1px solid var(--accent);
+  background: rgba(255,45,107,.10);
+  color: #c9006b;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-family: var(--fav);
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.work-content {
+  display: none;
+  margin-top: 20px;
+}
+
+.work-content.active {
+  display: block;
+}
+
+.bridge-card {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid #333;
+}
+
+.bridge-card p {
+  color: #d8d3c8;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 1040px;
+  margin-bottom: 10px;
+}
+
+.bridge-card p:last-child {
+  margin-bottom: 0;
+  color: #d8d3c8;
+    font-weight: 700;
+
+}
+  .moving-vignettes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-bottom: 28px;
+  }
+
+.vignette-timeline {
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin-top:18px;
+}
+
+.vignette-moment {
+  background:#F8F8F8;
+  border:1px solid var(--rule);
+  border-left:4px solid var(--accent);
+  border-radius:14px;
+  padding:16px 18px;
+}
+
+.vignette-moment-label {
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  color:#c9006b;
+  background:rgba(255,81,167,.12);
+  border-radius:999px;
+  padding:4px 10px;
+  margin-bottom:8px;
+}
+
+.vignette-moment p {
+  margin:0;
+}
+
+.vignette-sources {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:12px;
+}
+
+.vignette-source {
+  font-size:11px;
+  line-height:13px;
+  font-weight:700;
+  color:#4d4d4f;
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:5px 8px;
+}
+
+.signal-arrow {
+  font-family:var(--fav);
+  color:var(--accent);
+  font-weight:700;
+  margin:0 2px;
+}
+
+.vignette-shift {
+  background:#000005;
+  color:#F8F8F8;
+  border-radius:16px;
+  padding:18px 20px;
+  margin-top:18px;
+}
+
+.vignette-shift p {
+  color:#d8d3c8;
+  margin-bottom:8px;
+}
+
+.vignette-shift p:last-child {
+  margin-bottom:0;
+}
+
+.vignette-card {
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  padding: 30px 32px;
+  box-shadow: 0 0 40px -22px rgba(255,45,107,.28);
+}
+
+.vignette-card h3 {
+  font-family: var(--fav);
+  font-size: 32px;
+  line-height: 34px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #1A1A1C;
+}
+
+.vignette-card p {
+  font-size: 16px;
+  line-height: 23px;
+  color: #4d4d4f;
+  margin-bottom: 14px;
+}
+
+.vignette-closer {
+  border-top: 1px solid var(--rule);
+  margin-top: 20px;
+  padding-top: 18px;
+}
+
+.vignette-closer p {
+  font-size: 15px;
+  line-height: 21px;
+  margin-bottom: 8px;
+}
+
+.vignette-closer strong {
+  color: #1A1A1C;
+}
+
+.moving-bridge {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 20px;
+  padding: 28px 32px;
+  border: 1px solid #333;
+}
+
+.moving-bridge p {
+  color: #d8d3c8;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 1040px;
+  margin-bottom: 10px;
+}
+
+.moving-bridge p:last-child {
+  margin-bottom: 0;
+  font-weight: 700;
+}
   @media (max-width: 920px) {
     .header, nav, main, .footer { padding-left: 20px; padding-right: 20px; }
     .header-right { display:none; }
     .header-left h1 { font-size: 2rem; }
-    .grid-3, .grid-2, .workflow-grid, .exec-hero, .exec-stack, .exec-decisions, .exec-outcomes { grid-template-columns: 1fr; }
+    .grid-3, .grid-2, .workflow-grid, .exec-stack, .exec-decisions, .moving-vignettes { grid-template-columns: 1fr; }
     .exec-flow { grid-template-columns: 1fr 1fr; }
     .arch-row { grid-template-columns: 1fr; }
     .arch-value { border-left: 0; border-top: 1px solid var(--rule); }
+  }
+  @media (max-width: 900px) {
+    .fw-pathways { grid-template-columns: 1fr; }
+    .fw-factor-row { grid-template-columns: 100px 1fr; }
   }
 
 
@@ -205,478 +619,374 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
 </style>
 </head>
 <body>
-<div class="header">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="header">
   <div class="header-left">
     <h1>Signal-Based GTM Stack<br><em>Agentic Engineering Architecture</em></h1>
-    <p>Celtra Revenue Operations · May 2026</p>
   </div>
   <div class="header-right">
     Salesforce-centered · Snowflake-powered<br>
     Better timing · Better context · Better action<br>
   </div>
-</div>
-<nav>
-  <button class="active" onclick="show('thesis', event)">① The Big Opportunity</button>
-  <button onclick="show('operating-plan', event)">② Operating Model</button>
-  <button onclick="show('architecture', event)">③ Stack Architecture</button>
-  <button onclick="show('workflows', event)">④ Seller Workflows</button>
-  <button onclick="show('marketing-workflows', event)">⑤ Marketing Workflows</button>
-  <button onclick="show('sc-workflows', event)">⑥ Solutions Consulting</button>
-  <button onclick="show('cs-workflows', event)">⑦ Customer Success</button>
-  <button onclick="show('tools', event)">⑧ Tool Decisions</button>
-  <button onclick="show('metrics', event)">⑨ Success Metrics</button>
+</header>
+<nav aria-label="Presentation sections" role="tablist" aria-orientation="horizontal">
+  <button id="tab-thesis" class="active" type="button" role="tab" aria-controls="sec-thesis" aria-selected="true" onclick="show('thesis', event)">① The Lot We&apos;re Standing On</button>
+  <button id="tab-operating-plan" type="button" role="tab" aria-controls="sec-operating-plan" aria-selected="false" onclick="show('operating-plan', event)">② Building the Foundation</button>
+  <button id="tab-tomorrow" type="button" role="tab" aria-controls="sec-tomorrow" aria-selected="false" onclick="show('tomorrow', event)">③ What Tomorrow Looks Like</button>
+  <button id="tab-architecture" type="button" role="tab" aria-controls="sec-architecture" aria-selected="false" onclick="show('architecture', event)">④ Stack Architecture</button>
+  <button id="tab-workflows" type="button" role="tab" aria-controls="sec-workflows" aria-selected="false" onclick="show('workflows', event)">⑤ Seller Workflows</button>
+  <button id="tab-marketing-workflows" type="button" role="tab" aria-controls="sec-marketing-workflows" aria-selected="false" onclick="show('marketing-workflows', event)">⑥ Marketing Workflows</button>
+  <button id="tab-sc-workflows" type="button" role="tab" aria-controls="sec-sc-workflows" aria-selected="false" onclick="show('sc-workflows', event)">⑦ Solutions Consulting</button>
+  <button id="tab-cs-workflows" type="button" role="tab" aria-controls="sec-cs-workflows" aria-selected="false" onclick="show('cs-workflows', event)">⑧ Customer Success</button>
+  <button id="tab-tools" type="button" role="tab" aria-controls="sec-tools" aria-selected="false" onclick="show('tools', event)">⑨ Tool Decisions</button>
+  <button id="tab-metrics" type="button" role="tab" aria-controls="sec-metrics" aria-selected="false" onclick="show('metrics', event)">⑩ Success Metrics</button>
 </nav>
-<main>
-  <section class="section active" id="sec-thesis">
-    <div class="section-title">The Big Opportunity</div>
-    <div class="section-sub">A shared call to move Celtra to coordinated revenue action</div>
-  
-    <div class="exec-hero">
-      <div class="exec-hero-main">
-        <div class="eyebrow">The opportunity</div>
-        <h2>Celtra can turn every meaningful customer signal into the <em>right next action.</em></h2>
-        <p>Celtra does not need another system that stores information. Celtra needs a better way to mobilize around what the business already knows. Marketing engagement, buyer conversations, product adoption, support risk, contract progress, commercial activity, and market intelligence should all help teams act faster, align earlier, and make better decisions across the revenue lifecycle.</p>
+<main id="main-content">
+  <section class="section active" id="sec-thesis" role="tabpanel" aria-labelledby="tab-thesis">
+    <header>
+      <h2 class="section-title">The Lot We&apos;re Standing On</h2>
+      <p class="section-sub">This is not a tooling decision, it is an operating model decision</p>
+    </header>
+
+    <div class="callout">
+      <h3>Celtra does not need more AI tools. It needs a GTM AI operating model.</h3>
+      <p>We already own most of the systems required for AI-enabled GTM execution. HubSpot, Gong, Salesforce, Gmail, Slack, Pendo, and more; the signals are there. </p>
+        <br><p>What we are missing is not another tool. It is a decision about who owns the workflows, who owns the data those workflows run on, and what AI is actually permitted to do. Without those three decisions made explicitly, every workflow we build becomes a disconnected pilot. We are not behind on AI. We are behind on the operating model that makes AI safe to scale.</p>
+        <br><p>Celtra has more signal than it can act on. The problem is not that we lack data; it is that we have not decided how data becomes action.</p>
+      </div>
+
+    <div class="plain-card" style="margin-bottom:24px;">
+      <div class="metric-label">The cost of delay</div>
+      <p>Every quarter we increase GTM activity without a coordinated operating model, we make the future fix harder. The longer ownership, governance, and data boundaries stay implicit, the more expensive they become to retrofit into live workflows. Delay does not keep the system still. It lets complexity compound.</p>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:24px;">
+      <div class="plain-card">
+        <div class="metric-label">Decision 01</div>
+        <h3 style="font-family:var(--fav); font-size:28px; line-height:30px; font-weight:500; letter-spacing:-.02em; margin-bottom:10px;">Who owns GTM AI workflows?</h3>
+        <p>RevOps should own them, but that ownership needs to be made official and scoped now. If workflow ownership stays fuzzy, execution quality, adoption, and accountability will stay fuzzy too.</p>
+      </div>
+      <div class="plain-card">
+        <div class="metric-label">Decision 02</div>
+        <h3 style="font-family:var(--fav); font-size:28px; line-height:30px; font-weight:500; letter-spacing:-.02em; margin-bottom:10px;">Who owns the trusted data layer?</h3>
+        <p>DI should own it, but the model has to be defined before workflows are built on top of it. If we build first and define later, we will be pouring concrete before the lot is graded.</p>
+      </div>
+      <div class="plain-card">
+        <div class="metric-label">Decision 03</div>
+        <h3 style="font-family:var(--fav); font-size:28px; line-height:30px; font-weight:500; letter-spacing:-.02em; margin-bottom:10px;">Who sets the boundaries on what AI can do?</h3>
+        <p>Leadership has to decide this before we scale. If those boundaries are not explicit, the company will end up making them reactively under pressure instead of deliberately by design.</p>
       </div>
     </div>
-   <div class="exec-hero-side">
-        <div class="metric-label">Why now</div>
-        <h3>The pace of GTM work is increasing faster than our operating model.</h3>
-        <p>We have rich signals scattered across HubSpot, Gong, Pendo, Zendesk, Salesforce, and Gmail. But teams see different slices of the customer journey. The work of connecting context, deciding ownership, and triggering action still depends on manual follow-up, heroics, and luck. As revenue cycles get longer and buyer committees get wider, we're stuck in a cycle where more signals mean more noise, not more clarity.</p>
+
+    <div class="plain-card">
+      <div class="metric-label">What comes next</div>
+      <p>The next tab turns those decisions into the work: what has to be built, who has to contribute, and how Celtra starts putting the operating model in place.</p>
+    </div>
+  </section>
+  <section class="section" id="sec-operating-plan" role="tabpanel" aria-labelledby="tab-operating-plan" hidden>
+  <header>
+    <h2 class="section-title">Building the Foundation</h2>
+    <p class="section-sub">What has to be true before AI-enabled GTM workflows can scale safely</p>
+  </header>
+
+  <div class="foundation-hero">
+    <h3>The foundation work is the work that makes every future workflow reliable.</h3>
+    <p>Celtra does not need to make the house livable before the structure exists. Leadership defines the roof. DI builds the foundation and structural systems. RevOps furnishes the house: the workflows, operating motions, standards, and habits that determine how people actually live and work inside it.</p>
+  </div>
+
+  <div class="house-diagram">
+    <div class="house-tier house-roof active" onclick="toggleFoundationLayer('roof')">
+      <div class="house-tier-label">The Roof</div>
+      <h3>Executive Direction</h3>
+      <p>The architectural vision for the system: Risk tolerance, approval boundaries, investment priorities.</p>
+      <span class="house-owner">Owner: Leadership</span>
+
+    </div>
+
+      <div class="house-middle">
+        <div class="house-tier house-wall" onclick="toggleFoundationLayer('governance')">
+          <div class="house-tier-label">Left Wall</div>
+          <h3>Governance</h3>
+          <p>The control layer for security, permissions, approved access, compliance, AI guardrails, and human approval boundaries.</p>
+          <span class="house-owner">Owner: Security + Legal + DI</span>
+        </div>
+
+        <div class="house-tier house-wall" onclick="toggleFoundationLayer('framework')">
+          <div class="house-tier-label">Right Wall</div>
+          <h3>Operating Framework</h3>
+          <p>The blueprint for how GTM should operate.</p>
+          <span class="house-owner">Owner: RevOps</span>
+        </div>
       </div>
-    <div class="exec-stack">
-      <div class="exec-stack-card">
-        <div class="metric-label">Current reality</div>
-        <h3>Teams spend time searching instead of selling.</h3>
-        <p>AEs search across Gong, Gmail, Salesforce, Slack, and account history to find context before calls. Marketing doesn't know if campaigns are moving deals. CS waits for renewal surprises instead of acting on adoption signals. Deal desk and legal don't have prioritized signals until late-stage.</p>
+
+    <div class="house-tier house-foundation" onclick="toggleFoundationLayer('foundation')">
+      <div class="house-tier-label">The Foundation</div>
+      <h3>Data and Infrastructure</h3>
+      <p>Snowflake · Salesforce · Signal Taxonomy · System Integrations.</p>
+      <span class="house-owner">Owner: DI</span>
+    </div>
+
+    <div id="foundation-expansion-roof" class="house-expansion active">
+      <div class="metric-label">Executive Direction</div>
+<p>Leadership acts as the head architect. They decide what kind of system Celtra is building, how much investment it deserves, what risks are acceptable, what regulations and approvals must be respected, and what success looks like when the work is complete. They are not designing workflows or defining data models. They are establishing the constraints and objectives that every other team must build within. Without this layer, the teams below may build useful components, but they will not be building toward the same destination.</p>
+    </div>
+
+    <div id="foundation-expansion-governance" class="house-expansion">
+      <div class="metric-label">Governance</div>
+      <p>Governance is the control layer. Security, Legal, and DI define approved data access, permissions, compliance requirements, auditability standards, AI guardrails, and human approval boundaries. This is the building code for the system. Without it, workflows may function, but they cannot scale safely.</p>
+    </div>
+
+    <div id="foundation-expansion-framework" class="house-expansion">
+      <div class="metric-label">Operating Framework</div>
+      <p>RevOps defines the operating model before workflows are built. Which motions need to exist. Which teams participate. How signals are routed. Where ownership changes hands. What gets measured. And where approvals are required. This is the blueprint that tells builders what the house needs before anyone starts constructing rooms.</p>
+    </div>
+
+    <div id="foundation-expansion-foundation" class="house-expansion">
+      <div class="metric-label">Data and Infrastructure</div>
+      <p>This is the infrastructure that everything else runs on: Snowflake as the context layer, Salesforce as the system of record, and signal taxonomy, data models, and system integrations as the utilities running through the walls. This layer has to be stable before anything above it can function reliably.</p>
+    </div>
+  </div>
+
+  <div class="plain-card" style="margin-bottom:26px; border-left:4px solid var(--accent);">
+    <div class="metric-label">A House is Not a Home</div>
+    <h3 style="font-family:var(--fav); font-size:30px; line-height:32px; font-weight:500; letter-spacing:-.02em; margin-bottom:12px;">Building the structure is not the end state.</h3>
+    <p>Leadership decides what kind of house Celtra is building. Security, Legal, and DI establish the building code and foundational systems. RevOps acts as the translator between the home owners and the architects: defining what rooms the house needs, how people should move through it, and what capabilities must exist.</p>
+    <br><p>But even that is not enough.</p>
+    <br><p>Once the structure is built, RevOps must furnish the house. Workflows, operating standards, training, measurement, adoption, and day-to-day execution are what make the system useful to the people living inside it.</p>
+    <br> <p>The architecture creates the possibility of coordinated execution. RevOps turns it into a reality.</p>
+  </div>
+
+    <div class="owner-cards">
+      <div class="owner-card">
+        <div class="metric-label">Owner 01</div>
+        <h3>Leadership owns the roof.</h3>
+      <p><strong>What they own:</strong> Risk tolerance, investment priorities, executive approval philosophy, automation ambition, and the outcomes the system needs to improve.</p>        
+      <p><strong>What breaks without them:</strong> The teams below make local decisions without a shared direction. The result is scattered investment, uneven ambition, and no clear standard for what success means.</p>
       </div>
-      <div class="exec-stack-card">
-        <div class="metric-label">Cost of fragmentation</div>
-        <h3>Signal isolation kills timing and context.</h3>
-        <p>Expansion signals appear in Pendo, but Salesforce doesn't know. Competitor mentions appear in Gong, but only the AE who was on the call remembers. Renewal risk appears in usage, but CSMs don't see it until it's too late. We're leaving money on the table because the right person doesn't know the right signal in time.</p>
+
+      <div class="owner-card">
+            <div class="metric-label">Owner 02</div>
+        <h3>Security, Legal, and DI own governance.</h3>
+        <p><strong>What they own:</strong> Approved data access, permissioning, compliance requirements, auditability, AI guardrails, and human approval boundaries.</p>
+        <p><strong>What breaks without them:</strong> Workflows may be useful, but they cannot scale safely. Teams will not know what data AI can use, what it can do, or where a human must approve the action.</p>
       </div>
-      <div class="exec-stack-card">
-        <div class="metric-label">What is possible</div>
-        <h3>A shared revenue action system.</h3>
-        <p>Celtra can define which signals matter, who owns the response, where work appears, and how outcomes are measured across Marketing, Sales, SC, CS, Legal, Finance, and leadership.</p>
-      </div>
-      <div class="exec-stack-card">
-        <div class="metric-label">What must be true</div>
-        <h3>Trust before scale.</h3>
-        <p>Snowflake should become the governed context layer. Salesforce should remain the revenue operating surface. AI should support decisions, not create uncontrolled action.</p>
+
+      <div class="owner-card">
+    <div class="metric-label">Owner 03</div>
+        <h3>RevOps designs the experience.</h3>
+        <p><strong>What they own:</strong> The GTM operating framework, workflow requirements, signal routing, operating standards, adoption, training, and measurement.</p>
+        <p><strong>What breaks without them:</strong> The house may be structurally sound, but nobody agrees on what it is for. Teams build disconnected motions, workflows solve local problems, and the end-user experience becomes fragmented.</p>
       </div>
     </div>
-  
-    <div class="exec-shift">
-      <div class="metric-label">The shared move</div>
-      <h3>Move from scattered GTM signals to coordinated revenue action.</h3>
-      <div class="exec-flow">
-        <div class="exec-flow-step">Signal appears</div>
-        <div class="exec-flow-step ai">Context assembled</div>
-        <div class="exec-flow-step">Owner identified</div>
-        <div class="exec-flow-step approval">Action approved</div>
-        <div class="exec-flow-step">Work completed</div>
-        <div class="exec-flow-step">Impact measured</div>
-      </div>
-      <p>This is the core shift: every meaningful signal should have a clear business meaning, a named owner, a recommended next step, a place where work happens, and a way to measure impact. The system should make coordinated action easier than individual heroics.</p>
-    </div>
-  
-    <table>
-      <thead><tr><th>Symptom</th><th>Root Cause</th><th>Implication</th></tr></thead>
-      <tbody>
-        <tr><td>Stalled opportunities linger because nobody noticed there's no next step</td>
-          <td>Forecast risk is invisible until weekly review</td>
-          <td>Pipeline fiction, forecasting innacuracy, and quarter-end surprises</td></tr>
-        <tr><td>Renewal churn surprises us; CSMs don't have adoption signals</td>
-          <td>Usage data lives in Pendo, not connected to customer health</td>
-          <td>Lower retention and harder expansion motion</td></tr>
-        <tr><td>Sales reps and CSMs spend time searching for account context instead of selling</td>
-          <td>Context is distributed across five systems with no single brief</td>
-          <td>Less time with customers; slower deal progression</td></tr>
-        <tr><td>Legal, finance, and deal desk aren't visible until it's too late</td>
-          <td>Commercial readiness (contract, approvals, terms) isn't surfaced early</td>
-          <td>Deals slip or close unprepared; vendor management friction</td></tr>
-      </tbody>
-    </table>
-  
-    <div class="exec-decisions">
-      <div class="exec-decision-lead">
-        <h3>To make this real, Celtra needs alignment on the operating rules.</h3>
-        <p>This is the operating principle that guides every workflow, tool decision, and governance rule. Before we automate, add AI, or route work, we ask: What is the simplest reliable solution? When in doubt, we favor discipline over scale.</p>
-      </div>
+
+  <div class="work-breakdown">
+    <button class="work-toggle" type="button" onclick="toggleWorkBreakdown(this)">
+      Hide team breakdown
+    </button>
+
+    <div id="foundation-work-content" class="work-content active">
       <table>
-        <thead><tr><th>Shared commitment</th><th>Decision Celtra needs</th></tr></thead>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>What they need to contribute</th>
+            <th>Why it matters</th>
+            <th>Near-term artifact</th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td><strong>Trusted signals</strong></td><td>Which customer, market, product, engagement, contract, and support signals are reliable enough to trigger action?</td></tr>
-          <tr><td><strong>Clear ownership</strong></td><td>When does the next step belong to Marketing, AE, SC, CSM, Deal Desk, Legal, Support, Finance, or leadership?</td></tr>
-          <tr><td><strong>Right surface</strong></td><td>Where should each team receive and complete work: Salesforce, Slack, Gmail, HubSpot, dashboards, or manager views?</td></tr>
-          <tr><td><strong>Human control</strong></td><td>Which actions can be drafted, recommended, or routed by AI, and which require explicit approval?</td></tr>
-          <tr><td><strong>Measurable impact</strong></td><td>How will Celtra measure accepted recommendations, completed actions, pipeline movement, trial conversion, expansion, risk reduction, and forecast quality?</td></tr>
+          <tr>
+            <td><strong>DI</strong></td>
+            <td>Define the governed account and customer schema; own Snowflake models and semantic definitions; validate signal freshness and identity resolution; partner with Security and Legal on approved AI data paths.</td>
+            <td>Recommendations are only as reliable as the data underneath them.</td>
+            <td>Snowflake data model and AI access policy.</td>
+          </tr>
+          <tr>
+            <td><strong>Security, Legal, and Finance</strong></td>
+            <td>Define approved data access, permissioning, AI guardrails, compliance requirements, approval thresholds, exception handling, and audit expectations.</td>
+            <td>AI workflows cannot scale safely without clear control points for what data can be used, what AI can do, and where human approval is required.</td>
+            <td>Governance guardrail matrix and approval boundary policy.</td>
+          </tr>
+          <tr>
+            <td><strong>Sales Leadership</strong></td>
+            <td>Confirm workflow ownership for AE-facing automations; define acceptable seller actions; validate trust thresholds; set expectations for AI-assisted prospecting and pipeline management.</td>
+            <td>Seller adoption fails without leadership endorsement of the workflows sellers are expected to use.</td>
+            <td>Workflow ownership matrix and pilot cohort.</td>
+          </tr>
+          <tr>
+            <td><strong>Marketing</strong></td>
+            <td>Map campaign and content signals to account stage; define MQL-to-opportunity handoff logic; confirm contact-gap automation rules.</td>
+            <td>Signal-based GTM only works if marketing signals are structured and connected to the commercial motion.</td>
+            <td>Campaign signal definitions and contact gap automation spec.</td>
+          </tr>
+          <tr>
+            <td><strong>Customer Success</strong></td>
+            <td>Define health signal thresholds; confirm expansion and renewal risk triggers; validate CS workflow ownership for AI-assisted QBR prep and renewal readiness.</td>
+            <td>Expansion and retention are the highest-value use cases. CS signal quality determines whether AI helps or misleads.</td>
+            <td>CS signal thresholds and renewal readiness checklist.</td>
+          </tr>
+          <tr>
+            <td><strong>Product and Support</strong></td>
+            <td>Identify product events that should surface as GTM signals; define support escalation signals; confirm cross-functional blockers that should be visible to GTM teams.</td>
+            <td>Cross-functional blockers often become a useful customer signal and a critical field inventory.</td>
+            <td>Product and support signal inventory.</td>
+          </tr>
         </tbody>
       </table>
     </div>
-  </section>
-<section class="section" id="sec-operating-plan">
-  <div class="section-title">Operating Model</div>
-  <div class="section-sub">Build the house before buying the furniture</div>
-  <div class="plain-card" style="padding:22px; margin-bottom:28px;">
-
-    <div class="metric-label">The agentic operating model</div>
-
-    <h3 style="font-family:var(--fav); font-size:34px; line-height:38px; font-weight:500; letter-spacing:-.02em; margin-bottom:16px; max-width:1000px;">
-      RevOps can make the house livable, but first the company has to build the house.
-    </h3>
-
-    <p style="max-width:1000px; margin-bottom:28px;">
-      The workflows in this document are intentionally future-focused. They represent the kinds of experiences Celtra may want to create for sellers, marketers, solutions consultants, and customer success teams. But before we start buying tools, building agents, or launching workflows at scale, we need agreement on the foundation, the walls, and the roof. Otherwise we risk furnishing a house that has not been designed yet.
-    </p>
-
-    <div style="max-width:1000px; margin:0 auto;">
-
-      <div style="background:#000005; color:#F8F8F8; border-radius:18px 18px 0 0; padding:24px; text-align:center; margin:0 auto; max-width:1000px;">
-        <div class="metric-label" style="color:#ff51a7;">THE ROOF</div>
-        <h3 style="font-family:var(--fav); font-size:28px; line-height:30px; font-weight:500; margin-bottom:10px;">Executive Direction</h3>
-        <p style="color:#b4b4b4;">Strategic priorities • Investment decisions • Cross-functional accountability • Leadership commitment • “This is how we operate.”</p>
-      </div>
-
-      <div class="grid-2" style="margin-top:0; gap:200px; align-items:stretch;">
-
-        <div class="plain-card" style="background:rgba(23,89,140,.06); border:1px solid rgba(23,89,140,.20);max-width:400px;">
-          <div class="metric-label">LEFT WALL</div>
-          <h3 style="font-family:var(--fav); font-size:26px; line-height:28px; font-weight:500; margin-bottom:10px;">Governance</h3>
-          <p>Security, permissions, AI guardrails, approved data access, compliance requirements, and human approval boundaries.</p>
-        </div>
-
-        <div class="plain-card" style="background:rgba(255,81,167,.06); border:1px solid rgba(255,81,167,.20);max-width:400px;">
-          <div class="metric-label">RIGHT WALL</div>
-          <h3 style="font-family:var(--fav); font-size:26px; line-height:28px; font-weight:500; margin-bottom:10px;">Operating Framework</h3>
-          <p>Signal definitions, ownership rules, workflow standards, escalation paths, measurement requirements, and decision rights.</p>
-        </div>
-
-      </div>
-
-      <div style="background:rgba(0,166,106,.08); border:2px solid rgba(0,166,106,.25); border-radius:0 0 18px 18px; padding:28px; margin-top:0; text-align:center;">
-        <div class="metric-label">FOUNDATION</div>
-        <h3 style="font-family:var(--fav); font-size:30px; line-height:32px; font-weight:500; margin-bottom:14px;">Data & Infrastructure</h3>
-        <p style="max-width:900px; margin:0 auto;">
-          Snowflake • Account Identity • Signal Taxonomy • Data Models • System Integrations • Orchestration • Logging • Measurement • Trusted Context
-        </p>
-      </div>
-
-      <div style="margin-top:28px; text-align:center; padding:26px; background:#F8F8F8; border:2px dashed var(--border); border-radius:18px;">
-        <div class="metric-label">THEN REVOPS MOVES IN</div>
-        <h3 style="font-family:var(--fav); font-size:30px; line-height:32px; font-weight:500; margin-bottom:12px;">Decorate the house</h3>
-        <p style="max-width:900px; margin:0 auto 18px;">
-          Once the structure exists, RevOps can make it useful. This is where workflows, automations, agents, alerts, briefs, dashboards, meeting prep, trial audits, renewal reviews, and seller experiences belong.
-        </p>
-
-        <div class="flow" style="justify-content:center;">
-          <span class="step">Meeting Prep</span>
-          <span class="step">Trial Audits</span>
-          <span class="step">Renewal Reviews</span>
-          <span class="step">Expansion Plays</span>
-          <span class="step">AI Briefs</span>
-          <span class="step">Slack Alerts</span>
-          <span class="step">Seller Guidance</span>
-        </div>
-      </div>
-    </div>
   </div>
-  <div class="plain-card" style="padding:22px; margin-bottom:28px;">
-    <div class="plain-card">
-          <div class="metric-label">Data democratization</div>
-          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Access trumps ownership</h3>
-          <p>RevOps owns the plumbing that lets every GTM team access the context they need. This isn't about data loss-of-control. It's about empowering teams with better answers faster. Salesforce remains the revenue operating surface. Snowflake becomes the trusted context layer that connects engagement, adoption, commercial, and outcome data.</p>
-        </div>
-        <div class="plain-card">
-          <div class="metric-label">Governance before scale</div>
-          <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Discipline enables speed</h3>
-          <p>We define which signals are reliable enough to trigger action, who owns each response, where the work appears, which decisions humans keep, and how we measure impact. This takes 4 weeks upfront to save 4 months of fragmentation later.</p>
-        </div>
-      </div>
-    </div>
-  <div class="plain-card" style="padding:22px; margin-bottom:28px;">
-    <div class="grid-3">
-      <div class="plain-card">
-        <div class="metric-label">Phase 01 · Decide</div>
-        <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Define the operating rules</h3>
-        <p>Align RevOps, DI, Sales, Marketing, CS, Product, Legal, and Finance on source-of-truth rules, signal taxonomy, account identity, AI access, human approval boundaries, and where recommendations and outcomes should be logged.</p>
-      </div>
-      <div class="plain-card">
-        <div class="metric-label">Phase 02 · Pilot</div>
-        <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Run controlled front-end workflows</h3>
-        <p>Use Salesforce tasks and fields, Slack alerts, Gmail drafts, HubSpot workflows, Gong summaries, Zendesk context, and Claude-generated briefs. Keep humans in control and measure recommendation acceptance, completion, and outcomes.</p>
-      </div>
-      <div class="plain-card">
-        <div class="metric-label">Phase 03 · Scale</div>
-        <h3 style="font-family:var(--fav); font-size:24px; line-height:28px; font-weight:500; letter-spacing:-.02em; margin-bottom:8px;">Promote reliable signals into infrastructure</h3>
-        <p>Move validated signals into Snowflake-modeled definitions, retire manual workarounds, document field and prompt rules, and decide which tools deserve investment based on unique signal, context, execution, or measurement value.</p>
-      </div>
-    </div>
+
+  <div class="bridge-card">
+    <h2>The foundation work is not glamorous, but it is what makes everything that follows reliable.</h2>
+    <br><p>A finished foundation is not the destination. Once the structure is in place, RevOps can begin furnishing the house with workflows, operating standards, and coordinated motions that help every GTM team work from the same system.</p>
+     <br><p>Tab 3 shows what that future state looks like when people are no longer reacting to signals individually, but operating inside a coordinated system.</p>
   </div>
-<div class="plain-card" style="padding: 28px; margin-bottom: 28px;">
-  <h3 style="font-family:var(--fav); font-size:34px; line-height:38px; font-weight:500; letter-spacing:-.02em; margin-bottom:16px; max-width:1000px;">
-    When do we automate, add AI, or handle manually?</h3>
-  <div class="plain-card" style="margin-bottom:24px;">
-    <div class="metric-label">Decision framework</div>
-    <p style="margin-bottom:24px;"><strong>The goal is not to maximize AI usage.</strong> The goal is to improve GTM outcomes with the simplest reliable solution. Choose between three approaches: automation (Salesforce Flow, Gong alerts for fully-mapped rules), AI assistance (Claude for interpretation and recommendations), or manual work (human judgment for high-stakes decisions).</p>
-
-    <style>
-.fw-container { padding: 0; }
-.fw-factors { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
-.fw-factors-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.fw-factor-row { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; margin-bottom: 0.75rem; align-items: flex-start; }
-.fw-factor-row:last-child { margin-bottom: 0; }
-.fw-factor-label { font-size: 12px; font-weight: 600; color: #1a1a1c; padding-top: 0.25rem; }
-.fw-factor-items { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.fw-factor-item { font-size: 11px; padding: 0.3rem 0.6rem; border-radius: 6px; border: 0.5px solid var(--rule); white-space: nowrap; }
-.fw-factor-item.auto { background: rgba(0,166,106,0.08); color: #0f6e56; }
-.fw-factor-item.ai { background: rgba(255,176,0,0.08); color: #854f0b; }
-.fw-factor-item.manual { background: rgba(128,128,130,0.08); color: #5f5e5a; }
-.fw-pathways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
-.fw-pathway { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
-.fw-pathway-label { font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
-.fw-pathway.auto .fw-pathway-label { color: #0f6e56; }
-.fw-pathway.ai .fw-pathway-label { color: #854f0b; }
-.fw-pathway.manual .fw-pathway-label { color: #5f5e5a; }
-.fw-pathway h4 { font-family: var(--fav); font-size: 16px; font-weight: 500; color: #1a1a1c; margin-bottom: 0.75rem; }
-.fw-criteria { background: #f8f8f8; border: 0.5px solid var(--rule); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem; }
-.fw-criteria-title { font-size: 11px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.04em; }
-.fw-criteria ul { font-size: 12px; color: #4a4a4a; line-height: 1.5; margin-left: 1rem; }
-.fw-criteria li { margin-bottom: 0.25rem; }
-.fw-examples { margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
-.fw-examples-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin-bottom: 0.5rem; }
-.fw-example-tag { display: inline-block; font-size: 11px; padding: 0.35rem 0.6rem; background: #f5f5f5; color: #5f5e5a; border-radius: 6px; margin: 0.25rem 0.25rem 0.25rem 0; line-height: 1; border: 0.5px solid var(--rule); }
-.fw-tree { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 1.25rem; }
-.fw-tree-title { font-size: 13px; font-weight: 700; color: #1a1a1c; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em; }
-.fw-tree-node { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 0.5px solid var(--rule); }
-.fw-tree-node:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.fw-tree-q { font-size: 12px; font-weight: 600; color: #1a1a1c; margin-bottom: 0.5rem; padding-left: 1.25rem; position: relative; }
-.fw-tree-q:before { content: "Q"; position: absolute; left: 0; font-size: 10px; color: var(--muted); font-weight: 700; }
-.fw-tree-a { font-size: 12px; color: var(--muted); padding-left: 1.25rem; margin-bottom: 0.25rem; }
-.fw-tree-a strong { color: #1a1a1c; }
-.fw-routes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1rem; padding-top: 1rem; border-top: 0.5px solid var(--rule); }
-.fw-route { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 0.5rem; border-radius: 6px; text-align: center; }
-.fw-route.auto { background: rgba(0,166,106,0.12); color: #0f6e56; }
-.fw-route.ai { background: rgba(255,176,0,0.12); color: #854f0b; }
-.fw-route.manual { background: rgba(128,128,130,0.12); color: #5f5e5a; }
-.fw-govlimit { background: rgba(239,68,68,0.05); border: 0.5px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 0.75rem; margin-top: 1rem; font-size: 12px; color: var(--muted); }
-.fw-govlimit strong { color: #1a1a1c; }
-@media (max-width: 900px) { .fw-pathways { grid-template-columns: 1fr; } .fw-factor-row { grid-template-columns: 100px 1fr; } }
-    </style>
-
-    <div class="fw-container">
-      <div class="fw-factors">
-        <div class="fw-factors-title">Key decision dimensions</div>
-        
-        <div class="fw-factor-row">
-          <div class="fw-factor-label">Rule clarity</div>
-          <div class="fw-factor-items">
-            <span class="fw-factor-item auto">✓ Fully mapped before build</span>
-            <span class="fw-factor-item ai">△ Mostly clear, needs interpretation</span>
-            <span class="fw-factor-item manual">✗ Requires judgment call</span>
-          </div>
-        </div>
-
-        <div class="fw-factor-row">
-          <div class="fw-factor-label">Business stakes</div>
-          <div class="fw-factor-items">
-            <span class="fw-factor-item auto">Low: Operational efficiency</span>
-            <span class="fw-factor-item ai">Med: Timing and quality</span>
-            <span class="fw-factor-item manual">High: Customer/contract/pricing impact</span>
-          </div>
-        </div>
-
-        <div class="fw-factor-row">
-          <div class="fw-factor-label">Data availability</div>
-          <div class="fw-factor-items">
-            <span class="fw-factor-item auto">Complete in SFDC/Gong/system</span>
-            <span class="fw-factor-item ai">Mostly available, context-dependent</span>
-            <span class="fw-factor-item manual">Fragmented, requires human context</span>
-          </div>
-        </div>
-
-        <div class="fw-factor-row">
-          <div class="fw-factor-label">Frequency of change</div>
-          <div class="fw-factor-items">
-            <span class="fw-factor-item auto">Stable: Rules don't change often</span>
-            <span class="fw-factor-item ai">Moderate: Quarterly/project-based</span>
-            <span class="fw-factor-item manual">High: Deal-by-deal variation</span>
-          </div>
-        </div>
-
-        <div class="fw-factor-row">
-          <div class="fw-factor-label">Speed requirement</div>
-          <div class="fw-factor-items">
-            <span class="fw-factor-item auto">Can be batch or on-demand</span>
-            <span class="fw-factor-item ai">Same-day or next-morning</span>
-            <span class="fw-factor-item manual">Can wait for human attention</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fw-pathways">
-        <div class="fw-pathway auto">
-          <div class="fw-pathway-label">Approach 01</div>
-          <h4>Automation</h4>
-          
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Build in Salesforce Flow or Gong alerts when:</div>
-            <ul>
-              <li>Rules are fully mapped before build</li>
-              <li>No edge cases or exceptions</li>
-              <li>Low business impact if wrong</li>
-              <li>Data is complete and structured</li>
-              <li>Runs repeatedly with same logic</li>
-            </ul>
-          </div>
-
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Governor limits to watch:</div>
-            <ul>
-              <li>Flow bulk limit: 5K bulk API calls/txn</li>
-              <li>SOQL queries per flow: 100</li>
-              <li>Complex loops with collects = slow</li>
-              <li>Use pre-fetch if querying N records</li>
-            </ul>
-          </div>
-
-          <div class="fw-examples">
-            <div class="fw-examples-title">Celtra examples</div>
-            <span class="fw-example-tag">Trial account status rollup</span>
-            <span class="fw-example-tag">Lead scoring routing</span>
-            <span class="fw-example-tag">SLA age tracking</span>
-            <span class="fw-example-tag">Quote auto-sync to Order</span>
-            <span class="fw-example-tag">Contract signal to Salesforce</span>
-            <span class="fw-example-tag">Task creation on stage change</span>
-          </div>
-        </div>
-
-        <div class="fw-pathway ai">
-          <div class="fw-pathway-label">Approach 02</div>
-          <h4>AI Assistance</h4>
-          
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Use Claude/AI when:</div>
-            <ul>
-              <li>Logic is context-dependent</li>
-              <li>Decision depends on judgment</li>
-              <li>Lower business impact (timing, quality)</li>
-              <li>Data from unstructured sources</li>
-              <li>Recommendations, not execution</li>
-            </ul>
-          </div>
-
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Approval strategy:</div>
-            <ul>
-              <li>AI recommends; human accepts/rejects</li>
-              <li>Log all recommendations + outcomes</li>
-              <li>Monitor accuracy before auto-execution</li>
-              <li>Can be async (next day okay)</li>
-            </ul>
-          </div>
-
-          <div class="fw-examples">
-            <div class="fw-examples-title">Celtra examples</div>
-            <span class="fw-example-tag">Call summary + next steps</span>
-            <span class="fw-example-tag">Account brief for AE</span>
-            <span class="fw-example-tag">Email draft (seller edits)</span>
-            <span class="fw-example-tag">Content gap identification</span>
-            <span class="fw-example-tag">Trial readiness scoring</span>
-            <span class="fw-example-tag">Expansion opportunity ranking</span>
-          </div>
-        </div>
-
-        <div class="fw-pathway manual">
-          <div class="fw-pathway-label">Approach 03</div>
-          <h4>Manual + Human Judgment</h4>
-          
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Keep human-owned when:</div>
-            <ul>
-              <li>High business stakes</li>
-              <li>Impacts customer/pricing/contract</li>
-              <li>Decision varies deal-to-deal</li>
-              <li>Requires legal/finance review</li>
-              <li>Creates precedent or exception</li>
-            </ul>
-          </div>
-
-          <div class="fw-criteria">
-            <div class="fw-criteria-title">Where humans add value:</div>
-            <ul>
-              <li>Pricing exceptions &amp; discounts</li>
-              <li>Deal restructuring decisions</li>
-              <li>Contract term exceptions</li>
-              <li>Cross-functional alignment</li>
-            </ul>
-          </div>
-
-          <div class="fw-examples">
-            <div class="fw-examples-title">Celtra examples</div>
-            <span class="fw-example-tag">Pricing override approval</span>
-            <span class="fw-example-tag">Deal close plan review</span>
-            <span class="fw-example-tag">Contract term negotiation</span>
-            <span class="fw-example-tag">Forecast adjustment</span>
-            <span class="fw-example-tag">Commitment override</span>
-            <span class="fw-example-tag">Strategic account decisions</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="fw-tree">
-        <div class="fw-tree-title">Decision sequence</div>
-        
-        <div class="fw-tree-node">
-          <div class="fw-tree-q">Can we fully map the rules before building?</div>
-          <div class="fw-tree-a"><strong>YES:</strong> Automation (Flow, Gong, rules-based logic)</div>
-          <div class="fw-tree-a"><strong>NO:</strong> Requires interpretation; continue below</div>
-        </div>
-
-        <div class="fw-tree-node">
-          <div class="fw-tree-q">Does the decision depend on context, judgment, or unstructured info?</div>
-          <div class="fw-tree-a"><strong>NO (mostly structured):</strong> Automation with conditional logic</div>
-          <div class="fw-tree-a"><strong>YES:</strong> AI Assistance or Manual; continue below</div>
-        </div>
-
-        <div class="fw-tree-node">
-          <div class="fw-tree-q">Could a wrong decision impact customers, pricing, contracts, or forecasts?</div>
-          <div class="fw-tree-a"><strong>YES (high stakes):</strong> AI recommends; human decides</div>
-          <div class="fw-tree-a"><strong>NO (lower stakes):</strong> AI assists; humans review later</div>
-          <div class="fw-tree-a"><strong>CRITICAL:</strong> Keep fully manual + approval chain</div>
-        </div>
-
-        <div class="fw-routes">
-          <div class="fw-route auto">→ Use Automation</div>
-          <div class="fw-route ai">→ Use AI + Review</div>
-          <div class="fw-route manual">→ Keep Manual</div>
-        </div>
-
-        <div class="fw-govlimit">
-          <strong>⚠️ Salesforce Flow reality check:</strong> Before building complex automation, audit governor limits. Multi-account contracts, trial rollups, and order orchestration often need pre-fetch architectures and record-type filtering to avoid bulk API or SOQL limits. When in doubt, ask: "Can this fit in 100 SOQL + 5K bulk calls per transaction?" If no, consider async processing or API-driven automation outside Flow.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="plain-card" style="padding:22px; margin-bottom:12px;">
-
-  <div class="section-sub" style="margin-top:18px;">What RevOps needs from partner teams</div>
-  <table>
-    <thead><tr><th>Team</th><th>Needed contribution</th><th>Why it matters</th><th>Near-term artifact</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Data / DI</strong></td><td>Define the governed account/customer graph, Snowflake access pattern, signal freshness rules, and approved AI data path.</td><td>Prevents pilots from becoming one-off automations or competing sources of truth.</td><td>Canonical object map, signal taxonomy, and AI access decision.</td></tr>
-      <tr><td><strong>Sales leadership</strong></td><td>Confirm AE ownership rules, acceptable seller actions, manager coaching expectations, and adoption accountability.</td><td>Recommendations only create value if sellers trust, accept, and complete the right next action.</td><td>Workflow owner matrix and pilot seller cohort.</td></tr>
-      <tr><td><strong>Marketing</strong></td><td>Map campaign, content, AEO, and ABM signals to account-stage context and sales follow-up expectations.</td><td>Shifts Marketing from MQL volume toward demand quality, buying-group development, and pipeline movement.</td><td>Campaign-to-signal definitions and content-gap operating loop.</td></tr>
-      <tr><td><strong>Customer Success</strong></td><td>Define health, adoption, expansion, support, and renewal-risk thresholds that should trigger CSM action.</td><td>Turns post-sale data into proactive adoption, expansion, and retention workflows instead of retrospective reporting.</td><td>CS signal thresholds and renewal readiness checklist.</td></tr>
-      <tr><td><strong>Product / Support / Legal / Finance</strong></td><td>Identify product events, support escalation rules, contract terms, order readiness, and approval gates that affect GTM execution.</td><td>Cross-functional blockers often determine whether a signal can become a useful customer-facing action.</td><td>Critical-field inventory and escalation/approval paths.</td></tr>
-    </tbody>
-  </table>
-</div>
 </section>
-<section class="section" id="sec-architecture">
-  <div class="section-title">Stack Architecture</div>
-  <div class="section-sub">Tools are organized by job: signal source, commercial truth, intelligence, execution, and measurement across Marketing, AE, SC, and CS workflows</div>
+  <section class="section" id="sec-tomorrow" role="tabpanel" aria-labelledby="tab-tomorrow" hidden>
+  <header>
+    <h2 class="section-title">Moving In</h2>
+    <p class="section-sub">What daily GTM work feels like when the house is built and people are living in it</p>
+  </header>
+
+  <div class="callout">
+    <h3>The house is built. This is what it feels like to live in it.</h3>
+    <p>The future state is not more AI activity. It is a GTM team that moves with more confidence because signals are captured, interpreted, enriched, and delivered to the right person before they have to go looking for them. The human still makes the judgment call. The difference is that the system has already done the research.</p>
+  </div>
+
+  <div class="moving-vignettes">
+    <div class="vignette-card">
+      <div class="metric-label">The AE</div>
+      <h3>When a signal reaches the seller</h3>
+      <p>The AE still works in Salesforce, Gong, and Gmail. What changes is what arrives there: not a raw alert, but a researched signal assembled from the systems around the account.</p>
+
+      <div class="vignette-timeline">
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Signal triggered</div>
+          <p>A stalled opportunity changes state: buyer activity drops, the next step is missing, and a recent Gong call includes a concern about governance and speed.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Salesforce</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Gong</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Gmail</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Orchestrator researches</div>
+          <p>Behind the scenes, the system checks deal history, stage age, stakeholder activity, prior meeting notes, open actions, and recent email engagement. It decides this is not just a stale deal. It is a recovery moment.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Opportunity history</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Conversation themes</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Buyer engagement</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Delivered in flow</div>
+          <p>The AE sees the signal inside Salesforce where they already manage the deal. It includes the reason the account was flagged, the supporting context, and a recommended next action.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Salesforce task</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Account brief</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Suggested action</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Human acts</div>
+          <p>The AE opens the recommended follow-up in Gmail. The draft already reflects the customer context, the concern from the call, and the agreed next step. The AE edits, applies judgment, and sends.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Gmail draft</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">AE judgment</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Customer action</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette-shift">
+        <p><strong>Before:</strong> The AE spent the first hour of the day assembling context from four different tools.</p>
+        <p><strong>After:</strong> The AE receives a researched signal for action, then decides how to use it.</p>
+      </div>
+    </div>
+
+    <div class="vignette-card">
+      <div class="metric-label">The CSM</div>
+      <h3>When a signal reaches the CSM</h3>
+      <p>The CSM still works through existing renewal and expansion motions. What changes is that risk and opportunity signals arrive with enough context to act before the next formal review.</p>
+
+      <div class="vignette-timeline">
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Signal triggered</div>
+          <p>A renewal account begins to drift: product usage slows, a key stakeholder becomes less active, and a recent Gong conversation suggests priorities may be shifting.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Snowflake</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Pendo</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Gong</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Orchestrator researches</div>
+          <p>Behind the scenes, the system connects usage trends, support history, renewal timing, stakeholder engagement, and recent conversation themes. It separates normal account noise from a risk worth acting on.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Usage trend</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Support history</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Renewal date</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Delivered in flow</div>
+          <p>The CSM receives the signal in the account workflow, not as a generic alert. It explains what changed, why it matters, and which customer conversation should happen next.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Salesforce account</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Risk brief</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Recommended action</span>
+          </div>
+        </div>
+
+        <div class="vignette-moment">
+          <div class="vignette-moment-label">Human acts</div>
+          <p>The CSM uses the brief to shape the customer conversation. They do not treat the health score as the answer. They use the researched signal to decide what to ask, who to engage, and how to change the account plan.</p>
+          <div class="vignette-sources">
+            <span class="vignette-source">Customer conversation</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">CSM judgment</span>
+            <span class="signal-arrow">+</span>
+            <span class="vignette-source">Renewal plan</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vignette-shift">
+        <p><strong>Before:</strong> Renewal risk surfaced at the quarterly review, often too late to change the outcome.</p>
+        <p><strong>After:</strong> The CSM receives a researched signal early enough to shape the conversation and influence the result.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="moving-bridge">
+    <p>This is what the house looks like when people are living in it: signals move through the structure, context is assembled behind the walls, and the person closest to the customer receives something they can act on.</p>
+    <p>Tab 4 shows the operating model and stack architecture that make that experience possible.</p>
+  </div>
+</section>
+<section class="section" id="sec-architecture" role="tabpanel" aria-labelledby="tab-architecture" hidden>
+  <header>
+    <h2 class="section-title">Stack Architecture</h2>
+    <p class="section-sub">Tools are organized by job: signal source, commercial truth, intelligence, execution, and measurement across Marketing, AE, SC, and CS workflows</p>
+  </header>
   <div class="callout">
     <h3>Use the Agentic Enterprise architecture as the organizing model.</h3>
     <p>The stack should be explained as four connected systems: the system of engagement where users interact, the system of agency where agents reason and recommend, the system of work where business processes execute, and the system of context where governed data, enrichment, product usage, and conversation history live.</p>
@@ -753,9 +1063,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </div>
   </div>
 </section>
-<section class="section" id="sec-workflows">
-  <div class="section-title">Seller Workflows</div>
-  <div class="section-sub">Named triggers, source tools, qualification logic, AE action, and execution channel</div>
+<section class="section" id="sec-workflows" role="tabpanel" aria-labelledby="tab-workflows" hidden>
+  <header>
+    <h2 class="section-title">Seller Workflows</h2>
+    <p class="section-sub">Named triggers, source tools, qualification logic, AE action, and execution channel</p>
+  </header>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 01 · Pipeline generation</div><div class="wf-title">High-fit account engages with marketing content</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot form fill, webinar attendance, product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit and no actively worked opp</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">→</span><span class="step">Salesforce campaign/member</span><span class="arrow">→</span><span class="step ai">Claude brief</span><span class="arrow">→</span><span class="step">SFDC task</span><span class="arrow">→</span><span class="step">Outreach/Gmail</span></div><div class="output"><strong>Seller sees:</strong> “Acme Retail had 2 contacts engage with creative automation content. High ICP fit. Recommended action: AE personalized follow-up. Use the webinar angle, reference the account context, and avoid a generic demo CTA.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Outreach/Gmail</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Workflow 02 · Expansion</div><div class="wf-title">Existing customer usage spike</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Snowflake/Pendo shows 30%+ usage increase, new team usage, or new users from a region/business unit</li><li>Salesforce confirms white space and Zendesk does not show active escalation</li></ul></div><div class="flow"><span class="step">Snowflake/Pendo</span><span class="arrow">→</span><span class="step">SFDC account flag</span><span class="arrow">→</span><span class="step ai">Expansion brief</span><span class="arrow">→</span><span class="step">Slack AE+CSM</span><span class="arrow">→</span><span class="step">Value review task</span></div><div class="output"><strong>Seller sees:</strong> “Usage increased 42% in 30 days, 11 new users added, no major support risk. Recommended play: AE + CSM value review. Create expansion opp only after customer confirms broader rollout need.”</div><div class="tags"><span class="tag">Snowflake</span><span class="tag">Pendo</span><span class="tag">Salesforce</span><span class="tag">Zendesk</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
@@ -772,9 +1084,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   </div>
   </section>
 
-<section class="section" id="sec-marketing-workflows">
-  <div class="section-title">Marketing Workflows</div>
-  <div class="section-sub">Marketing-owned triggers, source tools, qualification logic, next action, and closed-loop measurement</div>
+<section class="section" id="sec-marketing-workflows" role="tabpanel" aria-labelledby="tab-marketing-workflows" hidden>
+  <header>
+    <h2 class="section-title">Marketing Workflows</h2>
+    <p class="section-sub">Marketing-owned triggers, source tools, qualification logic, next action, and closed-loop measurement</p>
+  </header>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 01 · High-fit engagement</div><div class="wf-title">Target account shows meaningful demand signal</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot shows form fill, webinar attendance, pricing/product page visit, or 2+ contacts engaging in 14 days</li><li>Salesforce/Snowflake confirms ICP fit, target segment, open-account ownership, and no duplicate active play</li></ul></div><div class="flow"><span class="step">HubSpot</span><span class="arrow">+</span><span class="step">Salesforce/Snowflake</span><span class="arrow">→</span><span class="step ai">Account engagement brief</span><span class="arrow">→</span><span class="step">SFDC campaign/member</span><span class="arrow">→</span><span class="step">AE task + Slack</span></div><div class="output"><strong>Marketing sees:</strong> “Acme has 3 contacts engaging with creative automation content and matches Tier 1 ICP. Routed to AE with campaign context; measure meeting creation and opp movement, not MQL volume.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Slack</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 02 · Campaign learning loop</div><div class="wf-title">Campaign creates engagement but unclear revenue movement</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>HubSpot campaign generates engagement from target accounts, but Salesforce shows weak meeting, opp, stage, or pipeline influence</li><li>Salesforce and Snowflake can connect campaign members to account, opportunity, segment, and outcome data</li></ul></div><div class="flow"><span class="step">HubSpot campaign</span><span class="arrow">+</span><span class="step">Salesforce outcomes</span><span class="arrow">→</span><span class="step ai">Campaign quality brief</span><span class="arrow">→</span><span class="step">Marketing ops review</span><span class="arrow">→</span><span class="step">Budget/content adjustment</span></div><div class="output"><strong>Marketing sees:</strong> “Webinar drove 41 target-account engagements but only 3 accepted sales actions. Best conversion came from retail creative ops. Recommended action: shift follow-up to retail workflow content and pause broad nurture.”</div><div class="tags"><span class="tag">HubSpot</span><span class="tag">Salesforce</span><span class="tag">Snowflake</span><span class="tag">Claude</span><span class="tag">Marketing Ops</span></div></div></div>
@@ -786,9 +1100,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">Marketing Workflow 08 · Customer proof loop</div><div class="wf-title">Customer outcome becomes usable market proof</div></div><div class="wf-priority p-med">Build next</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Pendo/Snowflake shows usage growth, feature adoption, team expansion, or time-to-value improvement in a healthy customer account</li><li>Salesforce, Gong, and CSM notes confirm customer health, approved narrative, and no open escalation or renewal risk</li></ul></div><div class="flow"><span class="step">Pendo/Snowflake</span><span class="arrow">+</span><span class="step">Salesforce/CS notes</span><span class="arrow">→</span><span class="step ai">Proof-point brief</span><span class="arrow">→</span><span class="step">Customer marketing review</span><span class="arrow">→</span><span class="step">Case study/reference asset</span></div><div class="output"><strong>Marketing sees:</strong> “Customer expanded usage across 2 regions and cut campaign launch cycle time. Recommended action: validate story with CSM, create proof-point asset, and attach it to relevant sales plays.”</div><div class="tags"><span class="tag">Pendo</span><span class="tag">Snowflake</span><span class="tag">Salesforce</span><span class="tag">Gong</span><span class="tag">Claude</span></div></div></div>
   </div>
 </section>
-<section class="section" id="sec-sc-workflows">
-  <div class="section-title">Solutions Consulting Workflows</div>
-  <div class="section-sub">Pre-sales engineering motions for demos, technical evaluation, proof planning, and buyer confidence</div>
+<section class="section" id="sec-sc-workflows" role="tabpanel" aria-labelledby="tab-sc-workflows" hidden>
+  <header>
+    <h2 class="section-title">Solutions Consulting Workflows</h2>
+    <p class="section-sub">Pre-sales engineering motions for demos, technical evaluation, proof planning, and buyer confidence</p>
+  </header>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">SC Workflow 01 · Demo qualification</div><div class="wf-title">Demo request needs a tailored technical plan</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce opportunity has demo requested, stage Discovery or later, and at least one target persona attached</li><li>Gong, Gmail, and HubSpot show stated pain, campaign interest, prior questions, and buyer urgency</li></ul></div><div class="flow"><span class="step">Salesforce opp</span><span class="arrow">+</span><span class="step">Gong/Gmail/HubSpot</span><span class="arrow">→</span><span class="step ai">Demo brief</span><span class="arrow">→</span><span class="step">SC task</span><span class="arrow">→</span><span class="step">Slack deal room</span></div><div class="output"><strong>SC sees:</strong> “Demo is for creative ops and marketing ops. Core pain is launch speed and governance. Recommended demo path: campaign intake, template controls, approval workflow, and reporting handoff. Avoid generic platform tour.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Gong</span><span class="tag">Gmail</span><span class="tag">HubSpot</span><span class="tag">Slack</span><span class="tag">Claude</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">SC Workflow 02 · Demo environment readiness</div><div class="wf-title">Upcoming demo requires configured assets and proof points</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Demo meeting is scheduled within 5 business days and Salesforce product interest or use case fields are populated</li><li>Snowflake and Pendo provide relevant customer usage benchmarks, adoption patterns, and feature proof points for similar accounts</li></ul></div><div class="flow"><span class="step">Calendar/SFDC</span><span class="arrow">+</span><span class="step">Snowflake/Pendo</span><span class="arrow">→</span><span class="step ai">Demo checklist</span><span class="arrow">→</span><span class="step">SC prep task</span><span class="arrow">→</span><span class="step">Slack AE+SC</span></div><div class="output"><strong>SC sees:</strong> “Demo in 3 days. Account cares about localization and governance. Recommended prep: configure localized template example, include approval-path walkthrough, and bring usage benchmark from comparable customer cohort.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Calendar</span><span class="tag">Snowflake</span><span class="tag">Pendo</span><span class="tag">Slack</span><span class="tag">Claude</span></div></div></div>
@@ -797,9 +1113,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">SC Workflow 05 · Demo follow-up quality</div><div class="wf-title">Demo happened but technical next steps are unclear</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Gong detects demo completed with technical questions, objections, or requested proof points</li><li>Salesforce has no technical next step, no success criteria update, or no follow-up sent in Gmail within 24 hours</li></ul></div><div class="flow"><span class="step">Gong demo</span><span class="arrow">+</span><span class="step">Salesforce/Gmail</span><span class="arrow">→</span><span class="step ai">Demo recap draft</span><span class="arrow">→</span><span class="step">SC + AE task</span><span class="arrow">→</span><span class="step">Gmail</span></div><div class="output"><strong>SC sees:</strong> “Demo landed well, but buyer asked for proof on permissions and workflow governance. Recommended follow-up: send technical recap, attach permission model notes, and propose a hands-on validation session.”</div><div class="tags"><span class="tag">Gong</span><span class="tag">Salesforce</span><span class="tag">Gmail</span><span class="tag">Slack</span><span class="tag">Claude</span></div></div></div>
   </div>
 </section>
-<section class="section" id="sec-cs-workflows">
-  <div class="section-title">Customer Success Workflows</div>
-  <div class="section-sub">Post-sale motions for adoption, engagement, renewal confidence, expansion, and cross-functional coordination</div>
+<section class="section" id="sec-cs-workflows" role="tabpanel" aria-labelledby="tab-cs-workflows" hidden>
+  <header>
+    <h2 class="section-title">Customer Success Workflows</h2>
+    <p class="section-sub">Post-sale motions for adoption, engagement, renewal confidence, expansion, and cross-functional coordination</p>
+  </header>
   <div class="workflow-grid">
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">CS Workflow 01 · Onboarding activation</div><div class="wf-title">New customer is not reaching early adoption milestones</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce shows new customer, onboarding phase, or first 30-60 days post-close</li><li>Pendo/Snowflake shows low login rate, missing admin setup, no template creation, or low invited-user activation</li></ul></div><div class="flow"><span class="step">Salesforce customer</span><span class="arrow">+</span><span class="step">Pendo/Snowflake</span><span class="arrow">→</span><span class="step ai">Onboarding brief</span><span class="arrow">→</span><span class="step">CSM task</span><span class="arrow">→</span><span class="step">Slack implementation pod</span></div><div class="output"><strong>CSM sees:</strong> “Customer is day 21 post-close. Admin setup is complete, but only 2 of 9 invited users activated and no templates are live. Recommended play: schedule enablement session and send role-based activation checklist.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Pendo</span><span class="tag">Snowflake</span><span class="tag">Slack</span><span class="tag">Gmail</span><span class="tag">Claude</span></div></div></div>
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">CS Workflow 02 · Adoption drop</div><div class="wf-title">Healthy account shows usage decline or engagement drop</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Pendo/Snowflake shows usage down 25%+, fewer active users, stalled campaigns, or reduced key feature adoption</li><li>Gmail/Gong shows champion silence, weak meeting attendance, or fewer business-review interactions</li></ul></div><div class="flow"><span class="step">Pendo/Snowflake</span><span class="arrow">+</span><span class="step">Gmail/Gong</span><span class="arrow">→</span><span class="step ai">Adoption risk brief</span><span class="arrow">→</span><span class="step">CSM task</span><span class="arrow">→</span><span class="step">Manager alert</span></div><div class="output"><strong>CSM sees:</strong> “Usage is down 34% in 30 days and champion has not replied in 18 days. Recommended play: send value-recovery note, confirm current priorities, and offer workflow tune-up.”</div><div class="tags"><span class="tag">Pendo</span><span class="tag">Snowflake</span><span class="tag">Gmail</span><span class="tag">Gong</span><span class="tag">Salesforce</span><span class="tag">Claude</span></div></div></div>
@@ -808,9 +1126,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     <div class="wf-card"><div class="wf-head"><div><div class="wf-num">CS Workflow 05 · Renewal readiness</div><div class="wf-title">Renewal window opens and customer value proof is incomplete</div></div><div class="wf-priority p-high">Build first</div></div><div class="wf-body"><div class="signal-box"><div class="label">Actual trigger</div><ul><li>Salesforce renewal date is inside 120 days and health, usage, support, and stakeholder fields need review</li><li>SpotDraft/Salesforce provides contract terms, renewal notice windows, pricing context, and signature or paper-process requirements</li></ul></div><div class="flow"><span class="step">Salesforce renewal</span><span class="arrow">+</span><span class="step">Pendo/Snowflake/Zendesk</span><span class="arrow">+</span><span class="step">SpotDraft</span><span class="arrow">→</span><span class="step ai">Renewal brief</span><span class="arrow">→</span><span class="step">CSM plan</span></div><div class="output"><strong>CSM sees:</strong> “Renewal is 102 days away. Usage is stable, two support themes remain open, and renewal notice window is 60 days. Recommended play: build value recap, resolve support theme, and confirm executive sponsor before commercial conversation.”</div><div class="tags"><span class="tag">Salesforce</span><span class="tag">Pendo</span><span class="tag">Snowflake</span><span class="tag">Zendesk</span><span class="tag">SpotDraft</span><span class="tag">Claude</span></div></div></div>
   </div>
 </section>
-<section class="section" id="sec-tools">
-  <div class="section-title">Tool Decisions</div>
-  <div class="section-sub">Evaluate tools by signal quality, actionability, adoption, and measurable revenue impact</div>
+<section class="section" id="sec-tools" role="tabpanel" aria-labelledby="tab-tools" hidden>
+  <header>
+    <h2 class="section-title">Tool Decisions</h2>
+    <p class="section-sub">Evaluate tools by signal quality, actionability, adoption, and measurable revenue impact</p>
+  </header>
   <div class="plain-card" style="margin-bottom:22px;">
     <div class="metric-label">Decision lens</div>
     <p>The tool decisions below reflect the workflows described in the Marketing, Seller, Solutions Consulting, and Customer Success tabs. A tool should be kept, expanded, or added only if it improves signal quality, context quality, action execution, or outcome measurement in the governed GTM operating model.</p>
@@ -838,9 +1158,11 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
     </tbody>
   </table>
 </section>
-<section class="section" id="sec-metrics">
-  <div class="section-title">Success Metrics</div>
-  <div class="section-sub">Measure whether signal-based workflows create better timing, better context, and better revenue outcomes</div>
+<section class="section" id="sec-metrics" role="tabpanel" aria-labelledby="tab-metrics" hidden>
+  <header>
+    <h2 class="section-title">Success Metrics</h2>
+    <p class="section-sub">Measure whether signal-based workflows create better timing, better context, and better revenue outcomes</p>
+  </header>
 
   <div class="callout">
     <h3>Success should be measured by action quality and revenue impact, not by the volume of AI recommendations.</h3>
@@ -876,9 +1198,7 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
       <p>Review real conversations and action outcomes. Tune prompts, signal thresholds, routing rules, source data, and success metrics before expanding automation.</p>
     </div>
   </div>
-  <div class="section-sub" style="margin-top:12px;"></div>
-
-  <table>
+  <table class="metrics-summary-table">
     <thead><tr><th>Workflow</th><th>Primary metric</th><th>Secondary metric</th><th>Outcome</th></tr></thead>
     <tbody>
       <tr><td>High-fit marketing engagement</td><td>Meetings booked from high-fit engagement</td><td>Opps created</td><td>Better conversion from existing demand</td></tr>
@@ -904,14 +1224,60 @@ table{border-collapse:separate!important;border-spacing:0!important;overflow:hid
   </table>
 </section>
 </main>
-<div class="footer"><span>Celtra Revenue Operations · Signal-Based GTM Stack · May 2026</span><span>Confidential · Internal use</span></div>
+<footer class="footer">
+  <span>Celtra Revenue Operations · Signal-Based GTM Stack · May 2026</span>
+  <span>Confidential · Internal use</span>
+</footer>
 <script>
 function show(tab, e) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-  document.getElementById('sec-' + tab).classList.add('active');
-  if (e && e.target) e.target.classList.add('active');
+  const sections = document.querySelectorAll('.section');
+  const buttons = document.querySelectorAll('nav button');
+  const nextSection = document.getElementById('sec-' + tab);
+  const nextButton = e && e.target ? e.target : document.getElementById('tab-' + tab);
+
+  sections.forEach((section) => {
+    const isActive = section === nextSection;
+    section.classList.toggle('active', isActive);
+    section.hidden = !isActive;
+  });
+
+  buttons.forEach((button) => {
+    const isActive = button === nextButton;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+  });
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function toggleFoundationLayer(layer) {
+  const diagram = document.querySelector('.house-diagram');
+  if (!diagram) return;
+
+  diagram.querySelectorAll('.house-tier').forEach(tier => {
+    tier.classList.remove('active');
+  });
+
+  diagram.querySelectorAll('.house-expansion').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  const activePanel = document.getElementById(`foundation-expansion-${layer}`);
+  const activeTier = Array.from(diagram.querySelectorAll('.house-tier')).find(tier =>
+    tier.getAttribute('onclick') && tier.getAttribute('onclick').includes(`'${layer}'`)
+  );
+
+  if (activeTier) activeTier.classList.add('active');
+  if (activePanel) activePanel.classList.add('active');
+}
+
+function toggleWorkBreakdown(button) {
+  const content = document.getElementById('foundation-work-content');
+  if (!content) return;
+
+  const isOpen = content.classList.toggle('active');
+  button.textContent = isOpen
+    ? 'Hide team breakdown'
+    : 'See what this requires from each team';
 }
 </script>
 </body>
